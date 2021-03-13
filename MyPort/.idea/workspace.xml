@@ -3,6 +3,7 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="Gradle : com.myport : MyPort-1.0-SNAPSHOT.war" />
+      <artifact name="Gradle : org.example : MyPort-1.0-SNAPSHOT.war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -110,17 +111,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment />
@@ -336,6 +326,7 @@
       <workItem from="1615186679977" duration="3309000" />
       <workItem from="1615199685994" duration="3163000" />
       <workItem from="1615204310494" duration="2917000" />
+      <workItem from="1615636763334" duration="1035000" />
     </task>
     <servers />
   </component>
