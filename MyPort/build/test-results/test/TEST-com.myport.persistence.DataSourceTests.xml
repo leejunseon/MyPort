@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.myport.persistence.DataSourceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-18T14:05:49" hostname="DESKTOP-NBFUJJ3" time="0.007">
+  <properties/>
+  <testcase name="testConnection" classname="com.myport.persistence.DataSourceTests" time="0.007"/>
+  <system-out><![CDATA[INFO  DataSourceTests:27 - ConnectionJavassistProxy(286240429) wrapping oracle.jdbc.driver.T4CConnection@5aea2482
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>

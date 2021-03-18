@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.myport.persistence.JDBCTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-16T14:06:25" hostname="DESKTOP-NBFUJJ3" time="0.353">
-  <properties/>
-  <testcase name="testConnection" classname="com.myport.persistence.JDBCTests" time="0.353"/>
-  <system-out><![CDATA[INFO  JDBCTests:28 - oracle.jdbc.driver.T4CConnection@23f1ff33
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
