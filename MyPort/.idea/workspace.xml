@@ -28,7 +28,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e060a043-cade-4987-89d4-ed1018aafb68" name="Default Changelist" comment="" />
+    <list default="true" id="e060a043-cade-4987-89d4-ed1018aafb68" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/myport/persistence/DataSourceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/myport/persistence/DataSourceTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,7 +121,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.DataSourceTests">
+  <component name="RunManager" selected="Gradle.DataSourceTests.testMybatis">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -131,6 +139,27 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.myport.persistence.DataSourceTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DataSourceTests.testMybatis" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.myport.persistence.DataSourceTests.testMybatis&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -387,6 +416,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DataSourceTests.testMybatis" />
         <item itemvalue="Gradle.DataSourceTests" />
         <item itemvalue="Gradle.JDBCTests" />
         <item itemvalue="Gradle.MyPort" />
@@ -412,7 +442,9 @@
       <workItem from="1615890441630" duration="1358000" />
       <workItem from="1615901949980" duration="1849000" />
       <workItem from="1616072492402" duration="1045000" />
-      <workItem from="1616073746617" duration="1365000" />
+      <workItem from="1616073746617" duration="1474000" />
+      <workItem from="1616149802868" duration="594000" />
+      <workItem from="1616163242684" duration="1576000" />
     </task>
     <servers />
   </component>
