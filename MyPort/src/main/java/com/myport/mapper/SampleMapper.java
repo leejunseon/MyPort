@@ -7,4 +7,6 @@ public interface SampleMapper {
 
     @Select("SELECT SYSDATE FROM DUAL")
     public String getTime();
+
+    public String getTime2();
 }

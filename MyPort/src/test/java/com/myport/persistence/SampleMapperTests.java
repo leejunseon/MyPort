@@ -22,4 +22,10 @@ public class SampleMapperTests {
         log.info(sampleMapper.getClass().getName());
         log.info(sampleMapper.getTime());
     }
+
+    @Test
+    public void testGetTime2(){
+        log.info("getTime2");
+        log.info(sampleMapper.getTime2());
+    }
 }

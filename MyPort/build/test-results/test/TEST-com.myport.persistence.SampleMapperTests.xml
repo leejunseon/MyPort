@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.myport.persistence.SampleMapperTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-20T14:43:40" hostname="DESKTOP-NBFUJJ3" time="0.352">
+<testsuite name="com.myport.persistence.SampleMapperTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-21T14:45:05" hostname="DESKTOP-NBFUJJ3" time="0.303">
   <properties/>
-  <testcase name="testGetTime" classname="com.myport.persistence.SampleMapperTests" time="0.352"/>
-  <system-out><![CDATA[INFO  SampleMapperTests:22 - com.sun.proxy.$Proxy35
-INFO  SampleMapperTests:23 - 2021-03-20 23:43:40
+  <testcase name="testGetTime2" classname="com.myport.persistence.SampleMapperTests" time="0.303"/>
+  <system-out><![CDATA[INFO  SampleMapperTests:28 - getTime2
+INFO  SampleMapperTests:29 - 2021-03-21 23:45:05
 ]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
