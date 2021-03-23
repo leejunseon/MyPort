@@ -29,6 +29,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e060a043-cade-4987-89d4-ed1018aafb68" name="Default Changelist" comment="2021-03-19">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db_migration/V20210323__Init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/257d0b73-cf7c-45fc-b088-fab8e1ddf4c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/257d0b73-cf7c-45fc-b088-fab8e1ddf4c6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/257d0b73-cf7c-45fc-b088-fab8e1ddf4c6/storage_v2/_src_/schema/MYPORT.LeRwiA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/257d0b73-cf7c-45fc-b088-fab8e1ddf4c6/storage_v2/_src_/schema/MYPORT.LeRwiA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +125,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Database Script.V20210323214303__Init.sql (1)">
+  <component name="RunManager" selected="Database Script.V20210323__Init.sql">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -151,33 +155,18 @@
       <data-source id="257d0b73-cf7c-45fc-b088-fab8e1ddf4c6" namespace="schema/&quot;MYPORT&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="V20210323__Init.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/db_migration/V20210323__Init.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="257d0b73-cf7c-45fc-b088-fab8e1ddf4c6" namespace="schema/&quot;MYPORT&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="JDBCTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.myport.persistence.JDBCTests&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="SampleMapperTests.testGetTime2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.myport.persistence.SampleMapperTests.testGetTime2&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -394,11 +383,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Database Script.V20210323__Init.sql" />
         <item itemvalue="Database Script.V20210323214303__Init.sql (1)" />
         <item itemvalue="Database Script.V20210323214303__Init.sql" />
         <item itemvalue="Database Script.V20210323213913__Init.sql" />
         <item itemvalue="Gradle.JDBCTests" />
-        <item itemvalue="Gradle.SampleMapperTests.testGetTime2" />
       </list>
     </recent_temporary>
   </component>
@@ -428,7 +417,7 @@
       <workItem from="1616315493155" duration="592000" />
       <workItem from="1616337061039" duration="907000" />
       <workItem from="1616416436065" duration="5129000" />
-      <workItem from="1616502653619" duration="1730000" />
+      <workItem from="1616502653619" duration="2973000" />
     </task>
     <task id="LOCAL-00001" summary="2021-03-19">
       <created>1616164991337</created>
@@ -465,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616504872839</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2021-03-23">
+      <created>1616505013950</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616505013950</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
