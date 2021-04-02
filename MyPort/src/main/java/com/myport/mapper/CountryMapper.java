@@ -8,5 +8,6 @@ public interface CountryMapper {
 
     public List<CountryVo> getList();
 
+    public void insert(CountryVo country);
 
 }

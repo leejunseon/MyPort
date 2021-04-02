@@ -2,5 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/resources/db_sqls/V20210323__Init.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db_sqls/V20210402__Alter_DateColumns.sql" dialect="GenericSQL" />
+    <file url="PROJECT" dialect="Oracle" />
   </component>
 </project>

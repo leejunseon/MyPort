@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myport.mapper.UserMapper">
+
+    <select id = "getList" resultType="com.myport.domain.UserVo">
+        SELECT * FROM TBL_USER
+    </select>
+
+    <insert id = "insert">
+        INSERT INTO TBL_USER (U_ID,U_PW,U_NAME,U_EMAIL)
+        VALUES(#{uId},#{uPw},#{uName},#{uEmail})
+    </insert>
+
+</mapper>
