@@ -6,10 +6,10 @@ import java.util.Date;
 
 @Data
 public class CountryVo {
-    private Long cPk;
-    private Long uPk;
+    private Long cNo;
+    private String uId;
     private String cName;
-    private int cRatio;
-    private Date cRegdate;
-    private Date cUpdatedate;
+    private Long cRatio;
+    private String cRegdate;
+    private String cUpdatedate;
 }

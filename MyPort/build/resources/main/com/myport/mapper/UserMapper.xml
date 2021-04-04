@@ -4,13 +4,47 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.myport.mapper.UserMapper">
 
-    <select id = "getList" resultType="com.myport.domain.UserVo">
-        SELECT * FROM TBL_USER
-    </select>
-
     <insert id = "insert">
         INSERT INTO TBL_USER (U_ID,U_PW,U_NAME,U_EMAIL)
         VALUES(#{uId},#{uPw},#{uName},#{uEmail})
     </insert>
+
+    <select id = "getList" resultType="com.myport.domain.UserVo">
+        SELECT * FROM TBL_USER
+    </select>
+
+    <select id = "select" resultType="com.myport.domain.UserVo">
+        SELECT * FROM TBL_USER
+        WHERE U_NO = #{uNo}
+    </select>
+
+    <select id = "selectKey" resultType="Long">
+        SELECT U_NO FROM TBL_USER
+        WHERE U_ID = #{uId}
+    </select>
+
+    <update id="update">
+        UPDATE TBL_USER
+        SET
+        <if test="uId != null">
+            U_ID = #{uId},
+        </if>
+        <if test="uPw != null">
+            U_PW = #{uPw},
+        </if>
+        <if test="uName != null">
+            U_NAME = #{uName},
+        </if>
+        <if test="uEmail != null">
+            U_EMAIL = #{uEmail},
+        </if>
+            U_UPDATEDATE = to_char(sysdate, 'YYYY/MM/DD HH24:MI:SS')
+        WHERE U_NO = #{uNo}
+    </update>
+
+    <delete id="delete">
+        DELETE TBL_USER
+        WHERE U_NO = #{uNo}
+    </delete>
 
 </mapper>

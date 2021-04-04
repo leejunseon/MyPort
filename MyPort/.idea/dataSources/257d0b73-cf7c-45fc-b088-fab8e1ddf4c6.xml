@@ -57,10 +57,11 @@
     </schema>
     <schema id="19" parent="1" name="MYPORT">
       <ObjectId>108</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <IntrospectionVersion>200820</IntrospectionVersion>
-      <IntrospectionTimestamp>2021-03-30.05:07:21</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2021-04-05.04:24:53</IntrospectionTimestamp>
+      <CommentsHash>1731207260821</CommentsHash>
       <Current>1</Current>
     </schema>
     <schema id="20" parent="1" name="OJVMSYS">
@@ -238,52 +239,56 @@
     <user id="76" parent="1" name="XS$NULL">
       <ObjectId>2147483638</ObjectId>
     </user>
-    <sequence id="77" parent="19" name="TBL_COUNTRY_SEQ">
-      <ObjectId>73731</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <sequence id="77" parent="19" name="SEQ_ASSET">
+      <ObjectId>74110</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <sequence id="78" parent="19" name="TBL_FIELD_SEQ">
-      <ObjectId>73727</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <sequence id="78" parent="19" name="SEQ_COUNTRY">
+      <ObjectId>74115</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <sequence id="79" parent="19" name="TBL_STOCK_SEQ">
-      <ObjectId>73735</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <sequence id="79" parent="19" name="SEQ_INVESTMENT">
+      <ObjectId>74119</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <sequence id="80" parent="19" name="TBL_USER_SEQ">
-      <ObjectId>73723</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <sequence id="80" parent="19" name="SEQ_USER">
+      <ObjectId>74106</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
       <SequenceIdentity>1</SequenceIdentity>
     </sequence>
-    <table id="81" parent="19" name="TBL_COUNTRY">
-      <ObjectId>73729</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <table id="81" parent="19" name="TBL_ASSET">
+      <ObjectId>74107</ObjectId>
+      <Comment>자산</Comment>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="82" parent="19" name="TBL_FIELD">
-      <ObjectId>73725</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <table id="82" parent="19" name="TBL_COUNTRY">
+      <ObjectId>74112</ObjectId>
+      <Comment>국가</Comment>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="83" parent="19" name="TBL_STOCK">
-      <ObjectId>73733</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <table id="83" parent="19" name="TBL_INVESTMENT">
+      <ObjectId>74116</ObjectId>
+      <Comment>투자 종목</Comment>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="84" parent="19" name="TBL_USER">
-      <ObjectId>73721</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+      <ObjectId>74103</ObjectId>
+      <Comment>유저</Comment>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <synonym id="85" parent="27" name="ABSPATH">
@@ -49977,283 +49982,377 @@
       <System>1</System>
       <RemoteDatabaseString>ORACLR_CONNECTION_DATA</RemoteDatabaseString>
     </dblink>
-    <column id="7184" parent="81" name="C_PK">
+    <column id="7184" parent="81" name="A_NO">
       <Position>1</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>자산 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7185" parent="81" name="U_PK">
+    <column id="7185" parent="81" name="U_NO">
       <Position>2</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>유저 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7186" parent="81" name="C_NAME">
+    <column id="7186" parent="81" name="A_NAME">
       <Position>3</Position>
+      <Comment>자산 이름</Comment>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7187" parent="81" name="C_RATIO">
+    <column id="7187" parent="81" name="A_RATIO">
       <Position>4</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>자산 설정비율</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7188" parent="81" name="C_REGDATE">
+    <column id="7188" parent="81" name="A_REGDATE">
       <Position>5</Position>
-      <DataType>DATE|0s</DataType>
+      <Comment>자산 등록 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
     </column>
-    <column id="7189" parent="81" name="C_UPDATEDATE">
+    <column id="7189" parent="81" name="A_UPDATEDATE">
       <Position>6</Position>
-      <DataType>DATE|0s</DataType>
+      <Comment>자산 업데이트 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
     </column>
-    <index id="7190" parent="81" name="TBL_COUNTRY_PK">
-      <ObjectId>73730</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <index id="7190" parent="81" name="TBL_ASSET_PK">
+      <ObjectId>74108</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
-      <ColNames>C_PK</ColNames>
+      <ColNames>A_NO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="7191" parent="81" name="TBL_COUNTRY_PK">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>C_PK</ColNames>
+    <index id="7191" parent="81" name="TBL_ASSET_UK">
+      <ObjectId>74109</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>U_NO
+A_NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="7192" parent="81" name="TBL_ASSET_PK">
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
+      <ColNames>A_NO</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>TBL_ASSET_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="7193" parent="81" name="TBL_ASSET_UK">
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
+      <ColNames>U_NO
+A_NAME</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>TBL_ASSET_UK</UnderlyingIndexName>
+    </key>
+    <foreign-key id="7194" parent="81" name="TBL_ASSET_USER_U_NO_FK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>U_NO</ColNames>
+      <RefSchemaName>MYPORT</RefSchemaName>
+      <RefTableName>TBL_USER</RefTableName>
+      <RefKeyName>TBL_USER_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <trigger id="7195" parent="81" name="TBL_ASSET_AI_TRG">
+      <ObjectId>74111</ObjectId>
+      <SourceTextLength>73</SourceTextLength>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <Events>I</Events>
+      <Turn>before-row</Turn>
+    </trigger>
+    <column id="7196" parent="82" name="C_NO">
+      <Position>1</Position>
+      <Comment>국가 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="7197" parent="82" name="U_NO">
+      <Position>2</Position>
+      <Comment>유저 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="7198" parent="82" name="C_NAME">
+      <Position>3</Position>
+      <Comment>국가 이름</Comment>
+      <DataType>VARCHAR2(20 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="7199" parent="82" name="C_RATIO">
+      <Position>4</Position>
+      <Comment>국가 설정비율</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="7200" parent="82" name="C_REGDATE">
+      <Position>5</Position>
+      <Comment>국가 등록 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
+    </column>
+    <column id="7201" parent="82" name="C_UPDATEDATE">
+      <Position>6</Position>
+      <Comment>국가 업데이트 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
+    </column>
+    <index id="7202" parent="82" name="TBL_COUNTRY_PK">
+      <ObjectId>74113</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>C_NO</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="7203" parent="82" name="TBL_COUNTRY_UK">
+      <ObjectId>74114</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>U_NO
+C_NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="7204" parent="82" name="TBL_COUNTRY_PK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>C_NO</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>TBL_COUNTRY_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="7192" parent="81" name="FK_TBL_COUNTRY_U_PK_TBL_USER_U">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>U_PK</ColNames>
-      <RefSchemaName>MYPORT</RefSchemaName>
-      <RefTableName>TBL_USER</RefTableName>
-      <RefKeyName>TBL_USER_PK</RefKeyName>
-      <OnDelete>restrict</OnDelete>
-    </foreign-key>
-    <trigger id="7193" parent="81" name="TBL_COUNTRY_AI_TRG">
-      <ObjectId>73732</ObjectId>
-      <SourceTextLength>79</SourceTextLength>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <Events>I</Events>
-      <Turn>before-row</Turn>
-    </trigger>
-    <column id="7194" parent="82" name="F_PK">
-      <Position>1</Position>
-      <DataType>NUMBER(*)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="7195" parent="82" name="U_PK">
-      <Position>2</Position>
-      <DataType>NUMBER(*)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="7196" parent="82" name="F_NAME">
-      <Position>3</Position>
-      <DataType>VARCHAR2(20 byte)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="7197" parent="82" name="F_RATIO">
-      <Position>4</Position>
-      <DataType>NUMBER(*)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="7198" parent="82" name="F_REGDATE">
-      <Position>5</Position>
-      <DataType>DATE|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
-    </column>
-    <column id="7199" parent="82" name="F_UPDATEDATE">
-      <Position>6</Position>
-      <DataType>DATE|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
-    </column>
-    <index id="7200" parent="82" name="TBL_FIELD_PK">
-      <ObjectId>73726</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <TablespaceName>USERS</TablespaceName>
-      <ColNames>F_PK</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="7201" parent="82" name="TBL_FIELD_PK">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>F_PK</ColNames>
+    <key id="7205" parent="82" name="TBL_COUNTRY_UK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>U_NO
+C_NAME</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>TBL_FIELD_PK</UnderlyingIndexName>
-      <Primary>1</Primary>
+      <UnderlyingIndexName>TBL_COUNTRY_UK</UnderlyingIndexName>
     </key>
-    <foreign-key id="7202" parent="82" name="FK_TBL_FIELD_U_PK_TBL_USER_U_P">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>U_PK</ColNames>
+    <foreign-key id="7206" parent="82" name="TBL_COUNTRY_USER_U_NO_FK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>U_NO</ColNames>
       <RefSchemaName>MYPORT</RefSchemaName>
       <RefTableName>TBL_USER</RefTableName>
       <RefKeyName>TBL_USER_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <trigger id="7203" parent="82" name="TBL_FIELD_AI_TRG">
-      <ObjectId>73728</ObjectId>
-      <SourceTextLength>77</SourceTextLength>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <trigger id="7207" parent="82" name="TBL_COUNTRY_AI_TRG">
+      <ObjectId>74101</ObjectId>
+      <SourceTextLength>75</SourceTextLength>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <Events>I</Events>
       <Turn>before-row</Turn>
     </trigger>
-    <column id="7204" parent="83" name="S_PK">
+    <column id="7208" parent="83" name="I_NO">
       <Position>1</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>투자종목 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7205" parent="83" name="U_PK">
+    <column id="7209" parent="83" name="U_NO">
       <Position>2</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>유저 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7206" parent="83" name="F_PK">
+    <column id="7210" parent="83" name="C_NO">
       <Position>3</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>국가 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7207" parent="83" name="C_PK">
+    <column id="7211" parent="83" name="A_NO">
       <Position>4</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>자산 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7208" parent="83" name="S_NAME">
+    <column id="7212" parent="83" name="I_NAME">
       <Position>5</Position>
+      <Comment>투자종목 이름</Comment>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7209" parent="83" name="S_PRICE">
+    <column id="7213" parent="83" name="I_PRICE">
       <Position>6</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>투자종목 가격</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7210" parent="83" name="S_NUM">
+    <column id="7214" parent="83" name="I_NUM">
       <Position>7</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>투자종목 갯수</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7211" parent="83" name="S_REGDATE">
+    <column id="7215" parent="83" name="I_REGDATE">
       <Position>8</Position>
-      <DataType>DATE|0s</DataType>
+      <Comment>투자종목 등록 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
     </column>
-    <column id="7212" parent="83" name="S_UPDATEDATE">
+    <column id="7216" parent="83" name="I_UPDATEDATE">
       <Position>9</Position>
-      <DataType>DATE|0s</DataType>
+      <Comment>투자종목 업데이트 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
     </column>
-    <index id="7213" parent="83" name="TBL_STOCK_PK">
-      <ObjectId>73734</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <index id="7217" parent="83" name="TBL_INVESTMENT_PK">
+      <ObjectId>74117</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
-      <ColNames>S_PK</ColNames>
+      <ColNames>I_NO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="7214" parent="83" name="TBL_STOCK_PK">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>S_PK</ColNames>
+    <index id="7218" parent="83" name="TBL_INVESTMENT_UK">
+      <ObjectId>74118</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>U_NO
+C_NO
+A_NO
+I_NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="7219" parent="83" name="TBL_INVESTMENT_PK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>I_NO</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>TBL_STOCK_PK</UnderlyingIndexName>
+      <UnderlyingIndexName>TBL_INVESTMENT_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="7215" parent="83" name="FK_TBL_STOCK_U_PK_TBL_USER_U_P">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>U_PK</ColNames>
+    <key id="7220" parent="83" name="TBL_INVESTMENT_UK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>U_NO
+C_NO
+A_NO
+I_NAME</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>TBL_INVESTMENT_UK</UnderlyingIndexName>
+    </key>
+    <foreign-key id="7221" parent="83" name="TBL_INVESTMENT_USER_U_NO_FK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>U_NO</ColNames>
       <RefSchemaName>MYPORT</RefSchemaName>
       <RefTableName>TBL_USER</RefTableName>
       <RefKeyName>TBL_USER_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="7216" parent="83" name="FK_TBL_STOCK_F_PK_TBL_FIELD_F_">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>F_PK</ColNames>
-      <RefSchemaName>MYPORT</RefSchemaName>
-      <RefTableName>TBL_FIELD</RefTableName>
-      <RefKeyName>TBL_FIELD_PK</RefKeyName>
-      <OnDelete>restrict</OnDelete>
-    </foreign-key>
-    <foreign-key id="7217" parent="83" name="FK_TBL_STOCK_C_PK_TBL_COUNTRY_">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>C_PK</ColNames>
+    <foreign-key id="7222" parent="83" name="TBL_INVESTMENT_COUNTRY_C_NO_FK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>C_NO</ColNames>
       <RefSchemaName>MYPORT</RefSchemaName>
       <RefTableName>TBL_COUNTRY</RefTableName>
       <RefKeyName>TBL_COUNTRY_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <trigger id="7218" parent="83" name="TBL_STOCK_AI_TRG">
-      <ObjectId>73736</ObjectId>
-      <SourceTextLength>77</SourceTextLength>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <foreign-key id="7223" parent="83" name="TBL_INVESTMENT_ASSET_A_NO_FK">
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
+      <ColNames>A_NO</ColNames>
+      <RefSchemaName>MYPORT</RefSchemaName>
+      <RefTableName>TBL_ASSET</RefTableName>
+      <RefKeyName>TBL_ASSET_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <trigger id="7224" parent="83" name="TBL_INVESTMENT_AI_TRG">
+      <ObjectId>74120</ObjectId>
+      <SourceTextLength>78</SourceTextLength>
+      <CreatedTimestamp>2021-04-05.04:24:50</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:50</ModifiedTimestamp>
       <Events>I</Events>
       <Turn>before-row</Turn>
     </trigger>
-    <column id="7219" parent="84" name="U_PK">
+    <column id="7225" parent="84" name="U_NO">
       <Position>1</Position>
-      <DataType>NUMBER(*)|0s</DataType>
+      <Comment>유저 키</Comment>
+      <DataType>NUMBER(18 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7220" parent="84" name="U_ID">
+    <column id="7226" parent="84" name="U_ID">
       <Position>2</Position>
+      <Comment>유저 아이디</Comment>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7221" parent="84" name="U_PW">
+    <column id="7227" parent="84" name="U_PW">
       <Position>3</Position>
+      <Comment>유저 패스워드</Comment>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7222" parent="84" name="U_NAME">
+    <column id="7228" parent="84" name="U_NAME">
       <Position>4</Position>
+      <Comment>유저 이름</Comment>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7223" parent="84" name="U_EMAIL">
+    <column id="7229" parent="84" name="U_EMAIL">
       <Position>5</Position>
+      <Comment>유저 이메일</Comment>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="7224" parent="84" name="U_REGDATE">
+    <column id="7230" parent="84" name="U_REGDATE">
       <Position>6</Position>
-      <DataType>DATE|0s</DataType>
+      <Comment>유저 등록 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
     </column>
-    <column id="7225" parent="84" name="U_UPDATEDATE">
+    <column id="7231" parent="84" name="U_UPDATEDATE">
       <Position>7</Position>
-      <DataType>DATE|0s</DataType>
+      <Comment>유저 업데이트 날짜/시간</Comment>
+      <DataType>VARCHAR2(40 byte)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>SYSDATE</DefaultExpression>
+      <DefaultExpression>to_char(sysdate, &apos;YYYY/MM/DD HH24:MI:SS&apos;)</DefaultExpression>
     </column>
-    <index id="7226" parent="84" name="TBL_USER_PK">
-      <ObjectId>73722</ObjectId>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <index id="7232" parent="84" name="TBL_USER_PK">
+      <ObjectId>74104</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
-      <ColNames>U_PK</ColNames>
+      <ColNames>U_NO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="7227" parent="84" name="TBL_USER_PK">
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
-      <ColNames>U_PK</ColNames>
+    <index id="7233" parent="84" name="TBL_USER_UK">
+      <ObjectId>74105</ObjectId>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>U_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="7234" parent="84" name="TBL_USER_PK">
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
+      <ColNames>U_NO</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>TBL_USER_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <trigger id="7228" parent="84" name="TBL_USER_AI_TRG">
-      <ObjectId>73724</ObjectId>
-      <SourceTextLength>76</SourceTextLength>
-      <CreatedTimestamp>2021-03-30.05:07:18</CreatedTimestamp>
-      <ModifiedTimestamp>2021-03-30.05:07:18</ModifiedTimestamp>
+    <key id="7235" parent="84" name="TBL_USER_UK">
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
+      <ColNames>U_ID</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>TBL_USER_UK</UnderlyingIndexName>
+    </key>
+    <trigger id="7236" parent="84" name="TBL_USER_AI_TRG">
+      <ObjectId>74099</ObjectId>
+      <SourceTextLength>72</SourceTextLength>
+      <CreatedTimestamp>2021-04-05.04:24:49</CreatedTimestamp>
+      <ModifiedTimestamp>2021-04-05.04:24:49</ModifiedTimestamp>
       <Events>I</Events>
       <Turn>before-row</Turn>
     </trigger>

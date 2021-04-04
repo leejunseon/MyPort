@@ -6,11 +6,11 @@ import java.util.Date;
 
 @Data
 public class UserVo {
-    private Long uPk;
+    private Long uNo;
     private String uId;
     private String uPw;
     private String uName;
     private String uEmail;
-    private Date uRegdate;
-    private Date uUpdatedate;
+    private String uRegdate;
+    private String uUpdatedate;
 }

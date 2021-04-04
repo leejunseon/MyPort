@@ -6,10 +6,10 @@ import java.util.Date;
 
 @Data
 public class FieldVo {
-    private Long fPk;
-    private Long uPk;
+    private Long fNo;
+    private String uId;
     private String fName;
     private Long fRatio;
-    private Date fRegdate;
-    private Date fUpdatedate;
+    private String fRegdate;
+    private String fUpdatedate;
 }

@@ -6,13 +6,13 @@ import java.util.Date;
 
 @Data
 public class StockVo {
-    private Integer sPk;
-    private Integer uPk;
-    private Integer fPk;
-    private Integer cPk;
+    private Long sNo;
+    private String uId;
+    private String cName;
+    private String fName;
     private String sName;
     private Long sPrice;
-    private Integer sNum;
-    private Date sRegdate;
-    private Date sUpdatedate;
+    private Long sNum;
+    private String sRegdate;
+    private String sUpdatedate;
 }

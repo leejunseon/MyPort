@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface CountryMapper {
 
-    public List<CountryVo> getList();
-
     public void insert(CountryVo country);
+
+    public List<CountryVo> getList();
 
 }
