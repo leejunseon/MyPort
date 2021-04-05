@@ -36,6 +36,14 @@ public class UserMapperTests {
     }
 
     @Test
+    public void testSelectKey(){
+        UserVo vo = new UserVo();
+        vo.setUId("testId1");
+        Long key = uMapper.selectKey(vo);
+        log.info(key);
+    }
+
+    @Test
     public void testSelect(){
         UserVo vo = new UserVo();
         vo.setUNo(1L);
@@ -44,18 +52,10 @@ public class UserMapperTests {
     }
 
     @Test
-    public void testSelectKey(){
-        UserVo vo = new UserVo();
-        vo.setUId("testId2");
-        Long key = uMapper.selectKey(vo);
-        log.info(key);
-    }
-
-    @Test
     public void testUpdate(){
         UserVo vo = new UserVo();
-        vo.setUNo(2L);
-        vo.setUId("testId1");
+        vo.setUNo(1L);
+        vo.setUId("testId1_update");
         int result = uMapper.update(vo);
         log.info(result);
     }
@@ -67,6 +67,5 @@ public class UserMapperTests {
         int result = uMapper.delete(vo);
         log.info(result);
     }
-
 
 }

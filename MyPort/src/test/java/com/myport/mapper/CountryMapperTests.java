@@ -23,17 +23,54 @@ public class CountryMapperTests {
 
     @Test
     public void testInsert(){
-        CountryVo vo = new CountryVo();
-        UserVo user = new UserVo();
-        user.setUName("testId1");
-        //vo.setUId(cMapper.selectKey(user));
+        CountryVo cVo = new CountryVo();
+        UserVo uVo = new UserVo();
+        uVo.setUId("testId1");
+        cVo.setUNo(uMapper.selectKey(uVo));
+        cVo.setCName("한국");
+        cVo.setCRatio(50L);
+        cMapper.insert(cVo);
     }
 
     @Test
     public void testGetList(){
-        /*for(CountryVo vo:uMapper.getList()){
+        for(CountryVo vo : cMapper.getList()){
             log.info(vo);
-        }*/
+        }
+    }
+
+    @Test
+    public void testSelectKey(){
+        CountryVo vo = new CountryVo();
+        vo.setUNo(2L);
+        vo.setCName("한국");
+        Long key = cMapper.selectKey(vo);
+        log.info(key);
+    }
+
+    @Test
+    public void testSelect(){
+        CountryVo vo = new CountryVo();
+        vo.setCNo(2L);
+        CountryVo result = cMapper.select(vo);
+        log.info(result);
+    }
+
+    @Test
+    public void testUpdate(){
+        CountryVo vo = new CountryVo();
+        vo.setCNo(2L);
+        vo.setCName("한국_update");
+        int result = cMapper.update(vo);
+        log.info(result);
+    }
+
+    @Test
+    public void testDelete(){
+        CountryVo vo = new CountryVo();
+        vo.setCNo(2L);
+        int result = cMapper.delete(vo);
+        log.info(result);
     }
 
 }
