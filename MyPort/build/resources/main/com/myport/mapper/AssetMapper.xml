@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myport.mapper.AssetMapper">
+
+    <insert id="insert">
+        INSERT INTO TBL_ASSET (U_NO,A_NAME,A_RATIO)
+        VALUES (#{uNo},#{aName},#{aRatio})
+    </insert>
+
+    <select id = "getList" resultType="com.myport.domain.AssetVo">
+        SELECT * FROM TBL_ASSET
+    </select>
+
+    <select id = "select" resultType="com.myport.domain.AssetVo">
+        SELECT * FROM TBL_ASSET
+        WHERE A_NO = #{aNo}
+    </select>
+
+    <select id = "selectKey" resultType="Long">
+        SELECT A_NO FROM TBL_ASSET
+        WHERE
+            U_NO = #{uNo}
+          AND
+            A_NAME = #{aName}
+    </select>
+
+    <update id="update">
+        UPDATE TBL_ASSET
+        SET
+        <if test="aName != null">
+            A_NAME = #{aName},
+        </if>
+        <if test="aRatio != null">
+            A_RATIO = #{aRatio},
+        </if>
+        A_UPDATEDATE = to_char(sysdate, 'YYYY/MM/DD HH24:MI:SS')
+        WHERE A_NO = #{aNo}
+    </update>
+
+    <delete id="delete">
+        DELETE TBL_ASSET
+        WHERE A_NO = #{aNo}
+    </delete>
+
+</mapper>
