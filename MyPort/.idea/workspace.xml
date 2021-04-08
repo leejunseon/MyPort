@@ -29,10 +29,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e060a043-cade-4987-89d4-ed1018aafb68" name="Default Changelist" comment="2021-03-19">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/myport/mapper/AssetMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/myport/mapper/InvestmentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/myport/mapper/AssetMapperTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/myport/mapper/InvestmentMapperTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myport/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myport/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/myport/service/UserServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
@@ -44,25 +43,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/domain/CountryVo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myport/domain/CountryVo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/domain/FieldVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/domain/StockVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/mapper/CountryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myport/mapper/CountryMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/mapper/FieldMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/mapper/StockMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/myport/mapper/CountryMapperTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/myport/mapper/CountryMapperTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/myport/mapper/UserMapperTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/myport/mapper/UserMapperTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.myport.mapper.UserMapperTests.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.myport.mapper.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.myport.mapper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/com/myport/mapper/CountryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/com/myport/mapper/CountryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/db_sqls/V20210323__Init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/db_sqls/V20210323__Init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.myport.mapper.UserMapperTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.myport.mapper.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myport/mapper/AssetMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myport/mapper/AssetMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myport/mapper/InvestmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myport/mapper/InvestmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +86,7 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
+        <option value="Interface" />
         <option value="package-info" />
         <option value="Class" />
       </list>
@@ -184,16 +172,14 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.InvestmentMapperTests.testInsert">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="Gradle.UserServiceTests.testRegister">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,12 +226,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="InvestmentMapperTests.testSelect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserMapperTests.testGetList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.myport.mapper.InvestmentMapperTests.testSelect&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.myport.mapper.UserMapperTests.testGetList&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -261,12 +247,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="InvestmentMapperTests.testSelectKey" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserServiceTests.testExist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.myport.mapper.InvestmentMapperTests.testSelectKey&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.myport.service.UserServiceTests.testExist&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -282,12 +268,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="InvestmentMapperTests.testUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="UserServiceTests.testRegister" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.myport.mapper.InvestmentMapperTests.testUpdate&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.myport.service.UserServiceTests.testRegister&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -504,11 +490,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserServiceTests.testRegister" />
+        <item itemvalue="Gradle.UserServiceTests.testExist" />
+        <item itemvalue="Gradle.UserMapperTests.testGetList" />
         <item itemvalue="Gradle.InvestmentMapperTests.testInsert" />
         <item itemvalue="Gradle.InvestmentMapperTests.testDelete" />
-        <item itemvalue="Gradle.InvestmentMapperTests.testUpdate" />
-        <item itemvalue="Gradle.InvestmentMapperTests.testSelect" />
-        <item itemvalue="Gradle.InvestmentMapperTests.testSelectKey" />
       </list>
     </recent_temporary>
   </component>
@@ -551,7 +537,9 @@
       <workItem from="1617451762405" duration="4992000" />
       <workItem from="1617522282054" duration="3585000" />
       <workItem from="1617630589377" duration="2862000" />
-      <workItem from="1617708059042" duration="4920000" />
+      <workItem from="1617708059042" duration="5718000" />
+      <workItem from="1617794894160" duration="353000" />
+      <workItem from="1617885849639" duration="4335000" />
     </task>
     <task id="LOCAL-00001" summary="2021-03-19">
       <created>1616164991337</created>
@@ -644,7 +632,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617632798370</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="2021-04-06">
+      <created>1617713096753</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1617713096754</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,7 +681,8 @@
     <MESSAGE value="2021-04-02" />
     <MESSAGE value="2021-04-04" />
     <MESSAGE value="2021-04-05" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-04-05" />
+    <MESSAGE value="2021-04-06" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-04-06" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
