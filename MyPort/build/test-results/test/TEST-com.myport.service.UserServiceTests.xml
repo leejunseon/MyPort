@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.myport.service.UserServiceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-08T13:58:29" hostname="DESKTOP-NBFUJJ3" time="0.216">
+<testsuite name="com.myport.service.UserServiceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-10T14:03:09" hostname="DESKTOP-NBFUJJ3" time="0.218">
   <properties/>
-  <testcase name="testRegister" classname="com.myport.service.UserServiceTests" time="0.216"/>
+  <testcase name="testDelete" classname="com.myport.service.UserServiceTests" time="0.218"/>
   <system-out><![CDATA[INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@56d69013, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@60e7e9f1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@28108f4c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4e79482e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2ccd1ffa]
+INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5614d98c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f926ac9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65481de8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@24134e3f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@543b3b88]
 INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
-INFO : org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@24a66d8a: startup date [Thu Apr 08 22:58:27 KST 2021]; root of context hierarchy
+INFO : org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@400170bc: startup date [Sat Apr 10 23:03:08 KST 2021]; root of context hierarchy
 INFO : com.zaxxer.hikari.HikariDataSource - HikariCP pool HikariPool-0 is starting.
 INFO : jdbc.connection - 1. Connection opened
 INFO : jdbc.audit - 1. Connection.new Connection returned 
@@ -304,12 +304,12 @@ INFO : jdbc.audit - 7. Connection.new Connection returned
 INFO : jdbc.audit - 7. Connection.setAutoCommit(true) returned 
 INFO : jdbc.audit - 7. Connection.setReadOnly(false) returned 
 INFO : jdbc.audit - 7. Connection.getTransactionIsolation() returned 2
-INFO : jdbc.audit - 1. Connection.getAutoCommit() returned true
 INFO : jdbc.connection - 8. Connection opened
 INFO : jdbc.audit - 8. Connection.new Connection returned 
 INFO : jdbc.audit - 8. Connection.setAutoCommit(true) returned 
 INFO : jdbc.audit - 8. Connection.setReadOnly(false) returned 
 INFO : jdbc.audit - 8. Connection.getTransactionIsolation() returned 2
+INFO : jdbc.audit - 1. Connection.getAutoCommit() returned true
 INFO : jdbc.connection - 9. Connection opened
 INFO : jdbc.audit - 9. Connection.new Connection returned 
 INFO : jdbc.audit - 9. Connection.setAutoCommit(true) returned 
@@ -321,23 +321,20 @@ INFO : jdbc.audit - 10. Connection.setAutoCommit(true) returned
 INFO : jdbc.audit - 10. Connection.setReadOnly(false) returned 
 INFO : jdbc.audit - 10. Connection.getTransactionIsolation() returned 2
 INFO : jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
-INFO : jdbc.audit - 1. Connection.prepareStatement(INSERT INTO TBL_USER (U_ID,U_PW,U_NAME,U_EMAIL)
-        VALUES(?,?,?,?)) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@b217ced
-INFO : jdbc.audit - 1. PreparedStatement.setString(1, "testId2") returned 
-INFO : jdbc.audit - 1. PreparedStatement.setString(2, "testPw") returned 
-INFO : jdbc.audit - 1. PreparedStatement.setString(3, "testName") returned 
-INFO : jdbc.audit - 1. PreparedStatement.setString(4, "testEmail") returned 
-INFO : jdbc.sqlonly - INSERT INTO TBL_USER (U_ID,U_PW,U_NAME,U_EMAIL) VALUES('testId2','testPw','testName','testEmail') 
+INFO : jdbc.audit - 1. Connection.prepareStatement(DELETE TBL_USER
+        WHERE U_NO = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@69391acc
+INFO : jdbc.audit - 1. PreparedStatement.setLong(1, 3) returned 
+INFO : jdbc.sqlonly - DELETE TBL_USER WHERE U_NO = 3 
 
-INFO : jdbc.sqltiming - INSERT INTO TBL_USER (U_ID,U_PW,U_NAME,U_EMAIL) VALUES('testId2','testPw','testName','testEmail') 
- {executed in 7 msec}
+INFO : jdbc.sqltiming - DELETE TBL_USER WHERE U_NO = 3 
+ {executed in 14 msec}
 INFO : jdbc.audit - 1. PreparedStatement.execute() returned false
 INFO : jdbc.audit - 1. PreparedStatement.getUpdateCount() returned 1
 INFO : jdbc.audit - 1. PreparedStatement.isClosed() returned false
 INFO : jdbc.audit - 1. PreparedStatement.close() returned 
 INFO : jdbc.audit - 1. Connection.getAutoCommit() returned true
 INFO : jdbc.audit - 1. Connection.clearWarnings() returned 
-INFO : com.myport.service.UserServiceTests - UserVo(uNo=null, uId=testId2, uPw=testPw, uName=testName, uEmail=testEmail, uRegdate=null, uUpdatedate=null)
+INFO : com.myport.service.UserServiceTests - 1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
