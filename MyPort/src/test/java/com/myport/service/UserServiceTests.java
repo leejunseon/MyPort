@@ -1,7 +1,6 @@
 package com.myport.service;
 
 import com.myport.domain.UserVo;
-import com.myport.mapper.UserMapper;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import org.junit.Test;

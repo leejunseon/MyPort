@@ -1,11 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.myport.service.UserServiceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-04-10T14:03:09" hostname="DESKTOP-NBFUJJ3" time="0.218">
-  <properties/>
-  <testcase name="testDelete" classname="com.myport.service.UserServiceTests" time="0.218"/>
-  <system-out><![CDATA[INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.myport.service.AssetServiceTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.myport.service.AssetServiceTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.myport.service.html">com.myport.service</a> &gt; AssetServiceTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.247s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testRemoveAsset</td>
+<td class="success">0.247s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
 INFO : org.springframework.test.context.support.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5614d98c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2f926ac9, org.springframework.test.context.support.DirtiesContextTestExecutionListener@65481de8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@24134e3f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@543b3b88]
 INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
-INFO : org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@400170bc: startup date [Sat Apr 10 23:03:08 KST 2021]; root of context hierarchy
+INFO : org.springframework.context.support.GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@400170bc: startup date [Sun Apr 11 22:17:18 KST 2021]; root of context hierarchy
 INFO : com.zaxxer.hikari.HikariDataSource - HikariCP pool HikariPool-0 is starting.
 INFO : jdbc.connection - 1. Connection opened
 INFO : jdbc.audit - 1. Connection.new Connection returned 
@@ -18,10 +103,10 @@ java.sql.SQLException: 널 실행기 인수
 	at com.zaxxer.hikari.pool.PoolUtilities.getAndSetNetworkTimeout(PoolUtilities.java:196)
 	at com.zaxxer.hikari.pool.BaseHikariPool.addConnection(BaseHikariPool.java:402)
 	at com.zaxxer.hikari.pool.BaseHikariPool.initializeConnections(BaseHikariPool.java:498)
-	at com.zaxxer.hikari.pool.BaseHikariPool.<init>(BaseHikariPool.java:172)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:61)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:49)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:78)
+	at com.zaxxer.hikari.pool.BaseHikariPool.&lt;init&gt;(BaseHikariPool.java:172)
+	at com.zaxxer.hikari.pool.HikariPool.&lt;init&gt;(HikariPool.java:61)
+	at com.zaxxer.hikari.pool.HikariPool.&lt;init&gt;(HikariPool.java:49)
+	at com.zaxxer.hikari.HikariDataSource.&lt;init&gt;(HikariDataSource.java:78)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -104,10 +189,10 @@ java.sql.SQLException: 널 실행기 인수
 	at com.zaxxer.hikari.pool.PoolUtilities.getAndSetNetworkTimeout(PoolUtilities.java:196)
 	at com.zaxxer.hikari.pool.BaseHikariPool.addConnection(BaseHikariPool.java:402)
 	at com.zaxxer.hikari.pool.BaseHikariPool.initializeConnections(BaseHikariPool.java:498)
-	at com.zaxxer.hikari.pool.BaseHikariPool.<init>(BaseHikariPool.java:172)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:61)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:49)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:78)
+	at com.zaxxer.hikari.pool.BaseHikariPool.&lt;init&gt;(BaseHikariPool.java:172)
+	at com.zaxxer.hikari.pool.HikariPool.&lt;init&gt;(HikariPool.java:61)
+	at com.zaxxer.hikari.pool.HikariPool.&lt;init&gt;(HikariPool.java:49)
+	at com.zaxxer.hikari.HikariDataSource.&lt;init&gt;(HikariDataSource.java:78)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -190,10 +275,10 @@ java.sql.SQLException: 널 실행기 인수
 	at com.zaxxer.hikari.pool.PoolUtilities.getAndSetNetworkTimeout(PoolUtilities.java:196)
 	at com.zaxxer.hikari.pool.BaseHikariPool.addConnection(BaseHikariPool.java:402)
 	at com.zaxxer.hikari.pool.BaseHikariPool.initializeConnections(BaseHikariPool.java:498)
-	at com.zaxxer.hikari.pool.BaseHikariPool.<init>(BaseHikariPool.java:172)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:61)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:49)
-	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:78)
+	at com.zaxxer.hikari.pool.BaseHikariPool.&lt;init&gt;(BaseHikariPool.java:172)
+	at com.zaxxer.hikari.pool.HikariPool.&lt;init&gt;(HikariPool.java:61)
+	at com.zaxxer.hikari.pool.HikariPool.&lt;init&gt;(HikariPool.java:49)
+	at com.zaxxer.hikari.HikariDataSource.&lt;init&gt;(HikariDataSource.java:78)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -309,32 +394,45 @@ INFO : jdbc.audit - 8. Connection.new Connection returned
 INFO : jdbc.audit - 8. Connection.setAutoCommit(true) returned 
 INFO : jdbc.audit - 8. Connection.setReadOnly(false) returned 
 INFO : jdbc.audit - 8. Connection.getTransactionIsolation() returned 2
-INFO : jdbc.audit - 1. Connection.getAutoCommit() returned true
 INFO : jdbc.connection - 9. Connection opened
 INFO : jdbc.audit - 9. Connection.new Connection returned 
 INFO : jdbc.audit - 9. Connection.setAutoCommit(true) returned 
 INFO : jdbc.audit - 9. Connection.setReadOnly(false) returned 
 INFO : jdbc.audit - 9. Connection.getTransactionIsolation() returned 2
+INFO : jdbc.audit - 1. Connection.getAutoCommit() returned true
 INFO : jdbc.connection - 10. Connection opened
 INFO : jdbc.audit - 10. Connection.new Connection returned 
 INFO : jdbc.audit - 10. Connection.setAutoCommit(true) returned 
 INFO : jdbc.audit - 10. Connection.setReadOnly(false) returned 
 INFO : jdbc.audit - 10. Connection.getTransactionIsolation() returned 2
 INFO : jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
-INFO : jdbc.audit - 1. Connection.prepareStatement(DELETE TBL_USER
-        WHERE U_NO = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@69391acc
-INFO : jdbc.audit - 1. PreparedStatement.setLong(1, 3) returned 
-INFO : jdbc.sqlonly - DELETE TBL_USER WHERE U_NO = 3 
+INFO : jdbc.audit - 1. Connection.prepareStatement(DELETE TBL_ASSET
+        WHERE A_NO = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@36983418
+INFO : jdbc.audit - 1. PreparedStatement.setLong(1, 22) returned 
+INFO : jdbc.sqlonly - DELETE TBL_ASSET WHERE A_NO = 22 
 
-INFO : jdbc.sqltiming - DELETE TBL_USER WHERE U_NO = 3 
- {executed in 14 msec}
+INFO : jdbc.sqltiming - DELETE TBL_ASSET WHERE A_NO = 22 
+ {executed in 13 msec}
 INFO : jdbc.audit - 1. PreparedStatement.execute() returned false
 INFO : jdbc.audit - 1. PreparedStatement.getUpdateCount() returned 1
 INFO : jdbc.audit - 1. PreparedStatement.isClosed() returned false
 INFO : jdbc.audit - 1. PreparedStatement.close() returned 
 INFO : jdbc.audit - 1. Connection.getAutoCommit() returned true
 INFO : jdbc.audit - 1. Connection.clearWarnings() returned 
-INFO : com.myport.service.UserServiceTests - 1
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
+INFO : com.myport.service.AssetServiceTests - 1
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 6.3</a> at 2021. 4. 11. 오후 10:17:20</p>
+</div>
+</div>
+</body>
+</html>

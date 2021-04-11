@@ -3,7 +3,6 @@ package com.myport.service;
 import com.myport.domain.UserVo;
 import com.myport.mapper.UserMapper;
 import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
