@@ -2,7 +2,7 @@ package com.myport.mapper;
 
 import com.myport.domain.AssetVo;
 import com.myport.domain.CountryVo;
-import com.myport.domain.InvestmentVo;
+import com.myport.domain.ItemVo;
 import com.myport.domain.UserVo;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
@@ -17,10 +17,10 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
-public class InvestmentMapperTests {
+public class ItemMapperTests {
 
     @Setter(onMethod_=@Autowired)
-    private InvestmentMapper iMapper;
+    private ItemMapper iMapper;
 
     @Setter(onMethod_=@Autowired)
     private UserMapper uMapper;
@@ -33,7 +33,7 @@ public class InvestmentMapperTests {
 
     @Test
     public void testInsert(){
-        InvestmentVo iVo = new InvestmentVo();
+        ItemVo iVo = new ItemVo();
         UserVo uVo = new UserVo();
         CountryVo cVo = new CountryVo();
         AssetVo aVo = new AssetVo();
@@ -53,18 +53,18 @@ public class InvestmentMapperTests {
 
     @Test
     public void testGetList(){
-        InvestmentVo param = new InvestmentVo();
+        ItemVo param = new ItemVo();
         param.setUNo(2L);
         param.setCNo(3L);
-        List<InvestmentVo> result = iMapper.getList(param);
-        for(InvestmentVo vo : result){
+        List<ItemVo> result = iMapper.getList(param);
+        for(ItemVo vo : result){
             log.info(vo);
         }
     }
 
     @Test
     public void testSelectKey(){
-        InvestmentVo vo = new InvestmentVo();
+        ItemVo vo = new ItemVo();
         vo.setUNo(2L);
         vo.setCNo(3L);
         vo.setANo(2L);
@@ -75,15 +75,15 @@ public class InvestmentMapperTests {
 
     @Test
     public void testSelect(){
-        InvestmentVo vo = new InvestmentVo();
+        ItemVo vo = new ItemVo();
         vo.setINo(1L);
-        InvestmentVo result = iMapper.select(vo);
+        ItemVo result = iMapper.select(vo);
         log.info(result);
     }
 
     @Test
     public void testUpdate(){
-        InvestmentVo vo = new InvestmentVo();
+        ItemVo vo = new ItemVo();
         vo.setINo(1L);
         vo.setIName("떡상주식_update");
         int result = iMapper.update(vo);
@@ -92,7 +92,7 @@ public class InvestmentMapperTests {
 
     @Test
     public void testDelete(){
-        InvestmentVo vo = new InvestmentVo();
+        ItemVo vo = new ItemVo();
         vo.setINo(1L);
         int result = iMapper.delete(vo);
         log.info(result);

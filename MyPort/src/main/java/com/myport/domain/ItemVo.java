@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class InvestmentVo {
+public class ItemVo {
     private Long iNo;
     private Long uNo;
     private Long cNo;
