@@ -29,7 +29,7 @@ public class AssetServiceTests {
     @Test
     public void testRegister(){
         AssetVo vo = new AssetVo();
-        vo.setUNo(2L);
+        vo.setUNo(1L);
         vo.setAName("채권1");
         vo.setARatio(30L);
         service.registerAsset(vo);

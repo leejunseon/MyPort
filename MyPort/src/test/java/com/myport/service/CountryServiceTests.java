@@ -28,7 +28,7 @@ public class CountryServiceTests {
     @Test
     public void testRegister(){
         CountryVo vo = new CountryVo();
-        vo.setUNo(2L);
+        vo.setUNo(1L);
         vo.setCName("미국");
         vo.setCRatio(70L);
         service.registerCountry(vo);
