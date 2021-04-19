@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Map;
+
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -37,18 +39,13 @@ public class UserServiceTests {
     }
 
     @Test
-    public void testRetrieveUser() {
-        for (UserVo vo : service.retrieveUser()) {
-            log.info(vo);
-        }
-    }
-
-    @Test
-    public void testGetUser() {
+    public void testLogin(){
         UserVo vo = new UserVo();
-        vo.setUNo(3L);
-        UserVo result = service.getUser(vo);
-        log.info(result);
+        vo.setUId("testId1");
+        vo.setUPw("testPw");
+        Map<String,String> result = service.login(vo);
+        log.info("result : "+result.get("result"));
+        log.info("url : "+result.get("url"));
     }
 
     @Test

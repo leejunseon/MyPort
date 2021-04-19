@@ -5,8 +5,12 @@ import com.myport.service.UserService;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Map;
 
 @Controller
 @Log4j
@@ -16,11 +20,14 @@ public class UserController {
 
     private UserService service;
 
-    /*
-    @PostMapping ("/register")
-    public String register(UserVo user){
-        service.registerUser(user);
+    @GetMapping("/login")
+    public void login(){}
 
+    @PostMapping("/login")
+    public String login(UserVo user, RedirectAttributes rttr){
+        Map<String,String> result = service.login(user);
+        rttr.addFlashAttribute("result",result.get("result"));
+        return result.get("url");
     }
-    */
+
 }

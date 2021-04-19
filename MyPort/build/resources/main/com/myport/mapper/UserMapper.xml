@@ -15,7 +15,15 @@
 
     <select id = "select" resultType="com.myport.domain.UserVo">
         SELECT * FROM TBL_USER
-        WHERE U_NO = #{uNo}
+        <where>
+            <if test="uNo != null">
+                U_NO = #{uNo}
+            </if>
+            <if test="uId != null">
+                AND
+                U_ID = #{uId}
+            </if>
+        </where>
     </select>
 
     <select id = "selectKey" resultType="Long">

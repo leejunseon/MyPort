@@ -28,26 +28,37 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e060a043-cade-4987-89d4-ed1018aafb68" name="Default Changelist" comment="2021-04-13">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myport/controller/UserController.java" afterDir="false" />
+    <list default="true" id="e060a043-cade-4987-89d4-ed1018aafb68" name="Default Changelist" comment="2021-04-16">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/myport/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/myport/mapper/ItemMapperTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/myport/mapper/ItemMapperTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/myport/service/AssetServiceTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/myport/service/AssetServiceTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/myport/service/CountryServiceTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/myport/service/CountryServiceTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.myport.mapper.ItemMapperTests.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/controller/SampleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myport/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/myport/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/myport/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/myport/service/UserServiceTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/myport/service/UserServiceTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.myport.service.ItemServiceTests.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.myport.mapper.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.myport.mapper.ItemMapperTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.myport.service.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.myport.service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/com/myport/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/com/myport/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.myport.service.ItemServiceTests.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myport/controller/SampleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myport/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myport/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myport/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myport/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myport/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myport/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/myport/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/myport/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/myport/service/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/myport/service/UserServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +135,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -132,9 +143,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.14584891" />
+    <property name="project.structure.side.proportion" value="0.36301368" />
     <property name="settings.editor.selected.configurable" value="project.propGUI" />
   </component>
   <component name="RecentsManager">
@@ -170,7 +181,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.ItemServiceTests.testRemoveItem">
+  <component name="RunManager" selected="Gradle.UserServiceTests.testLogin">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -181,48 +192,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="CountryServiceTests.testRegister" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.myport.service.CountryServiceTests.testRegister&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ItemServiceTests.testExist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.myport.service.ItemServiceTests.testExist&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
     </configuration>
     <configuration name="ItemServiceTests.testRegister" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -272,6 +241,48 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="--tests &quot;com.myport.service.ItemServiceTests.testRetrieveItem&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTests.testExist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.myport.service.UserServiceTests.testExist&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="UserServiceTests.testLogin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.myport.service.UserServiceTests.testLogin&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -488,11 +499,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.UserServiceTests.testLogin" />
+        <item itemvalue="Gradle.UserServiceTests.testExist" />
         <item itemvalue="Gradle.ItemServiceTests.testRemoveItem" />
         <item itemvalue="Gradle.ItemServiceTests.testRetrieveItem" />
         <item itemvalue="Gradle.ItemServiceTests.testRegister" />
-        <item itemvalue="Gradle.ItemServiceTests.testExist" />
-        <item itemvalue="Gradle.CountryServiceTests.testRegister" />
       </list>
     </recent_temporary>
   </component>
@@ -545,7 +556,9 @@
       <workItem from="1618141478275" duration="6799000" />
       <workItem from="1618227717517" duration="5317000" />
       <workItem from="1618322365038" duration="1460000" />
-      <workItem from="1618571793452" duration="1937000" />
+      <workItem from="1618571793452" duration="3190000" />
+      <workItem from="1618749842846" duration="2096000" />
+      <workItem from="1618833453326" duration="5233000" />
     </task>
     <task id="LOCAL-00001" summary="2021-03-19">
       <created>1616164991337</created>
@@ -680,7 +693,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618323818040</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="2021-04-16">
+      <created>1618574291792</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1618574291792</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,7 +748,8 @@
     <MESSAGE value="2021-04-11" />
     <MESSAGE value="2021-04-12" />
     <MESSAGE value="2021-04-13" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021-04-13" />
+    <MESSAGE value="2021-04-16" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021-04-16" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
