@@ -30,4 +30,13 @@ public class UserController {
         return result.get("url");
     }
 
+    @GetMapping("/register")
+    public void register(){}
+
+    @PostMapping("/register")
+    public String register(UserVo user, RedirectAttributes rttr){
+
+        return "";
+    }
+
 }
