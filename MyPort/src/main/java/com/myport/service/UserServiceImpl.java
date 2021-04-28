@@ -16,8 +16,13 @@ public class UserServiceImpl implements UserService{
     private UserMapper mapper;
 
     @Override
-    public void registerUser(UserVo user) {
+    public String registerUser(UserVo user) {
         mapper.insert(user);
+        if(user.getUNo()!=null){
+            return user.getUId();
+        }else{
+            return "";
+        }
     }
 
     @Override

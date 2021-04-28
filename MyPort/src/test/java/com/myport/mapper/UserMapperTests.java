@@ -20,12 +20,12 @@ public class UserMapperTests {
     @Test
     public void testInsert(){
         UserVo vo = new UserVo();
-        vo.setUId("testId1");
+        vo.setUId("testId83");
         vo.setUPw("testPw");
         vo.setUName("testName");
         vo.setUEmail("testEmail");
         uMapper.insert(vo);
-        log.info(vo);
+        log.info("result : "+vo.getUNo());
     }
 
     @Test

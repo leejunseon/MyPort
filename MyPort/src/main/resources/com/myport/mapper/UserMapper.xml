@@ -7,6 +7,9 @@
     <insert id = "insert">
         INSERT INTO TBL_USER (U_ID,U_PW,U_NAME,U_EMAIL)
         VALUES(#{uId},#{uPw},#{uName},#{uEmail})
+        <selectKey keyProperty="uNo" resultType="Long" order="AFTER">
+            SELECT SEQ_USER.currval FROM DUAL
+        </selectKey>
     </insert>
 
     <select id = "getList" resultType="com.myport.domain.UserVo">

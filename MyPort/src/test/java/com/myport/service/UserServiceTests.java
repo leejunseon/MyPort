@@ -30,12 +30,12 @@ public class UserServiceTests {
     @Test
     public void testRegister() {
         UserVo vo = new UserVo();
-        vo.setUId("testId2");
+        vo.setUId("testId91");
         vo.setUPw("testPw");
         vo.setUName("testName");
         vo.setUEmail("testEmail");
         service.registerUser(vo);
-        log.info(vo);
+        log.info("result uNo : "+vo.getUNo());
     }
 
     @Test

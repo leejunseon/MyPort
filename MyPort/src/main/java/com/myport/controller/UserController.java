@@ -35,7 +35,8 @@ public class UserController {
 
     @PostMapping("/register")
     public String register(UserVo user, RedirectAttributes rttr){
-
+        String result = service.registerUser(user);
+        //성공/실패 시 result 어떻게 보낼 것인지?
         return "";
     }
 
