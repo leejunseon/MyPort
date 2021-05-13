@@ -8,8 +8,6 @@ public interface CountryMapper {
 
     public void insert(CountryVo country);
 
-    public List<CountryVo> getList();
-
     public CountryVo select(CountryVo country);
 
     public Long selectKey(CountryVo country);

@@ -20,11 +20,6 @@ public class CountryServiceImpl implements CountryService{
     }
 
     @Override
-    public List<CountryVo> retrieveCountry() {
-        return mapper.getList();
-    }
-
-    @Override
     public CountryVo getCountry(CountryVo country) {
         return mapper.select(country);
     }

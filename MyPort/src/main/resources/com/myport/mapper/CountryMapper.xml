@@ -9,10 +9,6 @@
         VALUES (#{uNo},#{cName},#{cRatio})
     </insert>
 
-    <select id = "getList" resultType="com.myport.domain.CountryVo">
-        SELECT * FROM TBL_COUNTRY
-    </select>
-
     <select id = "select" resultType="com.myport.domain.CountryVo">
         SELECT * FROM TBL_COUNTRY
         WHERE C_NO = #{cNo}
