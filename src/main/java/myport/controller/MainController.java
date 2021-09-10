@@ -12,4 +12,14 @@ public class MainController {
 	public void dashboard() {
 		
 	}
+	
+	@GetMapping("/asset")
+	public void asset() {
+		
+	}
+	
+	@GetMapping("/investment")
+	public void investment() {
+		
+	}
 }
