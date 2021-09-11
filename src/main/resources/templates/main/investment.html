@@ -2,77 +2,89 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="includes/header"></th:block>
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-                    <div class="container-fluid">
+	<div class="container-fluid">
 
-	                    <!-- Page Heading -->
-	                    <h1 class="h3 mb-4 text-gray-800">투자 현황</h1>
-	                    
-	                    	                    <!-- DataTable -->
-	                    <div class="card shadow mb-4">
-	                        <div class="card-header py-3">
-	                            <h6 class="m-0 font-weight-bold text-primary">종목 별 투자현황</h6>
-	                        </div>
-	                        <div class="card-body">
-	                            <div class="table-responsive">
-	                                <table class="table table-bordered" width="100%" cellspacing="0">
-	                                    <thead>
-	                                        <tr>
-	                                            <th>종목</th>
-	                                            <th>채권 수익률</th>
-	                                            <th>변동</th>
-	                                            <th>변동 %</th>
-	                                        </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                        <tr>
-	                                            <td>한국 2년</td>
-	                                            <td>1.370</td>
-	                                            <td>+0.037</td>
-	                                            <td>+2.78</td>
-	                                        </tr>
-	                                        <tr>
-	                                            <td>한국 5년</td>
-	                                            <td>1.370</td>
-	                                            <td>+0.037</td>
-	                                            <td>+2.78</td>
-	                                        </tr>
-	                                        <tr>
-	                                            <td>한국 10년</td>
-	                                            <td>1.370</td>
-	                                            <td>+0.037</td>
-	                                            <td>+2.78</td>
-	                                        </tr>
-	                                    </tbody>
-	                                </table>
-	                            </div>
-	                            
-                                 <!-- Donut Chart -->
-		                       <div class="col-xl-4 col-lg-5">
-		                           <div class="card shadow mb-4">
-		                               <!-- Card Header - Dropdown -->
-		                               <div class="card-header py-3">
-		                                   <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
-		                               </div>
-		                               <!-- Card Body -->
-		                               <div class="card-body">
-		                                   <div class="chart-pie pt-4">
-		                                       <canvas id="myPieChart"></canvas>
-		                                   </div>
-		                                   <hr>
-		                                   Styling for the donut chart can be found in the
-		                                   <code>/js/demo/chart-pie-demo.js</code> file.
-		                               </div>
-		                           </div>
-		                       </div>
-	                        </div>
-	                    </div>
+		<!-- Page Heading -->
+		<h1 class="h3 mb-4 text-gray-800">투자 현황</h1>
 
-                	</div>
-                </div>
-                <!-- /.container-fluid -->
+		<!-- DataTable -->
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h6 class="m-0 font-weight-bold text-primary">종목 별 투자현황</h6>
+			</div>
+			<div class="card-body">
+				<div class="table-responsive">
+					<table class="table table-bordered" width="100%" cellspacing="0">
+						<thead>
+							<tr>
+								<th>종목</th>
+								<th>채권 수익률</th>
+								<th>변동</th>
+								<th>변동 %</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>한국 2년</td>
+								<td>1.370</td>
+								<td>+0.037</td>
+								<td>+2.78</td>
+							</tr>
+							<tr>
+								<td>한국 5년</td>
+								<td>1.370</td>
+								<td>+0.037</td>
+								<td>+2.78</td>
+							</tr>
+							<tr>
+								<td>한국 10년</td>
+								<td>1.370</td>
+								<td>+0.037</td>
+								<td>+2.78</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<!-- Donut Chart -->
+			<div class="col-xl-6 col-lg-6">
+				<div class="card shadow mb-4">
+					<!-- Card Header - Dropdown -->
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">종목</h6>
+					</div>
+					<!-- Card Body -->
+					<div class="card-body">
+						<div class="chart-pie pt-4">
+							<canvas id="myPieChart_1"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Donut Chart -->
+			<div class="col-xl-6 col-lg-6">
+				<div class="card shadow mb-4">
+					<!-- Card Header - Dropdown -->
+					<div class="card-header py-3">
+						<h6 class="m-0 font-weight-bold text-primary">국가</h6>
+					</div>
+					<!-- Card Body -->
+					<div class="card-body">
+						<div class="chart-pie pt-4">
+							<canvas id="myPieChart_2"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.container-fluid -->
 
 <th:block th:replace="includes/footer"></th:block>
 </html>
