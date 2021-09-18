@@ -5,17 +5,18 @@ Chart.defaults.global.defaultFontColor = '#858796';
 // Pie Chart Example
 var ctx1 = document.getElementById("myPieChart_1");
 var myPieChart1 = new Chart(ctx1, {
-	type: 'polarArea',
+	type: 'pie',
 	data: {
-		labels: ["Direct", "Referral", "Social"],
+		labels: ["주식", "채권", "원자재", "금", "달러"],
 		datasets: [{
-			data: [55, 30, 15],
+			data: [50, 30, 10, 5, 5],
 			backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
 			hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
 			hoverBorderColor: "rgba(234, 236, 244, 1)",
 		}],
 	},
 	options: {
+		responsive: true,
 		maintainAspectRatio: false,
 		tooltips: {
 			backgroundColor: "rgb(255,255,255)",
@@ -28,17 +29,16 @@ var myPieChart1 = new Chart(ctx1, {
 			caretPadding: 10,
 		},
 		legend: {
-			position: 'top',
-		},
-		cutoutPercentage: 80,
-	},
+			position: 'right',
+		}
+	}
 });
 
 var ctx2 = document.getElementById("myPieChart_2");
 var myPieChart2 = new Chart(ctx2, {
-	type: 'polarArea',
+	type: 'pie',
 	data: {
-		labels: ["Direct", "Referral", "Social"],
+		labels: ["미국", "한국", "국가분산"],
 		datasets: [{
 			data: [55, 30, 15],
 			backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
@@ -59,8 +59,7 @@ var myPieChart2 = new Chart(ctx2, {
 			caretPadding: 10,
 		},
 		legend: {
-			display: false
-		},
-		cutoutPercentage: 80,
+			position: 'right',
+		}
 	},
 });

@@ -1488,6 +1488,13 @@ pre code {
   color: #858796;
 }
 
+.half {
+	width: 50%;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	color: #858796;
+}
+
 .table th,
 .table td {
   padding: 0.75rem;
@@ -1819,6 +1826,10 @@ pre code {
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+.flex{
+	display: flex;
 }
 
 .table-responsive > .table-bordered {
