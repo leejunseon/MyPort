@@ -10,46 +10,65 @@
 		<!-- Page Heading -->
 		<h1 class="h3 mb-4 text-gray-800">설정 비율</h1>
 
-		<!-- DataTable -->
 		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h5 class="m-0 font-weight-bold text-primary fa-pull-left">자산</h5>
+				<button id='regBtn' type="button"
+					class="btn btn-secondary btn-icon-split btn-sm fa-pull-right">
+					<span class="icon text-white-50"> <i
+						class="fas fa-arrow-right"></i>
+					</span> <span class="text">추가</span>
+				</button>
+				<button id='regBtn' type="button"
+					class="btn btn-secondary btn-icon-split btn-sm fa-pull-right">
+					<span class="icon text-white-50"> <i
+						class="fas fa-arrow-right"></i>
+					</span> <span class="text">수정</span>
+				</button>
+			</div>
 			<div class="card-body">
-				<div class="card shadow mb-4">
-					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-primary">자산</h6>
+				<div class="row">
+					<div class="col-md-6 mb-4">
+						<div class="card border-left-primary shadow h-100 py-2">
+							<div class="card-body">
+								<div class="row no-gutters align-items-center">
+									<table class="table table-bordered" cellspacing="0">
+										<thead>
+											<tr>
+												<th>자산</th>
+												<th>비율</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>주식</td>
+												<td>50%</td>
+											</tr>
+											<tr>
+												<td>채권</td>
+												<td>30%</td>
+											</tr>
+											<tr>
+												<td>원자재</td>
+												<td>10%</td>
+											</tr>
+											<tr>
+												<td>금</td>
+												<td>5%</td>
+											</tr>
+											<tr>
+												<td>달러</td>
+												<td>5%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="card-body">
-						<div class="table-responsive flex">
-							<table class="table half table-bordered" cellspacing="0">
-								<thead>
-									<tr>
-										<th>자산</th>
-										<th>비율</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>주식</td>
-										<td>50%</td>
-									</tr>
-									<tr>
-										<td>채권</td>
-										<td>30%</td>
-									</tr>
-									<tr>
-										<td>원자재</td>
-										<td>10%</td>
-									</tr>
-									<tr>
-										<td>금</td>
-										<td>5%</td>
-									</tr>
-									<tr>
-										<td>달러</td>
-										<td>5%</td>
-									</tr>
-								</tbody>
-							</table>
-							<div class="card-body half">
+					<div class="col-md-6 mb-4">
+						<div class="card border-left-primary shadow h-100 py-2">
+							<div class="card-body">
 								<div class="chart-pie pt-4">
 									<canvas id="myPieChart_1"></canvas>
 								</div>
@@ -57,36 +76,60 @@
 						</div>
 					</div>
 				</div>
-				<!-- Donut Chart -->
-				<div class="card shadow mb-4">
-					<div class="card-header py-3">
-						<h6 class="m-0 font-weight-bold text-primary">국가</h6>
+			</div>
+		</div>
+
+		<div class="card shadow mb-4">
+			<div class="card-header py-3">
+				<h5 class="m-0 font-weight-bold text-primary fa-pull-left">국가</h5>
+				<button id='regBtn' type="button"
+					class="btn btn-secondary btn-icon-split btn-sm fa-pull-right">
+					<span class="icon text-white-50"> <i
+						class="fas fa-arrow-right"></i>
+					</span> <span class="text">추가</span>
+				</button>
+				<button id='regBtn' type="button"
+					class="btn btn-secondary btn-icon-split btn-sm fa-pull-right">
+					<span class="icon text-white-50"> <i
+						class="fas fa-arrow-right"></i>
+					</span> <span class="text">수정</span>
+				</button>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-6 mb-4">
+						<div class="card border-left-primary shadow h-100 py-2">
+							<div class="card-body">
+								<div class="row no-gutters align-items-center">
+									<table class="table table-bordered" cellspacing="0">
+										<thead>
+											<tr>
+												<th>국가</th>
+												<th>비율</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>미국</td>
+												<td>50%</td>
+											</tr>
+											<tr>
+												<td>한국</td>
+												<td>30%</td>
+											</tr>
+											<tr>
+												<td>국가분산</td>
+												<td>10%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="card-body">
-						<div class="table-responsive flex">
-							<table class="table half table-bordered" cellspacing="0">
-								<thead>
-									<tr>
-										<th>귝가</th>
-										<th>비율</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>미국</td>
-										<td>50%</td>
-									</tr>
-									<tr>
-										<td>한국</td>
-										<td>30%</td>
-									</tr>
-									<tr>
-										<td>국가분산</td>
-										<td>20%</td>
-									</tr>
-								</tbody>
-							</table>
-							<div class="card-body half">
+					<div class="col-md-6 mb-4">
+						<div class="card border-left-primary shadow h-100 py-2">
+							<div class="card-body">
 								<div class="chart-pie pt-4">
 									<canvas id="myPieChart_2"></canvas>
 								</div>
