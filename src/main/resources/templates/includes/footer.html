@@ -23,27 +23,131 @@
 	class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+<!-- 목록 추가 Modal-->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+				<h5 class="modal-title" id="exampleModalLabel">목록 추가</h5>
 				<button class="close" type="button" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
 			</div>
-			<div class="modal-body">Select "Logout" below if you are ready
-				to end your current session.</div>
+			<div class="modal-body">
+				추가할 목록의 이름을 입력하세요
+				<div class="form-group">
+					<input class="form-control" name='title'>
+				</div>
+			</div>
 			<div class="modal-footer">
-				<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-				<a class="btn btn-primary" href="login.html">Logout</a>
+				<button type="button" class="btn btn-primary">입력</button>
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
 			</div>
 		</div>
 	</div>
 </div>
+
+<!-- 목록 수정 Modal-->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">목록 수정</h4>
+				<button class="close" type="button" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<div class="mb-4">
+						<div class="card border-left-primary shadow h-100 py-2">
+							<div class="card-body">
+								<div class="row no-gutters align-items-center">
+									<table class="table table-bordered" cellspacing="0">
+										<thead>
+											<tr>
+												<th>자산</th>
+												<th>비율</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>주식</td>
+												<td>
+													<div class="row">
+														<div class='col-auto'>
+															<input class="form-control" value="50">
+														</div>
+														<div class='col-auto'>%</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>채권</td>
+												<td>
+													<div class="row">
+														<div class='col-auto'>
+															<input class="form-control" value="30">
+														</div>
+														<div class='col-auto'>%</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>원자재</td>
+												<td>
+													<div class="row">
+														<div class='col-auto'>
+															<input class="form-control" value="10">
+														</div>
+														<div class='col-auto'>%</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>금</td>
+												<td>
+													<div class="row">
+														<div class='col-auto'>
+															<input class="form-control" value="5">
+														</div>
+														<div class='col-auto'>%</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>달러</td>
+												<td>
+													<div class="row">
+														<div class='col-auto'>
+															<input class="form-control" value="5">
+														</div>
+														<div class='col-auto'>%</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id='modalModBtn' type="button" class="btn btn-warning">저장</button>
+				<button class='btn btn-default' type="button" data-dismiss="modal">취소</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <!-- Bootstrap core JavaScript-->
 <script src="/vendor/jquery/jquery.min.js"></script>
