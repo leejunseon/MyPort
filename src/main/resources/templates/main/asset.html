@@ -36,7 +36,7 @@
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
-									<table class="table table-bordered" cellspacing="0">
+									<table id="assetTable" class="table table-bordered" cellspacing="0">
 										<thead>
 											<tr>
 												<th>자산</th>
@@ -44,26 +44,6 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>주식</td>
-												<td>50%</td>
-											</tr>
-											<tr>
-												<td>채권</td>
-												<td>30%</td>
-											</tr>
-											<tr>
-												<td>원자재</td>
-												<td>10%</td>
-											</tr>
-											<tr>
-												<td>금</td>
-												<td>5%</td>
-											</tr>
-											<tr>
-												<td>달러</td>
-												<td>5%</td>
-											</tr>
 										</tbody>
 									</table>
 								</div>
@@ -159,9 +139,26 @@
 	document.addEventListener("DOMContentLoaded", function() {
 		
 		assetService.getAssets(
-			{uno:1}
+			1
 			,
-			function(){}
+			function(result){
+				console.log(result);
+				const assetTable = document.querySelector("#assetTable");
+				const assetTableBody = assetTable.children[1];			
+				let bodyText = "";
+				for(var i=0;i<result.length;i++){
+					bodyText+="<tr><td>";
+					bodyText+=result[i].aName;
+					bodyText+="</td><td>";
+					bodyText+=result[i].aRatio;
+					bodyText+="%</td></tr>";
+				}
+				assetTableBody.innerHTML = bodyText;
+			}
+			,
+			function(error){
+				console.log(error);
+			}
 		);
 		
 	});

@@ -2,20 +2,19 @@ console.log("Asset js Module");
 
 var assetService = (function() {
 
-	function getAssets(param,callback, error) {
+	function getAssets(param, callback, errorFunc) {
 		console.log("assetService.getAssets");
-		console.log(param);
-		
+		console.log("param(uno) : "+param);
+
 		axios({
-			method: 'get', //통신 방식
-			url: '/asset/1', //통신할 페이지
-			//data: 1 //인자로 보낼 데이터
+			method: 'get',
+			url: `/asset/${param}`,
 		})
 			.then(response => {
-				console.log(response.data);
+				callback(response.data);
 			})
 			.catch(error => {
-				console.log(error);
+				errorFunc(error);
 			})
 	}
 
