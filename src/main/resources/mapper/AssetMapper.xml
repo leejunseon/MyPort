@@ -4,7 +4,12 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="myport.mapper.AssetMapper">
 
-	<select id="getAssets" resultType="myport.domain.AssetVo">
+	<insert id="addAsset">
+		INSERT INTO TBL_ASSET(U_NO,A_NAME,A_RATIO)
+		VALUES (#{uNo},#{aName},#{aRatio})
+	</insert>
+
+	<select id="retrieveAssets" resultType="myport.domain.AssetVo">
 		<![CDATA[
 			SELECT *
 			FROM TBL_ASSET

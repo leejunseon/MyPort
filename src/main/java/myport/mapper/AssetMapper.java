@@ -10,6 +10,8 @@ import myport.domain.UserVo;
 @Mapper
 public interface AssetMapper {
 	
-	public List<AssetVo> getAssets(UserVo vo);
+	public List<AssetVo> retrieveAssets(UserVo vo);
+	
+	public int addAsset(AssetVo vo);
 
 }

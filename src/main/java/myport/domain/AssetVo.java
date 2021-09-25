@@ -5,10 +5,10 @@ import lombok.Data;
 @Data
 public class AssetVo {
 
-	public long cNo;
+	public long aNo;
 	public long uNo;
-	public String cName;
-	public long cRatio;
-	public String cRegdate;
-	public String cUpdatedate;
+	public String aName;
+	public long aRatio;
+	public String aRegdate;
+	public String aUpdatedate;
 }

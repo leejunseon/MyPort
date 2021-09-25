@@ -1,4 +1,4 @@
-package myport.mapper;
+package myport.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,14 @@ import myport.domain.UserVo;
 
 @SpringBootTest
 @Slf4j
-public class AssetMapperTest {
+public class AssetServiceTest {
 
 	@Autowired
-	private AssetMapper mapper;
+	private AssetService service;
 
 	// @Test
-	public void testMapper() {
-		log.info(mapper.toString());
+	public void testService() {
+		log.info(service.toString());
 	}
 
 	// @Test
@@ -28,19 +28,19 @@ public class AssetMapperTest {
 		int result = 0;
 		AssetVo paramVo = new AssetVo();
 		paramVo.setUNo(1);
-		paramVo.setAName("주식1");
-		paramVo.setARatio(50);
-		result = mapper.addAsset(paramVo);
+		paramVo.setAName("주식2");
+		paramVo.setARatio(10);
+		result = service.addAsset(paramVo);
 
 		log.info("result : " + Integer.toString(result));
 	}
 
 	@Test
-	public void testRetrieveAssets() {
+	public void testGetAssets() {
 		UserVo paramVo = new UserVo();
 		paramVo.setUNo(1);
 		List<AssetVo> result = new ArrayList<AssetVo>();
-		result = mapper.retrieveAssets(paramVo);
+		result = service.retrieveAssets(paramVo);
 		log.info("Result size : " + Integer.toString(result.size()));
 
 		if (result.size() > 0) {

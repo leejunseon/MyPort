@@ -8,15 +8,13 @@ var assetService = (function() {
 		
 		axios({
 			method: 'get', //통신 방식
-			url: '/ajax', //통신할 페이지
-			data: {} //인자로 보낼 데이터
+			url: '/asset/1', //통신할 페이지
+			//data: 1 //인자로 보낼 데이터
 		})
 			.then(response => {
-				document.getElementById('boom').innerText = response.data.num;
-				console.log(response);
+				console.log(response.data);
 			})
 			.catch(error => {
-				document.getElementById('boom').innerText = 'error';
 				console.log(error);
 			})
 	}

@@ -33,8 +33,5 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation group: 'org.bgee.log4jdbc-log4j2', name: 'log4jdbc-log4j2-jdbc4.1', version: '1.16'
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
-}
-
-test {
-	useJUnitPlatform()
+	compile group: 'junit', name: 'junit', version: '4.13.2'
 }
