@@ -152,14 +152,19 @@
 </div>
 <!-- /.container-fluid -->
 
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="/js/asset.js"></script>
 <script type="text/javascript" th:inline="javascript">
 	document.addEventListener("DOMContentLoaded", function() {
-		assetServce.getAssets(
-
+		
+		assetService.getAssets(
+			{uno:1}
+			,
+			function(){}
 		);
+		
 	});
 </script>
-
 <th:block th:replace="includes/footer"></th:block>
 </html>
