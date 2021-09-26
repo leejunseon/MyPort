@@ -9,24 +9,23 @@
 
 		<!-- Page Heading -->
 		<h1 class="h3 mb-4 text-gray-800">설정 비율</h1>
-
 		<div class="card shadow mb-4">
 			<div
 				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">자산</h6>
 				<div class="dropdown no-arrow">
-					<a class="dropdown-toggle" href="#" role="button"
-						id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> <i
-						class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+					<a class="dropdown-toggle" role="button" id="dropdownMenuLink"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
 					</a>
 					<div
 						class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
 						aria-labelledby="dropdownMenuLink">
 						<div class="dropdown-header">EDIT</div>
-						<a class="dropdown-item" href="#" data-toggle="modal"
-							data-target="#addModal">자산 추가</a> <a class="dropdown-item"
-							href="#" data-toggle="modal" data-target="#editModal">비율 수정</a>
+						<a id="asdf" class="dropdown-item" data-toggle="modal"
+							data-target="#addModal" data-id="asset">자산 추가</a> <a
+							class="dropdown-item" data-toggle="modal"
+							data-target="#editModal" data-id="asset">비율 수정</a>
 					</div>
 				</div>
 			</div>
@@ -78,8 +77,9 @@
 						aria-labelledby="dropdownMenuLink">
 						<div class="dropdown-header">EDIT</div>
 						<a class="dropdown-item" href="#" data-toggle="modal"
-							data-target="#addModal">국가 추가</a> <a class="dropdown-item"
-							href="#" data-toggle="modal" data-target="#editModal">비율 수정</a>
+							data-target="#addModal" data-id="country">국가 추가</a> <a
+							class="dropdown-item" href="#" data-toggle="modal"
+							data-target="#editModal" data-id="country">비율 수정</a>
 					</div>
 				</div>
 			</div>
@@ -97,18 +97,6 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>미국</td>
-												<td>50%</td>
-											</tr>
-											<tr>
-												<td>한국</td>
-												<td>30%</td>
-											</tr>
-											<tr>
-												<td>국가분산</td>
-												<td>10%</td>
-											</tr>
 										</tbody>
 									</table>
 								</div>
@@ -140,6 +128,13 @@
 <script type="text/javascript" th:inline="javascript">
 	document.addEventListener("DOMContentLoaded", function() {
 
+		//모달로 type(asset/country) 넘기기
+ 		$('#addModal').on('show.bs.modal', function(event) {
+			var type = $(event.relatedTarget).data('id');
+			console.log(event);
+			console.log(type);
+		});
+
 		assetService.getAssets(1, function(result) {
 			console.log(result);
 			setStatus("assetTable", "assetPieChart", result);
@@ -156,6 +151,8 @@
 			alert(error);
 		})
 
+		const modalFooter = document.querySelector(".modal-footer");
+		console.log(modalFooter);
 	});
 
 	function setStatus(tableElementId, chartElementId, result) {
