@@ -128,13 +128,7 @@
 <script type="text/javascript" th:inline="javascript">
 	document.addEventListener("DOMContentLoaded", function() {
 
-		//모달로 type(asset/country) 넘기기
- 		$('#addModal').on('show.bs.modal', function(event) {
-			var type = $(event.relatedTarget).data('id');
-			console.log(event);
-			console.log(type);
-		});
-
+		//자산 설정비율 현황 세팅
 		assetService.getAssets(1, function(result) {
 			console.log(result);
 			setStatus("assetTable", "assetPieChart", result);
@@ -143,6 +137,7 @@
 			alert(error);
 		});
 
+		//국가 설정비율 현황 세팅
 		countryService.getCountries(1, function(result) {
 			console.log(result);
 			setStatus("countryTable", "countryPieChart", result);
@@ -151,8 +146,50 @@
 			alert(error);
 		})
 
-		const modalFooter = document.querySelector(".modal-footer");
-		console.log(modalFooter);
+//////////////////////////////////모달 처리 필요////////////////////////////////////
+		//목록 추가 모달 popup
+		const addModal = $('#addModal');
+		const addSubmitBtn = $('#addSubmit');
+		console.log(addSubmitBtn);
+		addModal.on('show.bs.modal', function(event) {
+			var type = $(event.relatedTarget).data('id');
+			console.log("addModal " + type);
+			if (type === "asset") {
+				addSubmitBtn.on('click', function(event) {
+					console.log("asset add");
+				})
+			} else if (type === "country") {
+				addSubmitBtn.on('click', function(event) {
+					console.log("country add");
+				})
+			}
+		});
+
+		addModal.on('hidden.bs.modal', function(e) {
+			addModal.modal('dispose');
+		});
+
+		//목록 수정 모달 popup
+		const editModal = $('#editModal');
+		const editSubmitBtn = $('#editSubmit');
+		editModal.on('show.bs.modal', function(event) {
+			var type = $(event.relatedTarget).data('id');
+			console.log("editModal " + type);
+			if (type === "asset") {
+				editSubmitBtn.on('click', function(event) {
+					console.log("asset add");
+				})
+			} else if (type === "country") {
+				editSubmitBtn.on('click', function(event) {
+					console.log("country add");
+				})
+			}
+		});
+
+		editModal.on('hidden.bs.modal', function(e) {
+			editModal.modal('dispose');
+		});
+//////////////////////////////////모달 처리 필요////////////////////////////////////
 	});
 
 	function setStatus(tableElementId, chartElementId, result) {
