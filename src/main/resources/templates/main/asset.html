@@ -89,7 +89,7 @@
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
-									<table class="table table-bordered">
+									<table id="countryTable" class="table table-bordered">
 										<thead>
 											<tr>
 												<th>국가</th>
@@ -119,7 +119,7 @@
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
 								<div class="chart-pie pt-4">
-									<canvas id="myPieChart_2"></canvas>
+									<canvas id="countryPieChart"></canvas>
 								</div>
 							</div>
 						</div>
@@ -136,43 +136,58 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="/js/utils/chart-pie.js"></script>
 <script type="text/javascript" src="/js/data/asset.js"></script>
+<script type="text/javascript" src="/js/data/country.js"></script>
 <script type="text/javascript" th:inline="javascript">
 	document.addEventListener("DOMContentLoaded", function() {
 
 		assetService.getAssets(1, function(result) {
 			console.log(result);
-			setAssetStatus(result);
+			setStatus("assetTable", "assetPieChart", result);
 		}, function(error) {
 			console.log(error);
 			alert(error);
 		});
 
+		countryService.getCountries(1, function(result) {
+			console.log(result);
+			setStatus("countryTable", "countryPieChart", result);
+		}, function(error) {
+			console.log(error);
+			alert(error);
+		})
+
 	});
 
-	function setAssetStatus(result) {
-		const assetTable = document.querySelector("#assetTable");
-		const assetTableBody = assetTable.children[1];
-		let assetList = [];
+	function setStatus(tableElementId, chartElementId, result) {
+		const TableBody = document.getElementById(tableElementId).children[1];
+		let nameList = [];
 		let ratioList = [];
 		let colorList = [];
 		let bodyText = "";
 		for (var i = 0; i < result.length; i++) {
-			assetName = result[i].aName;
-			assetRatio = result[i].aRatio;
+
+			if (tableElementId.startsWith("asset")) {
+				name = result[i].aName;
+				ratio = result[i].aRatio;
+			} else if (tableElementId.startsWith("country")) {
+				name = result[i].cName;
+				ratio = result[i].cRatio;
+			}
 
 			bodyText += "<tr><td>";
-			bodyText += assetName;
+			bodyText += name;
 			bodyText += "</td><td>";
-			bodyText += assetRatio;
+			bodyText += ratio;
 			bodyText += "%</td></tr>";
 
-			assetList.push(assetName);
-			ratioList.push(assetRatio);
+			nameList.push(name);
+			ratioList.push(ratio);
 			colorList.push(getColor());
 		}
-		assetTableBody.innerHTML = bodyText;
+		TableBody.innerHTML = bodyText;
 
-		pieChartService.setPieChart("assetPieChart",assetList, ratioList, colorList);
+		pieChartService.setPieChart(chartElementId, nameList, ratioList,
+				colorList);
 	}
 
 	function getColor() {
