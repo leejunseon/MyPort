@@ -2,7 +2,7 @@ console.log("Asset js Module");
 
 var assetService = (function() {
 
-	function getAssets(param, callback, errorFunc) {
+	function getAssets(param, callbackFunction, errorFunction) {
 		console.log("assetService.getAssets");
 		console.log("param(uno) : "+param);
 
@@ -11,10 +11,10 @@ var assetService = (function() {
 			url: `/asset/${param}`,
 		})
 			.then(response => {
-				callback(response.data);
+				callbackFunction(response.data);
 			})
 			.catch(error => {
-				errorFunc(error);
+				errorFunction(error);
 			})
 	}
 
