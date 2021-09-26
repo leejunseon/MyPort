@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="myport.mapper.CountryMapper">
+
+	<insert id="addCountry">
+		INSERT INTO TBL_COUNTRY(U_NO,C_NAME,C_RATIO)
+		VALUES (#{uNo},#{cName},#{cRatio})
+	</insert>
+
+	<select id="retrieveCountries" resultType="myport.domain.CountryVo">
+		<![CDATA[
+			SELECT *
+			FROM TBL_COUNTRY
+			WHERE U_NO = #{uNo}
+			ORDER BY C_RATIO DESC
+		]]>
+	</select>
+
+</mapper>

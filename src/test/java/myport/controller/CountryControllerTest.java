@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @SpringBootTest
 @Slf4j
-public class AssetControllerTest {
+public class CountryControllerTest {
 	
 	@Setter(onMethod_= {@Autowired})
 	private WebApplicationContext ctx;
@@ -29,7 +29,7 @@ public class AssetControllerTest {
 	
 	@Test
 	public void testRetrieve() throws Exception{
-		log.info(mockMvc.perform(get("/asset/1"))
+		log.info(mockMvc.perform(get("/country/1"))
 				.andReturn()
 				.getResponse()
 				.getContentAsString()
