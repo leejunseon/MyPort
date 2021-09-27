@@ -14,18 +14,13 @@
 				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">자산</h6>
 				<div class="dropdown no-arrow">
-					<a class="dropdown-toggle" role="button" id="dropdownMenuLink"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
 					</a>
-					<div
-						class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-						aria-labelledby="dropdownMenuLink">
+					<div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
 						<div class="dropdown-header">EDIT</div>
-						<a id="asdf" class="dropdown-item" data-toggle="modal"
-							data-target="#addModal" data-id="asset">자산 추가</a> <a
-							class="dropdown-item" data-toggle="modal"
-							data-target="#editModal" data-id="asset">비율 수정</a>
+						<a id="addAssetBtn" class="dropdown-item">자산 추가</a>
+						<a id="editAssetBtn" class="dropdown-item">비율 수정</a>
 					</div>
 				</div>
 			</div>
@@ -63,23 +58,16 @@
 		</div>
 
 		<div class="card shadow mb-4">
-			<div
-				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">국가</h6>
 				<div class="dropdown no-arrow">
-					<a class="dropdown-toggle" href="#" role="button"
-						id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> <i
-						class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+					<a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"	aria-expanded="false"> 
+						<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
 					</a>
-					<div
-						class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-						aria-labelledby="dropdownMenuLink">
+					<div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
 						<div class="dropdown-header">EDIT</div>
-						<a class="dropdown-item" href="#" data-toggle="modal"
-							data-target="#addModal" data-id="country">국가 추가</a> <a
-							class="dropdown-item" href="#" data-toggle="modal"
-							data-target="#editModal" data-id="country">비율 수정</a>
+						<a id="addCountryBtn" class="dropdown-item">국가 추가</a>
+						<a id="editCountryBtn" class="dropdown-item">비율 수정</a>
 					</div>
 				</div>
 			</div>
@@ -145,53 +133,46 @@
 			console.log(error);
 			alert(error);
 		})
-
-//////////////////////////////////모달 처리 필요////////////////////////////////////
-		//목록 추가 모달 popup
-		const addModal = $('#addModal');
-		const addSubmitBtn = $('#addSubmit');
-		console.log(addSubmitBtn);
-		addModal.on('shown.bs.modal', function(event) {
-			var type = $(event.relatedTarget).data('id');
-			console.log("addModal " + type);
-			if (type === "asset") {
-				addSubmitBtn.on('click', function(event) {
-					console.log("asset add");
-				})
-			} else if (type === "country") {
-				addSubmitBtn.on('click', function(event) {
-					console.log("country add");
-				})
-			}
+		
+		//모달창 이벤트 추가
+		const addModal = $("#addModal");
+		const editModal = $("#editModal");
+		
+		const addAssetBtn = document.getElementById("addAssetBtn");
+		const editAssetBtn = document.getElementById("editAssetBtn");
+		addAssetBtn.addEventListener('click',function(){
+			document.getElementById("addModalLabel").innerText="자산 추가";
+			addModal.modal("show");
 		});
-
-		addModal.on('hidden.bs.modal', function(e) {
-			console.log("addModal dispose");
-			addModal.modal('dispose');
+		editAssetBtn.addEventListener('click',function(){
+			document.getElementById("editModalLabel").innerText="자산 수정";
+			assetService.getAssets(1, function(result){
+				setEditModalData("asset",result);
+			}, function(error){
+				console.log(error);
+				alert(error);
+			});
+			editModal.modal("show");
 		});
-
-		//목록 수정 모달 popup
-		const editModal = $('#editModal');
-		const editSubmitBtn = $('#editSubmit');
-		editModal.on('shown.bs.modal', function(event) {
-			var type = $(event.relatedTarget).data('id');
-			console.log("editModal " + type);
-			if (type === "asset") {
-				editSubmitBtn.on('click', function(event) {
-					console.log("asset add");
-				})
-			} else if (type === "country") {
-				editSubmitBtn.on('click', function(event) {
-					console.log("country add");
-				})
-			}
+		
+		const addCountryBtn = document.getElementById("addCountryBtn");
+		const editCountryBtn = document.getElementById("editCountryBtn");
+		addCountryBtn.addEventListener('click',function(){
+			document.getElementById("addModalLabel").innerText="국가 추가";
+			addModal.modal("show");
 		});
-
-		editModal.on('hidden.bs.modal', function(e) {
-			console.log("editModal dispose");
-			editModal.modal('dispose');
+		editCountryBtn.addEventListener('click',function(){
+			document.getElementById("editModalLabel").innerText="국가 수정";
+			countryService.getCountries(1, function(result){
+				setEditModalData("country",result);
+			}, function(error){
+				console.log(error);
+				alert(error);
+			});
+			editModal.modal("show");
 		});
-//////////////////////////////////모달 처리 필요////////////////////////////////////
+		
+
 	});
 
 	function setStatus(tableElementId, chartElementId, result) {
@@ -224,6 +205,30 @@
 
 		pieChartService.setPieChart(chartElementId, nameList, ratioList,
 				colorList);
+	}
+	
+	function setEditModalData(type, result){
+		const table = document.getElementById("editModalTable");
+		const thead = table.children[0];
+		const tbody = table.children[1];
+		
+		let tbodyText = "";
+		if(type==="asset"){
+			thead.innerHTML="<tr><th>자산</th><th>비율</th></tr>";
+			for(var i = 0;i<result.length;i++){
+				tbodyText += "<tr><td>"+result[i].aName+"</td><td><div class=\"row\"><div class='col-6'>"
+				tbodyText += "<input class=\"form-control\" value=\""+result[i].aRatio+"\"></div>"
+				tbodyText += "<div class='col-6'>%</div></div></td></tr>";
+			}
+		}else if(type==="country"){
+			thead.innerHTML="<tr><th>국가</th><th>비율</th></tr>";
+			for(var i = 0;i<result.length;i++){
+				tbodyText += "<tr><td>"+result[i].cName+"</td><td><div class=\"row\"><div class='col-6'>"
+				tbodyText += "<input class=\"form-control\" value=\""+result[i].cRatio+"\"></div>"
+				tbodyText += "<div class='col-6'>%</div></div></td></tr>";
+			}
+		}
+		tbody.innerHTML = tbodyText;
 	}
 
 	function getColor() {

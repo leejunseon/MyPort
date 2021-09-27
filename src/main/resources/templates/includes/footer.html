@@ -24,12 +24,11 @@
 </a>
 
 <!-- 목록 추가 Modal-->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
-	aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">목록 추가</h5>
+				<h5 class="modal-title" id="addModalLabel"></h5>
 				<button class="close" type="button" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">×</span>
@@ -55,9 +54,8 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title" id="myModalLabel">목록 수정</h4>
-				<button class="close" type="button" data-dismiss="modal"
-					aria-label="Close">
+				<h5 class="modal-title" id="editModalLabel"></h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
 			</div>
@@ -67,12 +65,8 @@
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
 								<div class="row no-gutters align-items-center">
-									<table class="table table-bordered">
+									<table id="editModalTable" class="table table-bordered">
 										<thead>
-											<tr>
-												<th>자산</th>
-												<th>비율</th>
-											</tr>
 										</thead>
 										<tbody>
 											<tr>
