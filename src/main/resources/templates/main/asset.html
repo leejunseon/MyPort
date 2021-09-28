@@ -116,7 +116,7 @@
 <script type="text/javascript" th:inline="javascript">
 	document.addEventListener("DOMContentLoaded", function() {
 
-		//자산 설정비율 현황 세팅
+		// 자산 설정비율 현황 세팅
 		assetService.getAssets(1, function(result) {
 			console.log(result);
 			setStatus("assetTable", "assetPieChart", result);
@@ -125,7 +125,7 @@
 			alert(error);
 		});
 
-		//국가 설정비율 현황 세팅
+		// 국가 설정비율 현황 세팅
 		countryService.getCountries(1, function(result) {
 			console.log(result);
 			setStatus("countryTable", "countryPieChart", result);
@@ -135,13 +135,17 @@
 		})
 		
 		//모달창 이벤트 추가
-		const addModal = $("#addModal");
-		const editModal = $("#editModal");
+		const addModal = $("#addModal");	//추가 모달 창
+		const editModal = $("#editModal");	//수정 모달 창
+		const addModalSubmitBtn = document.getElementById("addModalSubmitBtn");//추가 모달 Submit 버튼
+		const editModalSubmitBtn = document.getElementById("editModalSubmitBtn");//수정 모달 Submit 버튼
 		
-		const addAssetBtn = document.getElementById("addAssetBtn");
-		const editAssetBtn = document.getElementById("editAssetBtn");
+		//Asset 모달
+		const addAssetBtn = document.getElementById("addAssetBtn");	//자산 추가 버튼
+ 		const editAssetBtn = document.getElementById("editAssetBtn");//자산 비율수정 버튼
 		addAssetBtn.addEventListener('click',function(){
 			document.getElementById("addModalLabel").innerText="자산 추가";
+			addModalSubmitBtn.addEventListener('click',addAsset());
 			addModal.modal("show");
 		});
 		editAssetBtn.addEventListener('click',function(){
@@ -152,13 +156,16 @@
 				console.log(error);
 				alert(error);
 			});
+			editModalSubmitBtn.addEventListener('click',modifyAsset());
 			editModal.modal("show");
 		});
 		
-		const addCountryBtn = document.getElementById("addCountryBtn");
-		const editCountryBtn = document.getElementById("editCountryBtn");
+		//Country 모달
+		const addCountryBtn = document.getElementById("addCountryBtn");	//국가 추가 버튼
+		const editCountryBtn = document.getElementById("editCountryBtn");//국가 비율수정 버튼
 		addCountryBtn.addEventListener('click',function(){
 			document.getElementById("addModalLabel").innerText="국가 추가";
+			addModalSubmitBtn.addEventListener('click',addCountry());
 			addModal.modal("show");
 		});
 		editCountryBtn.addEventListener('click',function(){
@@ -169,12 +176,14 @@
 				console.log(error);
 				alert(error);
 			});
+			editModalSubmitBtn.addEventListener('click',modifyCountry());
 			editModal.modal("show");
 		});
 		
 
 	});
 
+	//초기 화면 세팅
 	function setStatus(tableElementId, chartElementId, result) {
 		const TableBody = document.getElementById(tableElementId).children[1];
 		let nameList = [];
@@ -207,6 +216,7 @@
 				colorList);
 	}
 	
+	//edit모달 초기데이터 세팅
 	function setEditModalData(type, result){
 		const table = document.getElementById("editModalTable");
 		const thead = table.children[0];
@@ -230,7 +240,24 @@
 		}
 		tbody.innerHTML = tbodyText;
 	}
+	
+	function addAsset(){
+		alert("addAsset");
+	}
+	
+	function addCountry(){
+		alert("addCountry");
+	}
+	
+	function modifyAsset(){
+		alert("modifyAsset");
+	}
+	
+	function modifyCountry(){
+		alert("modifyCountry");
+	}
 
+	//랜덤 Color 생성
 	function getColor() {
 		return "#" + Math.round(Math.random() * 0xffffff).toString(16);
 	}
