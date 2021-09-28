@@ -139,13 +139,16 @@
 		const editModal = $("#editModal");	//수정 모달 창
 		const addModalSubmitBtn = document.getElementById("addModalSubmitBtn");//추가 모달 Submit 버튼
 		const editModalSubmitBtn = document.getElementById("editModalSubmitBtn");//수정 모달 Submit 버튼
+		const editModalTbl = document.getElementById("editModalTable");//수정 모달 테이블
 		
 		//Asset 모달
 		const addAssetBtn = document.getElementById("addAssetBtn");	//자산 추가 버튼
  		const editAssetBtn = document.getElementById("editAssetBtn");//자산 비율수정 버튼
 		addAssetBtn.addEventListener('click',function(){
 			document.getElementById("addModalLabel").innerText="자산 추가";
-			addModalSubmitBtn.addEventListener('click',addAsset());
+			addModalSubmitBtn.addEventListener('click',function(){
+				////////////////////////////////////////
+			});
 			addModal.modal("show");
 		});
 		editAssetBtn.addEventListener('click',function(){
@@ -156,7 +159,7 @@
 				console.log(error);
 				alert(error);
 			});
-			editModalSubmitBtn.addEventListener('click',modifyAsset());
+			editModalSubmitBtn.addEventListener('click',modifyData);
 			editModal.modal("show");
 		});
 		
@@ -165,8 +168,9 @@
 		const editCountryBtn = document.getElementById("editCountryBtn");//국가 비율수정 버튼
 		addCountryBtn.addEventListener('click',function(){
 			document.getElementById("addModalLabel").innerText="국가 추가";
-			addModalSubmitBtn.addEventListener('click',addCountry());
-			addModal.modal("show");
+			addModalSubmitBtn.addEventListener('click',function(){
+				////////////////////////////////////////
+			});
 		});
 		editCountryBtn.addEventListener('click',function(){
 			document.getElementById("editModalLabel").innerText="국가 수정";
@@ -176,7 +180,7 @@
 				console.log(error);
 				alert(error);
 			});
-			editModalSubmitBtn.addEventListener('click',modifyCountry());
+			editModalSubmitBtn.addEventListener('click',modifyData);
 			editModal.modal("show");
 		});
 		
@@ -241,20 +245,26 @@
 		tbody.innerHTML = tbodyText;
 	}
 	
-	function addAsset(){
-		alert("addAsset");
-	}
-	
-	function addCountry(){
-		alert("addCountry");
-	}
-	
-	function modifyAsset(){
-		alert("modifyAsset");
-	}
-	
-	function modifyCountry(){
-		alert("modifyCountry");
+	//editModal 입력값 -> 백엔드로 송신
+	function modifyData(){
+		const editModalTbl = document.getElementById("editModalTable");//수정 모달 테이블
+		let cnt = editModalTbl.rows.length;
+		
+		let type = "";
+		let dataList = [];
+		for(var i=0;i<cnt;i++){
+			if(i==0){
+				type = editModalTbl.rows[i].cells[0].innerText;
+			}else{
+				let data = [];
+				data.push(editModalTbl.rows[i].cells[0].innerText);
+				data.push(editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value);
+				dataList.push(data);
+			}
+		}
+		
+		console.log("type : "+type);
+		console.log(dataList);
 	}
 
 	//랜덤 Color 생성
