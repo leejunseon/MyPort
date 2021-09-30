@@ -22,8 +22,17 @@ public class AssetServiceImpl implements AssetService{
 
 	@Override
 	public int addAsset(AssetVo vo) {
-		// TODO Auto-generated method stub
 		return mapper.addAsset(vo);
 	}
+
+	@Override
+	public int modifyAssets(List<AssetVo> voList) {
+		int updatedRow = 0;
+		for(AssetVo paramVo : voList) {
+			updatedRow += mapper.modifyAssets(paramVo);
+		}
+		return updatedRow;
+	}
+
 
 }

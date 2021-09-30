@@ -11,4 +11,6 @@ public interface AssetService {
 
 	public int addAsset(AssetVo vo);
 	
+	public int modifyAssets(List<AssetVo> voList);
+	
 }

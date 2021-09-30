@@ -3,6 +3,9 @@ package myport.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +15,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import myport.domain.AssetVo;
 
 @SpringBootTest
 @Slf4j
@@ -43,6 +49,35 @@ public class AssetControllerTest {
 		log.info(mockMvc.perform(post("/asset/add")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content("{\"uNo\":\"1\",\"aName\":\"채권2\",\"aRatio\":\"20\"}"))
+				.andReturn()
+				.getResponse()
+				.getContentAsString()
+				);
+	}
+	
+	@Test
+	public void testModifyAssets() throws Exception{
+		
+		ObjectMapper mapper = new ObjectMapper();
+		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
+		
+		AssetVo paramOne = new AssetVo();
+		paramOne.setUNo(1);
+		paramOne.setAName("주식1");
+		paramOne.setARatio(50);
+		paramVoList.add(paramOne);
+		
+		AssetVo paramTwo = new AssetVo();
+		paramTwo.setUNo(1);
+		paramTwo.setAName("채권1");
+		paramTwo.setARatio(50);
+		paramVoList.add(paramTwo);
+		
+		String jsonInString = mapper.writeValueAsString(paramVoList);
+		
+		log.info(mockMvc.perform(post("/asset/modify")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(jsonInString))
 				.andReturn()
 				.getResponse()
 				.getContentAsString()

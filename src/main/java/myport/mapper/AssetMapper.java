@@ -13,5 +13,7 @@ public interface AssetMapper {
 	public List<AssetVo> retrieveAssets(UserVo vo);
 	
 	public int addAsset(AssetVo vo);
+	
+	public int modifyAssets(AssetVo vo);
 
 }

@@ -35,7 +35,7 @@ public class AssetMapperTest {
 		log.info("result : " + Integer.toString(result));
 	}
 
-	@Test
+	//@Test
 	public void testRetrieveAssets() {
 		UserVo paramVo = new UserVo();
 		paramVo.setUNo(1);
@@ -50,6 +50,16 @@ public class AssetMapperTest {
 		} else {
 			log.info("Empty");
 		}
-
 	}
+	
+	@Test
+	public void testModifyAssets() {
+		AssetVo paramVo  = new AssetVo();
+		paramVo.setUNo(1);
+		paramVo.setAName("주식1");
+		paramVo.setARatio(30);
+		int result = mapper.modifyAssets(paramVo);
+		log.info("Updated row : " + result);
+	}
+	
 }

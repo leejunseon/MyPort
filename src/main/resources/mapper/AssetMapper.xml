@@ -17,5 +17,24 @@
 			ORDER BY A_RATIO DESC
 		]]>
 	</select>
+	
+	<update id="modifyAssets">
+		<selectKey keyProperty="aNo" order="BEFORE" resultType="long">
+			<![CDATA[
+				SELECT A_NO 
+				FROM TBL_ASSET
+				WHERE U_NO = #{uNo}
+				AND A_NAME = #{aName}
+			]]>
+		</selectKey>
+		<![CDATA[
+			UPDATE TBL_ASSET
+			SET 
+				A_NAME = #{aName},
+				A_RATIO = #{aRatio},
+				A_UPDATEDATE = to_char(sysdate, 'YYYY/MM/DD HH24:MI:SS')
+			WHERE A_NO = #{aNo}
+		]]>
+	</update>
 
 </mapper>

@@ -34,5 +34,11 @@ public class AssetController {
 		int insertCount=service.addAsset(vo);
 		return insertCount==1?"success":"fail";
 	}
+	
+	@PostMapping(value="/modify",consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})
+	public String modify(@RequestBody List<AssetVo> voList) throws Exception{
+		int modifyCount=service.modifyAssets(voList);
+		return modifyCount>1?"success":"fail";
+	}
 
 }

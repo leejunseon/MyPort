@@ -35,7 +35,7 @@ public class AssetServiceTest {
 		log.info("result : " + Integer.toString(result));
 	}
 
-	@Test
+	//@Test
 	public void testGetAssets() {
 		UserVo paramVo = new UserVo();
 		paramVo.setUNo(1);
@@ -50,6 +50,25 @@ public class AssetServiceTest {
 		} else {
 			log.info("Empty");
 		}
-
+	}
+	
+	@Test
+	public void testModifyAssets() {
+		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
+		
+		AssetVo paramOne = new AssetVo();
+		paramOne.setUNo(1);
+		paramOne.setAName("주식1");
+		paramOne.setARatio(50);
+		paramVoList.add(paramOne);
+		
+		AssetVo paramTwo = new AssetVo();
+		paramTwo.setUNo(1);
+		paramTwo.setAName("채권1");
+		paramTwo.setARatio(50);
+		paramVoList.add(paramTwo);
+		
+		int result = service.modifyAssets(paramVoList);
+		log.info("Updated row : " + result);
 	}
 }
