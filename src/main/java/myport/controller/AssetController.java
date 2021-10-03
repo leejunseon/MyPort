@@ -23,7 +23,7 @@ public class AssetController {
 	private AssetService service;
 
 	@GetMapping(value = "/{uNo}", produces = "application/json; charset=UTF8")
-	public List<AssetVo> get(@PathVariable("uNo") Long uNo) {
+	public List<AssetVo> retrieve(@PathVariable("uNo") Long uNo) {
 		UserVo paramVo = new UserVo();
 		paramVo.setUNo(uNo);
 		return service.retrieveAssets(paramVo);

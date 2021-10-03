@@ -14,13 +14,16 @@
 				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">자산</h6>
 				<div class="dropdown no-arrow">
-					<a class="dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="dropdown-toggle" role="button" id="dropdownMenuLink"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+					<div
+						class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+						aria-labelledby="dropdownMenuLink">
 						<div class="dropdown-header">EDIT</div>
-						<a id="addAssetBtn" class="dropdown-item">자산 추가</a>
-						<a id="editAssetBtn" class="dropdown-item">비율 수정</a>
+						<a id="addAssetBtn" class="dropdown-item">자산 추가</a> <a
+							id="editAssetBtn" class="dropdown-item">비율 수정</a>
 					</div>
 				</div>
 			</div>
@@ -58,16 +61,21 @@
 		</div>
 
 		<div class="card shadow mb-4">
-			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+			<div
+				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">국가</h6>
 				<div class="dropdown no-arrow">
-					<a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"	aria-expanded="false"> 
-						<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+					<a class="dropdown-toggle" href="#" role="button"
+						id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false"> <i
+						class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
 					</a>
-					<div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+					<div
+						class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+						aria-labelledby="dropdownMenuLink">
 						<div class="dropdown-header">EDIT</div>
-						<a id="addCountryBtn" class="dropdown-item">국가 추가</a>
-						<a id="editCountryBtn" class="dropdown-item">비율 수정</a>
+						<a id="addCountryBtn" class="dropdown-item">국가 추가</a> <a
+							id="editCountryBtn" class="dropdown-item">비율 수정</a>
 					</div>
 				</div>
 			</div>
@@ -103,7 +111,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
 <!-- /.container-fluid -->
@@ -114,9 +121,10 @@
 <script type="text/javascript" src="/js/data/asset.js"></script>
 <script type="text/javascript" src="/js/data/country.js"></script>
 <script type="text/javascript" th:inline="javascript">
+
 	document.addEventListener("DOMContentLoaded", function() {
 
-		// 자산 설정비율 현황 세팅
+		// 자산 초기세팅
 		assetService.getAssets(1, function(result) {
 			console.log(result);
 			setStatus("assetTable", "assetPieChart", result);
@@ -125,7 +133,7 @@
 			alert(error);
 		});
 
-		// 국가 설정비율 현황 세팅
+		// 국가 초기세팅
 		countryService.getCountries(1, function(result) {
 			console.log(result);
 			setStatus("countryTable", "countryPieChart", result);
@@ -134,60 +142,64 @@
 			alert(error);
 		})
 		
-		//모달창 이벤트 추가
+		// 모달창 이벤트 추가
 		const addModal = $("#addModal");	//추가 모달 창
 		const editModal = $("#editModal");	//수정 모달 창
 		const addModalSubmitBtn = document.getElementById("addModalSubmitBtn");//추가 모달 Submit 버튼
 		const editModalSubmitBtn = document.getElementById("editModalSubmitBtn");//수정 모달 Submit 버튼
 		const editModalTbl = document.getElementById("editModalTable");//수정 모달 테이블
 		
-		//Asset 모달
+		// Asset 모달 이벤트 설정 //////////////////////////////////////////////////////////////////////////
 		const addAssetBtn = document.getElementById("addAssetBtn");	//자산 추가 버튼
  		const editAssetBtn = document.getElementById("editAssetBtn");//자산 비율수정 버튼
+ 		
 		addAssetBtn.addEventListener('click',function(){
 			document.getElementById("addModalLabel").innerText="자산 추가";
-			addModalSubmitBtn.addEventListener('click',function(){
-				////////////////////////////////////////
-			});
+			addModalSubmitBtn.addEventListener('click',addData);//add submit 버튼 -> addData()
 			addModal.modal("show");
 		});
+ 		
 		editAssetBtn.addEventListener('click',function(){
 			document.getElementById("editModalLabel").innerText="자산 수정";
+			//edit 창 데이터 세팅
 			assetService.getAssets(1, function(result){
 				setEditModalData("asset",result);
 			}, function(error){
 				console.log(error);
 				alert(error);
 			});
-			editModalSubmitBtn.addEventListener('click',modifyData);
+			editModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
 			editModal.modal("show");
 		});
+		/////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		//Country 모달
+		// Country 모달 이벤트 설정 ////////////////////////////////////////////////////////////////////////
 		const addCountryBtn = document.getElementById("addCountryBtn");	//국가 추가 버튼
 		const editCountryBtn = document.getElementById("editCountryBtn");//국가 비율수정 버튼
+		
 		addCountryBtn.addEventListener('click',function(){
 			document.getElementById("addModalLabel").innerText="국가 추가";
-			addModalSubmitBtn.addEventListener('click',function(){
-				////////////////////////////////////////
-			});
+			addModalSubmitBtn.addEventListener('click',addData);//add submit 버튼 -> addData()
+			addModal.modal("show");
 		});
+		
 		editCountryBtn.addEventListener('click',function(){
 			document.getElementById("editModalLabel").innerText="국가 수정";
+			//edit 창 데이터 세팅
 			countryService.getCountries(1, function(result){
 				setEditModalData("country",result);
 			}, function(error){
 				console.log(error);
 				alert(error);
 			});
-			editModalSubmitBtn.addEventListener('click',modifyData);
+			editModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
 			editModal.modal("show");
 		});
-		
+		/////////////////////////////////////////////////////////////////////////////////////////////////
 
 	});
 
-	//초기 화면 세팅
+	// 초기 화면 세팅
 	function setStatus(tableElementId, chartElementId, result) {
 		const TableBody = document.getElementById(tableElementId).children[1];
 		let nameList = [];
@@ -220,7 +232,7 @@
 				colorList);
 	}
 	
-	//edit모달 초기데이터 세팅
+	// edit모달 초기데이터 세팅
 	function setEditModalData(type, result){
 		const table = document.getElementById("editModalTable");
 		const thead = table.children[0];
@@ -228,24 +240,90 @@
 		
 		let tbodyText = "";
 		if(type==="asset"){
-			thead.innerHTML="<tr><th>자산</th><th>비율</th></tr>";
+			thead.innerHTML="<tr><th>자산</th><th>비율</th><th>삭제</th></tr>";
 			for(var i = 0;i<result.length;i++){
-				tbodyText += "<tr><td>"+result[i].aName+"</td><td><div class=\"row\"><div class='col-6'>"
-				tbodyText += "<input class=\"form-control\" value=\""+result[i].aRatio+"\"></div>"
-				tbodyText += "<div class='col-6'>%</div></div></td></tr>";
+				tbodyText += "<tr>"
+				tbodyText += "<td>"+result[i].aName+"</td>"
+				tbodyText += "<td>"
+				tbodyText += "	<div class=\"row\">"
+				tbodyText += "		<div class='col-6'><input class=\"form-control\" value=\""+result[i].aRatio+"\"></div>"
+				tbodyText += "		<div class='col-6'>%</div>"
+				tbodyText += "	</div>"
+				tbodyText += "</td>"
+				tbodyText += "<td>"
+				tbodyText += "	<div class='custom-control custom-checkbox small'>"
+				tbodyText += "		<input type='checkbox' class='custom-control-input' id='customCheck"+i+"'>"
+				tbodyText += "		<label class='custom-control-label' for='customCheck"+i+"'></label>"
+				tbodyText += "	</div>"
+				tbodyText += "</td>"
+				tbodyText += "</tr>"
 			}
 		}else if(type==="country"){
 			thead.innerHTML="<tr><th>국가</th><th>비율</th></tr>";
 			for(var i = 0;i<result.length;i++){
-				tbodyText += "<tr><td>"+result[i].cName+"</td><td><div class=\"row\"><div class='col-6'>"
-				tbodyText += "<input class=\"form-control\" value=\""+result[i].cRatio+"\"></div>"
-				tbodyText += "<div class='col-6'>%</div></div></td></tr>";
+				tbodyText += "<tr>"
+				tbodyText += "<td>"+result[i].cName+"</td>"
+				tbodyText += "<td>"
+				tbodyText += "	<div class=\"row\">"
+				tbodyText += "		<div class='col-6'><input class=\"form-control\" value=\""+result[i].cRatio+"\"></div>"
+				tbodyText += "		<div class='col-6'>%</div>"
+				tbodyText += "	</div>"
+				tbodyText += "</td>"
+				tbodyText += "</tr>"
 			}
 		}
 		tbody.innerHTML = tbodyText;
 	}
 	
-	//editModal 입력값 -> 백엔드로 송신
+	// addModal 입력값 -> 백엔드로 송신
+	function addData(){
+		const inputData = document.getElementById("inputData");//추가 data
+		const addModalLabel = document.getElementById("addModalLabel");//자산 추가 or 국가 추가
+		
+		console.log("addData : "+inputData.value);
+		
+		if(addModalLabel.innerText.startsWith("자산")){
+			let asset = {
+				uNo : 1,
+				aName : inputData.value,
+				aRatio : 0			
+			};
+			assetService.addAsset(asset,
+				function(result){
+					console.log(result);
+					if(result === "success"){
+						window.location.reload();
+					}else{
+						alert("modifyAsset fail");
+					}
+				},function(error){
+					console.log(error);
+					alert(error)
+				}
+			);
+		}else if(addModalLabel.innerText.startsWith("국가")){
+			let country = {
+				uNo : 1,
+				cName : inputData,
+				cRatio : 0			
+			};
+			countryService.addCountry(country,
+				function(result){
+					console.log(result);
+					if(result === "success"){
+						window.location.reload();
+					}else{
+						alert("modifyAsset fail");
+					}
+				},function(error){
+					console.log(error);
+					alert(error)
+				}
+			);
+		}
+	}
+	
+	// editModal 입력값 -> 백엔드로 송신
 	function modifyData(){
 		const editModalTbl = document.getElementById("editModalTable");//수정 모달 테이블
 		let cnt = editModalTbl.rows.length;
@@ -301,10 +379,11 @@
 
 	}
 
-	//랜덤 Color 생성
+	// 랜덤 Color 생성
 	function getColor() {
 		return "#" + Math.round(Math.random() * 0xffffff).toString(16);
 	}
+	
 </script>
 <th:block th:replace="includes/footer"></th:block>
 </html>
