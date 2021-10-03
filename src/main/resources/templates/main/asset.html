@@ -249,22 +249,56 @@
 	function modifyData(){
 		const editModalTbl = document.getElementById("editModalTable");//수정 모달 테이블
 		let cnt = editModalTbl.rows.length;
-		
+
 		let type = "";
 		let dataList = [];
-		for(var i=0;i<cnt;i++){
-			if(i==0){
+		for (var i = 0; i < cnt; i++) {
+			if (i == 0) {
 				type = editModalTbl.rows[i].cells[0].innerText;
-			}else{
-				let data = [];
-				data.push(editModalTbl.rows[i].cells[0].innerText);
-				data.push(editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value);
-				dataList.push(data);
+			} else {
+				if (type === "자산") {
+					let asset = {
+						uNo : 1,
+						aName : null,
+						aRatio : null
+					};
+					asset.aName = editModalTbl.rows[i].cells[0].innerText;
+					asset.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
+					dataList.push(asset);
+				} else if (type === "국가") {
+					let country = {
+						uNo : 1,
+						cName : null,
+						cRatio : null
+					}
+					country.aName = editModalTbl.rows[i].cells[0].innerText;
+					country.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
+					dataList.push(country);
+				}
 			}
 		}
 		
-		console.log("type : "+type);
+		console.log("type : " + type);
 		console.log(dataList);
+		
+		if(type === "자산"){
+			assetService.modifyAssets(dataList, 
+				function(result) {
+					console.log(result);
+					if(result === "success"){
+						window.location.reload();
+					}else{
+						alert("modifyAsset fail");
+					}
+				}, function(error) {
+					console.log(error);
+					alert(error)
+				}
+			);
+		} else if (type === "국가") {
+
+		}
+
 	}
 
 	//랜덤 Color 생성

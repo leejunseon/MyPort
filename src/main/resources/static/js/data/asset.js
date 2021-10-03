@@ -17,9 +17,27 @@ var assetService = (function() {
 				errorFunction(error);
 			})
 	}
+	
+	function modifyAssets(param, callbackFunction, errorFunction){
+		console.log("assetService.modifyAssets");
+		console.log("param(asset info) : "+param);
+		
+		axios({
+			method: 'post',
+			url: '/asset/modify',
+			data:param
+		})
+			.then(response => {
+				callbackFunction(response.data);
+			})
+			.catch(error => {
+				errorFunction(error);
+			})
+	}
 
 	return {
-		getAssets: getAssets
+		getAssets: getAssets,
+		modifyAssets: modifyAssets
 	}
 
 })();
