@@ -17,5 +17,32 @@
 			ORDER BY C_RATIO DESC
 		]]>
 	</select>
+	
+	<update id="modifyCountry">
+		<selectKey keyProperty="cNo" order="BEFORE" resultType="long">
+			<![CDATA[
+				SELECT C_NO 
+				FROM TBL_COUNTRY
+				WHERE U_NO = #{uNo}
+				AND C_NAME = #{cName}
+			]]>
+		</selectKey>
+		<![CDATA[
+			UPDATE TBL_COUNTRY
+			SET 
+				C_NAME = #{cName},
+				C_RATIO = #{cRatio},
+				C_UPDATEDATE = to_char(sysdate, 'YYYY/MM/DD HH24:MI:SS')
+			WHERE C_NO = #{cNo}
+		]]>
+	</update>
+	
+	<delete id="deleteCountry">
+		<![CDATA[
+			DELETE TBL_COUNTRY
+			WHERE U_NO = #{uNo}
+			AND C_NAME = #{cName}
+		]]>
+	</delete>
 
 </mapper>

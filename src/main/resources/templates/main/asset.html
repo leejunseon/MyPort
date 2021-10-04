@@ -332,6 +332,8 @@
 		let deleteYn = "";
 		let editDataList = [];
 		let deleteDataList = [];
+		
+		//입력값 -> editDataList, deleteDataList로 세팅
 		for (var i = 0; i < cnt; i++) {
 			if (i == 0) {
 				type = editModalTbl.rows[i].cells[0].innerText;
@@ -346,7 +348,7 @@
 					};
 					asset.aName = editModalTbl.rows[i].cells[0].innerText;
 					asset.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
-					if(deleteYn === true){
+					if(deleteYn){
 						deleteDataList.push(asset);
 					}else{
 						editDataList.push(asset);
@@ -357,14 +359,13 @@
 						cName : null,
 						cRatio : null
 					}
-					country.aName = editModalTbl.rows[i].cells[0].innerText;
-					country.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
+					country.cName = editModalTbl.rows[i].cells[0].innerText;
+					country.cRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
 					if(deleteYn){
-						deleteDataList.push(asset);
+						deleteDataList.push(country);
 					}else{
-						editDataList.push(asset);
+						editDataList.push(country);
 					}
-					editDataList.push(country);
 				}
 			}
 		}
@@ -373,6 +374,7 @@
 		console.log(deleteDataList);
 		console.log(editDataList);
 		
+		//editDataList, deleteDataList -> U,D 처리
 		if(type === "자산"){
 			if(deleteDataList.length>0){
 				assetService.deleteAssets(deleteDataList, 

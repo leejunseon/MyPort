@@ -11,4 +11,8 @@ public interface CountryService {
 
 	public int addCountry(CountryVo vo);
 	
+	public int modifyCountries(List<CountryVo> voList);
+	
+	public int deleteCountries(List<CountryVo> voList);
+	
 }

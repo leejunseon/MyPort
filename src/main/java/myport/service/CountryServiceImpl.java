@@ -22,8 +22,25 @@ public class CountryServiceImpl implements CountryService{
 
 	@Override
 	public int addCountry(CountryVo vo) {
-		// TODO Auto-generated method stub
 		return mapper.addCountry(vo);
+	}
+
+	@Override
+	public int modifyCountries(List<CountryVo> voList) {
+		int updatedRow = 0;
+		for(CountryVo paramVo : voList) {
+			updatedRow += mapper.modifyCountry(paramVo);
+		}
+		return updatedRow;
+	}
+
+	@Override
+	public int deleteCountries(List<CountryVo> voList) {
+		int deletedRow = 0;
+		for(CountryVo paramVo : voList) {
+			deletedRow += mapper.deleteCountry(paramVo);
+		}
+		return deletedRow;
 	}
 
 }
