@@ -122,6 +122,7 @@
 <script type="text/javascript" src="/js/data/country.js"></script>
 <script type="text/javascript" th:inline="javascript">
 
+	//화면 초기화
 	document.addEventListener("DOMContentLoaded", function() {
 
 		// 자산 초기세팅
@@ -238,40 +239,39 @@
 		const thead = table.children[0];
 		const tbody = table.children[1];
 		
-		let tbodyText = "";
 		if(type==="asset"){
 			thead.innerHTML="<tr><th>자산</th><th>비율</th><th>삭제</th></tr>";
-			for(var i = 0;i<result.length;i++){
-				tbodyText += "<tr>"
-				tbodyText += "<td>"+result[i].aName+"</td>"
-				tbodyText += "<td>"
-				tbodyText += "	<div class=\"row\">"
-				tbodyText += "		<div class='col-6'><input class=\"form-control\" value=\""+result[i].aRatio+"\"></div>"
-				tbodyText += "		<div class='col-6'>%</div>"
-				tbodyText += "	</div>"
-				tbodyText += "</td>"
-				tbodyText += "<td>"
-				tbodyText += "	<div class='custom-control custom-checkbox small'>"
-				tbodyText += "		<input type='checkbox' class='custom-control-input' id='customCheck"+i+"'>"
-				tbodyText += "		<label class='custom-control-label' for='customCheck"+i+"'></label>"
-				tbodyText += "	</div>"
-				tbodyText += "</td>"
-				tbodyText += "</tr>"
-			}
 		}else if(type==="country"){
-			thead.innerHTML="<tr><th>국가</th><th>비율</th></tr>";
-			for(var i = 0;i<result.length;i++){
-				tbodyText += "<tr>"
-				tbodyText += "<td>"+result[i].cName+"</td>"
-				tbodyText += "<td>"
-				tbodyText += "	<div class=\"row\">"
-				tbodyText += "		<div class='col-6'><input class=\"form-control\" value=\""+result[i].cRatio+"\"></div>"
-				tbodyText += "		<div class='col-6'>%</div>"
-				tbodyText += "	</div>"
-				tbodyText += "</td>"
-				tbodyText += "</tr>"
-			}
+			thead.innerHTML="<tr><th>국가</th><th>비율</th><th>삭제</th></tr>";
 		}
+			
+		let tbodyText = "";
+		for(var i = 0;i<result.length;i++){
+			tbodyText += "<tr>"
+			if(type==="asset"){
+				tbodyText += "<td>"+result[i].aName+"</td>"
+			}else if(type==="country"){
+				tbodyText += "<td>"+result[i].cName+"</td>"
+			}
+			tbodyText += "<td>"
+			tbodyText += "	<div class=\"row\">"
+			if(type==="asset"){
+				tbodyText += "	<div class='col-6'><input class=\"form-control\" value=\""+result[i].aRatio+"\"></div>"
+			}else if(type==="country"){
+				tbodyText += "	<div class='col-6'><input class=\"form-control\" value=\""+result[i].cRatio+"\"></div>"
+			}
+			tbodyText += "		<div class='col-6'>%</div>"
+			tbodyText += "	</div>"
+			tbodyText += "</td>"
+			tbodyText += "<td>"
+			tbodyText += "	<div class='custom-control custom-checkbox small'>"
+			tbodyText += "		<input type='checkbox' class='custom-control-input' id='customCheck"+i+"'>"
+			tbodyText += "		<label class='custom-control-label' for='customCheck"+i+"'></label>"
+			tbodyText += "	</div>"
+			tbodyText += "</td>"
+			tbodyText += "</tr>"
+		}
+		
 		tbody.innerHTML = tbodyText;
 	}
 	
@@ -294,7 +294,7 @@
 					if(result === "success"){
 						window.location.reload();
 					}else{
-						alert("modifyAsset fail");
+						alert("Edit failed");
 					}
 				},function(error){
 					console.log(error);
@@ -304,7 +304,7 @@
 		}else if(addModalLabel.innerText.startsWith("국가")){
 			let country = {
 				uNo : 1,
-				cName : inputData,
+				cName : inputData.value,
 				cRatio : 0			
 			};
 			countryService.addCountry(country,
@@ -313,7 +313,7 @@
 					if(result === "success"){
 						window.location.reload();
 					}else{
-						alert("modifyAsset fail");
+						alert("Edit failed");
 					}
 				},function(error){
 					console.log(error);
@@ -374,7 +374,19 @@
 				}
 			);
 		} else if (type === "국가") {
-
+			countryService.modifyCountries(dataList, 
+				function(result) {
+					console.log(result);
+					if(result === "success"){
+						window.location.reload();
+					}else{
+						alert("modifyAsset fail");
+					}
+				}, function(error) {
+					console.log(error);
+					alert(error)
+				}
+			);
 		}
 
 	}
