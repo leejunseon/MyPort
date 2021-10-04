@@ -329,7 +329,7 @@
 		let cnt = editModalTbl.rows.length;
 
 		let type = "";
-		let dataList = [];
+		let editDataList = [];
 		for (var i = 0; i < cnt; i++) {
 			if (i == 0) {
 				type = editModalTbl.rows[i].cells[0].innerText;
@@ -342,7 +342,7 @@
 					};
 					asset.aName = editModalTbl.rows[i].cells[0].innerText;
 					asset.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
-					dataList.push(asset);
+					editDataList.push(asset);
 				} else if (type === "국가") {
 					let country = {
 						uNo : 1,
@@ -351,16 +351,16 @@
 					}
 					country.aName = editModalTbl.rows[i].cells[0].innerText;
 					country.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
-					dataList.push(country);
+					editDataList.push(country);
 				}
 			}
 		}
 		
 		console.log("type : " + type);
-		console.log(dataList);
+		console.log(editDataList);
 		
 		if(type === "자산"){
-			assetService.modifyAssets(dataList, 
+			assetService.modifyAssets(editDataList, 
 				function(result) {
 					console.log(result);
 					if(result === "success"){
@@ -374,7 +374,7 @@
 				}
 			);
 		} else if (type === "국가") {
-			countryService.modifyCountries(dataList, 
+			countryService.modifyCountries(editDataList, 
 				function(result) {
 					console.log(result);
 					if(result === "success"){

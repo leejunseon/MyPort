@@ -52,7 +52,7 @@ public class AssetMapperTest {
 		}
 	}
 	
-	@Test
+	// @Test
 	public void testModifyAssets() {
 		AssetVo paramVo  = new AssetVo();
 		paramVo.setUNo(1);
@@ -61,5 +61,13 @@ public class AssetMapperTest {
 		int result = mapper.modifyAssets(paramVo);
 		log.info("Updated row : " + result);
 	}
+	
+	@Test
+	public void testDeleteAsset() {
+		AssetVo paramVo  = new AssetVo();
+		paramVo.setUNo(1);
+		paramVo.setAName("금");
+		int result = mapper.deleteAsset(paramVo);
+		log.info("Deleted row : " + result);	}
 	
 }

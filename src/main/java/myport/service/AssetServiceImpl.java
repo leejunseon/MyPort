@@ -34,5 +34,14 @@ public class AssetServiceImpl implements AssetService{
 		return updatedRow;
 	}
 
+	@Override
+	public int deleteAssets(List<AssetVo> voList) {
+		int deletedRow = 0;
+		for(AssetVo paramVo : voList) {
+			deletedRow += mapper.deleteAsset(paramVo);
+		}
+		return deletedRow;
+	}
+
 
 }

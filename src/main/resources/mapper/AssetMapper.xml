@@ -36,5 +36,13 @@
 			WHERE A_NO = #{aNo}
 		]]>
 	</update>
+	
+	<delete id="deleteAsset">
+		<![CDATA[
+			DELETE TBL_ASSET
+			WHERE U_NO = #{uNo}
+			AND A_NAME = #{aName}
+		]]>
+	</delete>
 
 </mapper>

@@ -38,7 +38,13 @@ public class AssetController {
 	@PostMapping(value="/modify",consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})
 	public String modify(@RequestBody List<AssetVo> voList) throws Exception{
 		int modifyCount=service.modifyAssets(voList);
-		return modifyCount>1?"success":"fail";
+		return modifyCount>0?"success":"fail";
+	}
+	
+	@PostMapping(value="/delete",consumes="application/json",produces= {MediaType.TEXT_PLAIN_VALUE})
+	public String delete(@RequestBody List<AssetVo> voList) throws Exception{
+		int deleteCount=service.deleteAssets(voList);
+		return deleteCount>0?"success":"fail";
 	}
 
 }

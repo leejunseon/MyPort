@@ -15,5 +15,7 @@ public interface AssetMapper {
 	public int addAsset(AssetVo vo);
 	
 	public int modifyAssets(AssetVo vo);
+	
+	public int deleteAsset(AssetVo vo);
 
 }

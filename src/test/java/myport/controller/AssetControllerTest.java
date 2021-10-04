@@ -55,7 +55,7 @@ public class AssetControllerTest {
 				);
 	}
 	
-	@Test
+	//@Test
 	public void testModifyAssets() throws Exception{
 		
 		ObjectMapper mapper = new ObjectMapper();
@@ -76,6 +76,33 @@ public class AssetControllerTest {
 		String jsonInString = mapper.writeValueAsString(paramVoList);
 		
 		log.info(mockMvc.perform(post("/asset/modify")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(jsonInString))
+				.andReturn()
+				.getResponse()
+				.getContentAsString()
+				);
+	}
+	
+	@Test
+	public void testDeleteAssets() throws Exception{
+		
+		ObjectMapper mapper = new ObjectMapper();
+		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
+		
+		AssetVo paramOne = new AssetVo();
+		paramOne.setUNo(1);
+		paramOne.setAName("주식1");
+		paramVoList.add(paramOne);
+		
+		AssetVo paramTwo = new AssetVo();
+		paramTwo.setUNo(1);
+		paramTwo.setAName("채권1");
+		paramVoList.add(paramTwo);
+		
+		String jsonInString = mapper.writeValueAsString(paramVoList);
+		
+		log.info(mockMvc.perform(post("/asset/delete")
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(jsonInString))
 				.andReturn()

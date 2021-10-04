@@ -52,7 +52,7 @@ public class AssetServiceTest {
 		}
 	}
 	
-	@Test
+	// @Test
 	public void testModifyAssets() {
 		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
 		
@@ -70,5 +70,23 @@ public class AssetServiceTest {
 		
 		int result = service.modifyAssets(paramVoList);
 		log.info("Updated row : " + result);
+	}
+	
+	@Test
+	public void testDeleteAssets() {
+		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
+		
+		AssetVo paramOne = new AssetVo();
+		paramOne.setUNo(1);
+		paramOne.setAName("채권2");
+		paramVoList.add(paramOne);
+		
+		AssetVo paramTwo = new AssetVo();
+		paramTwo.setUNo(1);
+		paramTwo.setAName("주식2");
+		paramVoList.add(paramTwo);
+		
+		int result = service.deleteAssets(paramVoList);
+		log.info("Deleted row : " + result);
 	}
 }

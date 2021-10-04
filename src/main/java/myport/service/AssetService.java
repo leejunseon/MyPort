@@ -13,4 +13,6 @@ public interface AssetService {
 	
 	public int modifyAssets(List<AssetVo> voList);
 	
+	public int deleteAssets(List<AssetVo> voList);
+	
 }
