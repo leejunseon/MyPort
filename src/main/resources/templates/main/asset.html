@@ -329,11 +329,15 @@
 		let cnt = editModalTbl.rows.length;
 
 		let type = "";
+		let deleteYn = "";
 		let editDataList = [];
+		let deleteDataList = [];
 		for (var i = 0; i < cnt; i++) {
 			if (i == 0) {
 				type = editModalTbl.rows[i].cells[0].innerText;
 			} else {
+				deleteYn = editModalTbl.rows[i].cells[2].children[0].children[0].checked;
+				console.log(deleteYn);
 				if (type === "자산") {
 					let asset = {
 						uNo : 1,
@@ -342,7 +346,11 @@
 					};
 					asset.aName = editModalTbl.rows[i].cells[0].innerText;
 					asset.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
-					editDataList.push(asset);
+					if(deleteYn === true){
+						deleteDataList.push(asset);
+					}else{
+						editDataList.push(asset);
+					}
 				} else if (type === "국가") {
 					let country = {
 						uNo : 1,
@@ -351,15 +359,36 @@
 					}
 					country.aName = editModalTbl.rows[i].cells[0].innerText;
 					country.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
+					if(deleteYn){
+						deleteDataList.push(asset);
+					}else{
+						editDataList.push(asset);
+					}
 					editDataList.push(country);
 				}
 			}
 		}
 		
 		console.log("type : " + type);
+		console.log(deleteDataList);
 		console.log(editDataList);
 		
 		if(type === "자산"){
+			if(deleteDataList.length>0){
+				assetService.deleteAssets(deleteDataList, 
+					function(result) {
+						console.log(result);
+						if(result === "success"){
+							
+						}else{
+							alert("deleteAsset fail");
+						}
+					}, function(error) {
+						console.log(error);
+						alert(error)
+					}
+				);
+			}
 			assetService.modifyAssets(editDataList, 
 				function(result) {
 					console.log(result);
@@ -374,6 +403,21 @@
 				}
 			);
 		} else if (type === "국가") {
+			if(deleteDataList.length>0){
+				countryService.deleteCountries(deleteDataList, 
+					function(result) {
+						console.log(result);
+						if(result === "success"){
+							
+						}else{
+							alert("deleteAsset fail");
+						}
+					}, function(error) {
+						console.log(error);
+						alert(error)
+					}
+				);
+			}
 			countryService.modifyCountries(editDataList, 
 				function(result) {
 					console.log(result);

@@ -37,7 +37,7 @@ var assetService = (function() {
 	
 	function modifyAssets(param, callbackFunction, errorFunction){
 		console.log("assetService.modifyAssets");
-		console.log("param(asset info) : "+param);
+		console.log("param(editAssets info) : "+param);
 		
 		axios({
 			method: 'post',
@@ -51,11 +51,29 @@ var assetService = (function() {
 				errorFunction(error);
 			})
 	}
+	
+	function deleteAssets(param, callbackFunction, errorFunction) {
+		console.log("assetService.deleteAssets");
+		console.log("param(deleteAssets info) : " + param);
+
+		axios({
+			method: 'post',
+			url: '/asset/delete',
+			data: param
+		})
+			.then(response => {
+				callbackFunction(response.data);
+			})
+			.catch(error => {
+				errorFunction(error);
+			})
+	}
 
 	return {
 		getAssets: getAssets,
 		addAsset: addAsset,
-		modifyAssets: modifyAssets
+		modifyAssets: modifyAssets,
+		deleteAssets: deleteAssets
 	}
 
 })();
