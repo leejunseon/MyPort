@@ -1,7 +1,3 @@
-// Set new default font family and font color to mimic Bootstrap's default styling
-Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-Chart.defaults.global.defaultFontColor = '#858796';
-
 function number_format(number, decimals, dec_point, thousands_sep) {
 	// *     example: number_format(1234.56, 2, ',', ' ');
 	// *     return: '1 234,56'
@@ -32,38 +28,47 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
 	type: 'bar',
 	data: {
-		labels: ["KODEX 200TR", "KBSTAR 대형고배당10TR", "SPY", "DIA", "QQQ" /*"ARKK", "VT", "TIGER 중장기국채", "TLT", "IEF", "SCHP", "BNDW", "BCI", "KRK 금 현물", "달러RP"*/],
+		labels: ["KODEX 200TR", "KBSTAR 대형고배당10TR", "SPY", "DIA", "QQQ", "ARKK", "VT", "TIGER 중장기국채", "TLT", "IEF", "SCHP", "BNDW", "BCI", "KRK 금 현물", "달러RP"],
 		datasets: [{
-			label: "KODEX 200TR",
-			backgroundColor: "#4e73df",
-			hoverBackgroundColor: "#2e59d9",
-			borderColor: "#4e73df",
-			data: [819535],
-		},{
-			label: "KBSTAR 대형고배당10TR",
-			backgroundColor: "#4e73df",
-			hoverBackgroundColor: "#2e59d9",
-			borderColor: "#4e73df",
-			data: [728410],
-		},{
-			label: "SPY",
-			backgroundColor: "#4e73df",
-			hoverBackgroundColor: "#2e59d9",
-			borderColor: "#4e73df",
-			data: [1038478],
-		},{
-			label: "DIA",
-			backgroundColor: "#4e73df",
-			hoverBackgroundColor: "#2e59d9",
-			borderColor: "#4e73df",
-			data: [405836],
-		},{
-			label: "QQQ",
-			backgroundColor: "#4e73df",
-			hoverBackgroundColor: "#2e59d9",
-			borderColor: "#4e73df",
-			data: [877052],
-		}],
+			axis: 'y',
+			label: 'My First Dataset',
+			data: [65, 59, 80, 81, 56, 55, 40, 30, 50, 24, 13, 12, 24, 35, 15],
+			backgroundColor: [
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 205, 86, 0.2)',
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)', 
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)'
+			],
+			borderColor: [
+				'rgba(255, 99, 132, 0.2)',
+				'rgba(255, 159, 64, 0.2)',
+				'rgba(255, 205, 86, 0.2)',
+				'rgba(75, 192, 192, 0.2)',
+				'rgba(54, 162, 235, 0.2)',
+				'rgba(153, 102, 255, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)', 
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)',
+				'rgba(201, 203, 207, 0.2)'
+			],
+			borderWidth: 1
+		}]
 	},
 	options: {
 		indexAxis: 'y',
@@ -90,7 +95,7 @@ var myBarChart = new Chart(ctx, {
 			yAxes: [{
 				ticks: {
 					min: 0,
-					max: 1500000,
+					max: 100,
 					maxTicksLimit: 5,
 					padding: 10,
 					// Include a dollar sign in the ticks

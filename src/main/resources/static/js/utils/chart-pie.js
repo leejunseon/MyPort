@@ -4,10 +4,6 @@ var pieChartService = (function() {
 
 	function setPieChart(elementId, assets, ratios, colors) {
 
-		// Set new default font family and font color to mimic Bootstrap's default styling
-		Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-		Chart.defaults.global.defaultFontColor = '#858796';
-
 		console.log("pieChartService.setPieChart");
 		console.log(elementId);
 		console.log(assets);
@@ -39,8 +35,11 @@ var pieChartService = (function() {
 					displayColors: false,
 					caretPadding: 10,
 				},
-				legend: {
-					position: 'right',
+				plugins: {
+					legend: {
+						display: true,
+						position: 'right'
+					}
 				}
 			}
 		});
