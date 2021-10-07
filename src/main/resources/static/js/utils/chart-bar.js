@@ -71,7 +71,7 @@ var myBarChart = new Chart(ctx, {
 	},
 	options: {
 		indexAxis: 'y',
-		barThickness: 10,
+		barThickness: 30,
 		maintainAspectRatio: false,
 		layout: {
 			padding: {
