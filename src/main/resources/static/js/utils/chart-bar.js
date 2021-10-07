@@ -31,8 +31,7 @@ var myBarChart = new Chart(ctx, {
 		labels: ["KODEX 200TR", "KBSTAR 대형고배당10TR", "SPY", "DIA", "QQQ", "ARKK", "VT", "TIGER 중장기국채", "TLT", "IEF", "SCHP", "BNDW", "BCI", "KRK 금 현물", "달러RP"],
 		datasets: [{
 			axis: 'y',
-			label: 'My First Dataset',
-			data: [65, 59, 80, 81, 56, 55, 40, 30, 50, 24, 13, 12, 24, 35, 15],
+			data: [819535, 728410, 1038478, 405836, 877052, 562892, 980799, 728980, 355705, 549185, 445132, 475280, 793113, 432893, 414527],
 			backgroundColor: [
 				'rgba(255, 99, 132, 0.2)',
 				'rgba(255, 159, 64, 0.2)',
@@ -72,72 +71,23 @@ var myBarChart = new Chart(ctx, {
 	},
 	options: {
 		indexAxis: 'y',
+		barThickness: 10,
 		maintainAspectRatio: false,
 		layout: {
 			padding: {
 				left: 10,
-				right: 25,
-				top: 25,
+				right: 10,
+				top: 10,
 				bottom: 0
 			}
 		},
-		scales: {
-			xAxes: [{
-				time: {
-					unit: 'month'
-				},
-				gridLines: {
-					display: false,
-					drawBorder: false
-				},
-				maxBarThickness: 25,
-			}],
-			yAxes: [{
-				ticks: {
-					min: 0,
-					max: 100,
-					maxTicksLimit: 5,
-					padding: 10,
-					// Include a dollar sign in the ticks
-					callback: function(value, index, values) {
-						return number_format(value) + '원';
-					}
-				},
-				gridLines: {
-					color: "rgb(234, 236, 244)",
-					zeroLineColor: "rgb(234, 236, 244)",
-					drawBorder: false,
-					borderDash: [2],
-					zeroLineBorderDash: [2]
-				}
-			}],
-		},
 		plugins: {
 			legend: {
-				position: 'right',
+				display: false,
 			},
 			title: {
 				display: true,
-				text: 'Chart.js Horizontal Bar Chart'
-			}
-		},
-		tooltips: {
-			titleMarginBottom: 10,
-			titleFontColor: '#6e707e',
-			titleFontSize: 14,
-			backgroundColor: "rgb(255,255,255)",
-			bodyFontColor: "#858796",
-			borderColor: '#dddfeb',
-			borderWidth: 1,
-			xPadding: 15,
-			yPadding: 15,
-			displayColors: false,
-			caretPadding: 10,
-			callbacks: {
-				label: function(tooltipItem, chart) {
-					var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-					return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
-				}
+				text: '투자 현황'
 			}
 		},
 	}
