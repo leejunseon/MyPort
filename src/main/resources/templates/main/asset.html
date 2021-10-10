@@ -240,9 +240,9 @@
 		const tbody = table.children[1];
 		
 		if(type==="asset"){
-			thead.innerHTML="<tr><th>자산</th><th>비율</th><th>삭제</th></tr>";
+			thead.innerHTML="<tr><th width=\"40%\">자산</th><th width=\"40%\">비율</th><th width=\"20%\">삭제</th></tr>";
 		}else if(type==="country"){
-			thead.innerHTML="<tr><th>국가</th><th>비율</th><th>삭제</th></tr>";
+			thead.innerHTML="<tr><th width=\"40%\">국가</th><th width=\"40%\">비율</th><th width=\"20%\">삭제</th></tr>";
 		}
 			
 		let tbodyText = "";
@@ -256,11 +256,11 @@
 			tbodyText += "<td>"
 			tbodyText += "	<div class=\"row\">"
 			if(type==="asset"){
-				tbodyText += "	<div class='col-6'><input class=\"form-control\" value=\""+result[i].aRatio+"\"></div>"
+				tbodyText += "	<div class='col-8'><input class=\"form-control\" value=\""+result[i].aRatio+"\"></div>"
 			}else if(type==="country"){
-				tbodyText += "	<div class='col-6'><input class=\"form-control\" value=\""+result[i].cRatio+"\"></div>"
+				tbodyText += "	<div class='col-8'><input class=\"form-control\" value=\""+result[i].cRatio+"\"></div>"
 			}
-			tbodyText += "		<div class='col-6'>%</div>"
+			tbodyText += "		<div class='col-4'>%</div>"
 			tbodyText += "	</div>"
 			tbodyText += "</td>"
 			tbodyText += "<td>"
