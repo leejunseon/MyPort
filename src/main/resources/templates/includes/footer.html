@@ -24,12 +24,14 @@
 </a>
 
 <!-- 목록 추가 Modal-->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="addModalLabel"></h5>
-				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+				<button class="close" type="button" data-dismiss="modal"
+					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
 			</div>
@@ -54,7 +56,8 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title" id="editModalLabel"></h5>
-				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+				<button class="close" type="button" data-dismiss="modal"
+					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
 			</div>
@@ -75,7 +78,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" id="editModalSubmitBtn" class="btn btn-warning">저장</button>
+				<button type="button" id="editModalSubmitBtn"
+					class="btn btn-warning">저장</button>
 				<button class='btn btn-default' type="button" data-dismiss="modal">취소</button>
 			</div>
 		</div>
@@ -83,23 +87,49 @@
 </div>
 
 <!-- 투자목록 추가 Modal-->
-<div class="modal fade" id="addIvModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addIvModal" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">투자목록 추가</h5>
-				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+				<button class="close" type="button" data-dismiss="modal"
+					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
 			</div>
 			<div class="modal-body">
-				추가할 목록의 이름을 입력하세요
 				<div class="form-group">
-					<input class="form-control" id="inputData">
+					<label>이름</label> <input class="form-control" name='title'>
+				</div>
+				<div class="form-group">
+					<label>가격</label> <input class="form-control" name='title'>
+				</div>
+				<div class="form-group">
+					<label>갯수</label> <input class="form-control" name='title'>
+				</div>
+				<div class="form-group">
+					<label>자산 구분</label> <select class="form-control" name="job">
+						<option value="" selected="selected">자산 선택</option>
+						<option value="주식">주식</option>
+						<option value="국채">국채</option>
+						<option value="원자재">원자재</option>
+						<option value="금">금</option>
+						<option value="달러RP">달러RP</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>국가 구분</label> <select class="form-control" name="job">
+						<option value="" selected="selected">국가 선택</option>
+						<option value="미국">미국</option>
+						<option value="한국">한국</option>
+						<option value="국가분산">국가분산</option>
+					</select>
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button id="addIvModalSubmitBtn" type="button" class="btn btn-primary">입력</button>
+				<button id="addIvModalSubmitBtn" type="button"
+					class="btn btn-primary">입력</button>
 				<button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
 			</div>
 		</div>
@@ -113,7 +143,8 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title">투자목록 수정</h5>
-				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+				<button class="close" type="button" data-dismiss="modal"
+					aria-label="Close">
 					<span aria-hidden="true">×</span>
 				</button>
 			</div>
@@ -134,7 +165,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" id="editIvModalSubmitBtn" class="btn btn-warning">저장</button>
+				<button type="button" id="editIvModalSubmitBtn"
+					class="btn btn-warning">저장</button>
 				<button class='btn btn-default' type="button" data-dismiss="modal">취소</button>
 			</div>
 		</div>
@@ -152,7 +184,8 @@
 <script src="/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
 <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
