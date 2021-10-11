@@ -79,11 +79,67 @@
 				<button class='btn btn-default' type="button" data-dismiss="modal">취소</button>
 			</div>
 		</div>
-		<!-- /.modal-content -->
 	</div>
-	<!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+
+<!-- 투자목록 추가 Modal-->
+<div class="modal fade" id="addIvModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">투자목록 추가</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				추가할 목록의 이름을 입력하세요
+				<div class="form-group">
+					<input class="form-control" id="inputData">
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="addIvModalSubmitBtn" type="button" class="btn btn-primary">입력</button>
+				<button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--투자목록 수정 Modal-->
+<div class="modal fade" id="editIvModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">투자목록 수정</h5>
+				<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<div class="mb-4">
+						<div class="card border-left-primary shadow h-100 py-2">
+							<div class="card-body">
+								<div class="row no-gutters align-items-center">
+									<table id="editIvModalTable" class="table table-bordered">
+										<thead></thead>
+										<tbody></tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="editIvModalSubmitBtn" class="btn btn-warning">저장</button>
+				<button class='btn btn-default' type="button" data-dismiss="modal">취소</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!-- Bootstrap core JavaScript-->
 <script src="/vendor/jquery/jquery.min.js"></script>

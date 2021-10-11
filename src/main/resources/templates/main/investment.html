@@ -11,8 +11,22 @@
 		<h1 class="h3 mb-4 text-gray-800">투자 현황</h1>
 
 		<div class="card shadow mb-4">
-			<div class="card-header py-3">
+			<div
+				class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 				<h6 class="m-0 font-weight-bold text-primary">종목 별 투자현황</h6>
+				<div class="dropdown no-arrow">
+					<a class="dropdown-toggle" role="button" id="dropdownMenuLink"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+					</a>
+					<div
+						class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+						aria-labelledby="dropdownMenuLink">
+						<div class="dropdown-header">EDIT</div>
+						<a id="addIvBtn" class="dropdown-item">투자목록 추가</a> <a
+							id="editIvBtn" class="dropdown-item">투자목록 수정</a>
+					</div>
+				</div>
 			</div>
 			<div class="card-body">
 				<div class="col-md-auto mb-4">
@@ -368,22 +382,51 @@
 			</div>
 		</div>
 	</div>
-	<!-- /.container-fluid -->
+</div>
+<!-- /.container-fluid -->
 
 <script type="text/javascript" th:inline="javascript">
-
 	//화면 초기화
 	document.addEventListener("DOMContentLoaded", function() {
-		
-		nameList = ["A","B","C"];
-		ratioList = [10,20,30];
+
+		// 모달창 이벤트 추가
+		const addIvModal = $("#addIvModal"); //추가 모달 창
+		const editIvModal = $("#editIvModal"); //수정 모달 창
+		const addIvModalSubmitBtn = document.getElementById("addIvModalSubmitBtn");//추가 모달 Submit 버튼
+		const editIvModalSubmitBtn = document.getElementById("editIvModalSubmitBtn");//수정 모달 Submit 버튼
+		const editIvModalTable = document.getElementById("editIvModalTable");//수정 모달 테이블
+
+		// Asset 모달 이벤트 설정 //////////////////////////////////////////////////////////////////////////
+		const addIvBtn = document.getElementById("addIvBtn"); //자산 추가 버튼
+		const editIvBtn = document.getElementById("editIvBtn");//자산 비율수정 버튼
+
+		addIvBtn.addEventListener('click', function() {
+			//addIvModalSubmitBtn.addEventListener('click',addData);//add submit 버튼 -> addData()
+			addIvModal.modal("show");
+		});
+
+		editIvBtn.addEventListener('click', function() {
+			//edit 창 데이터 세팅
+			/* assetService.getAssets(1, function(result){
+				setEditModalData("asset",result);
+			}, function(error){
+				catchError(error);
+			}); */
+			//editIvModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
+			editIvModal.modal("show");
+		});
+
+		nameList = [ "A", "B", "C" ];
+		ratioList = [ 10, 20, 30 ];
 		colorList = [];
-		for(var i=0;i<3;i++){
+		for (var i = 0; i < 3; i++) {
 			colorList.push(getColor());
 		}
-		
-		pieChartService.setPieChart("assetRatioPieChart", nameList, ratioList, colorList);
-		pieChartService.setPieChart("countryRatioPieChart",nameList, ratioList, colorList);
+
+		pieChartService.setPieChart("assetRatioPieChart", nameList, ratioList,
+				colorList);
+		pieChartService.setPieChart("countryRatioPieChart", nameList,
+				ratioList, colorList);
 	});
 </script>
 <th:block th:replace="includes/footer"></th:block>
