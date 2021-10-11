@@ -19,14 +19,6 @@
 	</select>
 	
 	<update id="modifyCountry">
-		<selectKey keyProperty="cNo" order="BEFORE" resultType="long">
-			<![CDATA[
-				SELECT C_NO 
-				FROM TBL_COUNTRY
-				WHERE U_NO = #{uNo}
-				AND C_NAME = #{cName}
-			]]>
-		</selectKey>
 		<![CDATA[
 			UPDATE TBL_COUNTRY
 			SET 

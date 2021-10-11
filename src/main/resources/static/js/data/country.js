@@ -4,7 +4,6 @@ var countryService = (function() {
 
 	function getCountries(param, callbackFunction, errorFunction) {
 		console.log("countryService.getCountries");
-		console.log("param(uno) : "+param);
 
 		axios({
 			method: 'get',
@@ -20,7 +19,6 @@ var countryService = (function() {
 	
 	function addCountry(param, callbackFunction, errorFunction){
 		console.log("countryService.addCountry");
-		console.log("param(country) : "+param);
 	
 		axios({
 			method: 'post',
@@ -37,7 +35,6 @@ var countryService = (function() {
 	
 	function modifyCountries(param, callbackFunction, errorFunction){
 		console.log("countryService.modifyCountries");
-		console.log("param(editCountries info) : "+param);
 		
 		axios({
 			method: 'post',
@@ -54,7 +51,6 @@ var countryService = (function() {
 	
 	function deleteCountries(param, callbackFunction, errorFunction) {
 		console.log("countryService.deleteCountries");
-		console.log("param(deleteCountries info) : " + param);
 
 		axios({
 			method: 'post',

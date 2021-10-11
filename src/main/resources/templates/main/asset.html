@@ -249,9 +249,11 @@
 		for(var i = 0;i<result.length;i++){
 			tbodyText += "<tr>"
 			if(type==="asset"){
-				tbodyText += "<td>"+result[i].aName+"</td>"
+				tbodyText += "<td class=\"d-none\">"+result[i].aNo+"</td>"
+				tbodyText += "<td><div class='col-15'><input class=\"form-control\" value=\""+result[i].aName+"\"></div></td>"
 			}else if(type==="country"){
-				tbodyText += "<td>"+result[i].cName+"</td>"
+				tbodyText += "<td class=\"d-none\">"+result[i].cNo+"</td>"
+				tbodyText += "<td><div class='col-15'><input class=\"form-control\" value=\""+result[i].cName+"\"></div></td>"
 			}
 			tbodyText += "<td>"
 			tbodyText += "	<div class=\"row\">"
@@ -342,12 +344,14 @@
 				console.log(deleteYn);
 				if (type === "자산") {
 					let asset = {
+						aNo : null,
 						uNo : 1,
 						aName : null,
 						aRatio : null
 					};
-					asset.aName = editModalTbl.rows[i].cells[0].innerText;
-					asset.aRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
+					asset.aNo = editModalTbl.rows[i].cells[0].innerText;
+					asset.aName = editModalTbl.rows[i].cells[1].children[0].children[0].value;
+					asset.aRatio = editModalTbl.rows[i].cells[2].children[0].children[0].children[0].value;
 					if(deleteYn){
 						deleteDataList.push(asset);
 					}else{
@@ -355,12 +359,14 @@
 					}
 				} else if (type === "국가") {
 					let country = {
+						cNo : null,
 						uNo : 1,
 						cName : null,
 						cRatio : null
 					}
-					country.cName = editModalTbl.rows[i].cells[0].innerText;
-					country.cRatio = editModalTbl.rows[i].cells[1].children[0].children[0].children[0].value;
+					country.cNo = editModalTbl.rows[i].cells[0].innerText;
+					country.cName =editModalTbl.rows[i].cells[1].children[0].children[0].value;
+					country.cRatio = editModalTbl.rows[i].cells[2].children[0].children[0].children[0].value;
 					if(deleteYn){
 						deleteDataList.push(country);
 					}else{

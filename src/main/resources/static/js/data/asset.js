@@ -4,7 +4,6 @@ var assetService = (function() {
 
 	function getAssets(param, callbackFunction, errorFunction) {
 		console.log("assetService.getAssets");
-		console.log("param(uno) : "+param);
 
 		axios({
 			method: 'get',
@@ -20,7 +19,6 @@ var assetService = (function() {
 	
 	function addAsset(param, callbackFunction, errorFunction){
 		console.log("assetService.addAsset");
-		console.log("param(asset) : "+param);
 
 		axios({
 			method: 'post',
@@ -37,7 +35,6 @@ var assetService = (function() {
 	
 	function modifyAssets(param, callbackFunction, errorFunction){
 		console.log("assetService.modifyAssets");
-		console.log("param(editAssets info) : "+param);
 		
 		axios({
 			method: 'post',
@@ -54,7 +51,6 @@ var assetService = (function() {
 	
 	function deleteAssets(param, callbackFunction, errorFunction) {
 		console.log("assetService.deleteAssets");
-		console.log("param(deleteAssets info) : " + param);
 
 		axios({
 			method: 'post',

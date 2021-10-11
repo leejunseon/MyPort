@@ -19,14 +19,6 @@
 	</select>
 	
 	<update id="modifyAssets">
-		<selectKey keyProperty="aNo" order="BEFORE" resultType="long">
-			<![CDATA[
-				SELECT A_NO 
-				FROM TBL_ASSET
-				WHERE U_NO = #{uNo}
-				AND A_NAME = #{aName}
-			]]>
-		</selectKey>
 		<![CDATA[
 			UPDATE TBL_ASSET
 			SET 
