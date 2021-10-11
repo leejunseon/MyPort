@@ -32,8 +32,7 @@
 	<delete id="deleteCountry">
 		<![CDATA[
 			DELETE TBL_COUNTRY
-			WHERE U_NO = #{uNo}
-			AND C_NAME = #{cName}
+			WHERE C_NO = #{cNo}
 		]]>
 	</delete>
 

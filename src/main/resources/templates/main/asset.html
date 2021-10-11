@@ -115,14 +115,12 @@
 </div>
 <!-- /.container-fluid -->
 
-
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type="text/javascript" src="/js/utils/chart-pie.js"></script>
-<script type="text/javascript" src="/js/data/asset.js"></script>
-<script type="text/javascript" src="/js/data/country.js"></script>
 <script type="text/javascript" th:inline="javascript">
 
-	//화면 초기화
+	/*
+	* function : document.addEventListener
+	* description : 화면 초기화
+	*/
 	document.addEventListener("DOMContentLoaded", function() {
 
 		// 자산 초기세팅
@@ -130,8 +128,7 @@
 			console.log(result);
 			setStatus("assetTable", "assetPieChart", result);
 		}, function(error) {
-			console.log(error);
-			alert(error);
+			catchError(error);
 		});
 
 		// 국가 초기세팅
@@ -139,8 +136,7 @@
 			console.log(result);
 			setStatus("countryTable", "countryPieChart", result);
 		}, function(error) {
-			console.log(error);
-			alert(error);
+			catchError(error);
 		})
 		
 		// 모달창 이벤트 추가
@@ -166,8 +162,7 @@
 			assetService.getAssets(1, function(result){
 				setEditModalData("asset",result);
 			}, function(error){
-				console.log(error);
-				alert(error);
+				catchError(error);
 			});
 			editModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
 			editModal.modal("show");
@@ -190,8 +185,7 @@
 			countryService.getCountries(1, function(result){
 				setEditModalData("country",result);
 			}, function(error){
-				console.log(error);
-				alert(error);
+				catchError(error);
 			});
 			editModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
 			editModal.modal("show");
@@ -200,7 +194,11 @@
 
 	});
 
-	// 초기 화면 세팅
+	
+	/*
+	* function : setStatus
+	* description : 초기 화면 세팅
+	*/
 	function setStatus(tableElementId, chartElementId, result) {
 		const TableBody = document.getElementById(tableElementId).children[1];
 		let nameList = [];
@@ -233,7 +231,11 @@
 				colorList);
 	}
 	
-	// edit모달 초기데이터 세팅
+	
+	/*
+	* function : setEditModalData
+	* description : edit모달 초기데이터 세팅
+	*/
 	function setEditModalData(type, result){
 		const table = document.getElementById("editModalTable");
 		const thead = table.children[0];
@@ -277,7 +279,11 @@
 		tbody.innerHTML = tbodyText;
 	}
 	
-	// addModal 입력값 -> 백엔드로 송신
+	
+	/*
+	* function : addData
+	* description : addModal 입력값 -> 백엔드로 송신
+	*/
 	function addData(){
 		const inputData = document.getElementById("inputData");//추가 data
 		const addModalLabel = document.getElementById("addModalLabel");//자산 추가 or 국가 추가
@@ -294,13 +300,12 @@
 				function(result){
 					console.log(result);
 					if(result === "success"){
-						window.location.reload();
+						reload();
 					}else{
 						alert("Edit failed");
 					}
 				},function(error){
-					console.log(error);
-					alert(error)
+					catchError(error);
 				}
 			);
 		}else if(addModalLabel.innerText.startsWith("국가")){
@@ -313,19 +318,22 @@
 				function(result){
 					console.log(result);
 					if(result === "success"){
-						window.location.reload();
+						reload();
 					}else{
 						alert("Edit failed");
 					}
 				},function(error){
-					console.log(error);
-					alert(error)
+					catchError(error);
 				}
 			);
 		}
 	}
 	
-	// editModal 입력값 -> 백엔드로 송신
+	
+	/*
+	* function : modifyData
+	* description : editModal 입력값 -> 백엔드로 송신
+	*/
 	function modifyData(){
 		const editModalTbl = document.getElementById("editModalTable");//수정 모달 테이블
 		let cnt = editModalTbl.rows.length;
@@ -340,7 +348,7 @@
 			if (i == 0) {
 				type = editModalTbl.rows[i].cells[0].innerText;
 			} else {
-				deleteYn = editModalTbl.rows[i].cells[2].children[0].children[0].checked;
+				deleteYn = editModalTbl.rows[i].cells[3].children[0].children[0].checked;
 				console.log(deleteYn);
 				if (type === "자산") {
 					let asset = {
@@ -392,8 +400,7 @@
 							alert("deleteAsset fail");
 						}
 					}, function(error) {
-						console.log(error);
-						alert(error)
+						catchError(error);
 					}
 				);
 			}
@@ -401,13 +408,12 @@
 				function(result) {
 					console.log(result);
 					if(result === "success"){
-						window.location.reload();
+						reload();
 					}else{
 						alert("modifyAsset fail");
 					}
 				}, function(error) {
-					console.log(error);
-					alert(error)
+					catchError(error);
 				}
 			);
 		} else if (type === "국가") {
@@ -421,8 +427,7 @@
 							alert("deleteAsset fail");
 						}
 					}, function(error) {
-						console.log(error);
-						alert(error)
+						catchError(error);
 					}
 				);
 			}
@@ -430,22 +435,16 @@
 				function(result) {
 					console.log(result);
 					if(result === "success"){
-						window.location.reload();
+						reload();
 					}else{
 						alert("modifyAsset fail");
 					}
 				}, function(error) {
-					console.log(error);
-					alert(error)
+					catchError(error);
 				}
 			);
 		}
 
-	}
-
-	// 랜덤 Color 생성
-	function getColor() {
-		return "#" + Math.round(Math.random() * 0xffffff).toString(16);
 	}
 	
 </script>

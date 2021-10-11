@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -168,3 +168,22 @@
 				<!-- End of Topbar -->
 
 				<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+				<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+				<script type="text/javascript" src="/js/utils/chart-pie.js"></script>
+				<script type="text/javascript" src="/js/data/asset.js"></script>
+				<script type="text/javascript" src="/js/data/country.js"></script>
+<script type="text/javascript" th:inline="javascript">
+// 랜덤 Color 생성
+function getColor() {
+	return "#" + Math.round(Math.random() * 0xffffff).toString(16);
+}
+
+function reload(){
+	window.location.reload();
+}
+
+function catchError(error){
+	console.log(error);
+	alert(error);
+}
+</script>

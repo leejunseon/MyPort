@@ -283,7 +283,7 @@
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
 								<div class="chart-pie pt-4">
-									<canvas id="countryPieChart"></canvas>
+									<canvas id="assetRatioPieChart"></canvas>
 								</div>
 							</div>
 						</div>
@@ -359,7 +359,7 @@
 						<div class="card border-left-primary shadow h-100 py-2">
 							<div class="card-body">
 								<div class="chart-pie pt-4">
-									<canvas id="countryPieChart"></canvas>
+									<canvas id="countryRatioPieChart"></canvas>
 								</div>
 							</div>
 						</div>
@@ -370,5 +370,21 @@
 	</div>
 	<!-- /.container-fluid -->
 
-	<th:block th:replace="includes/footer"></th:block>
+<script type="text/javascript" th:inline="javascript">
+
+	//화면 초기화
+	document.addEventListener("DOMContentLoaded", function() {
+		
+		nameList = ["A","B","C"];
+		ratioList = [10,20,30];
+		colorList = [];
+		for(var i=0;i<3;i++){
+			colorList.push(getColor());
+		}
+		
+		pieChartService.setPieChart("assetRatioPieChart", nameList, ratioList, colorList);
+		pieChartService.setPieChart("countryRatioPieChart",nameList, ratioList, colorList);
+	});
+</script>
+<th:block th:replace="includes/footer"></th:block>
 </html>

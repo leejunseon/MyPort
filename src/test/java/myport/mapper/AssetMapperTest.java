@@ -65,8 +65,7 @@ public class AssetMapperTest {
 	@Test
 	public void testDeleteAsset() {
 		AssetVo paramVo  = new AssetVo();
-		paramVo.setUNo(1);
-		paramVo.setAName("금");
+		paramVo.setANo(51);
 		int result = mapper.deleteAsset(paramVo);
 		log.info("Deleted row : " + result);	
 	}
