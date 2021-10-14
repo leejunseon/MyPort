@@ -23,8 +23,8 @@
 						class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
 						aria-labelledby="dropdownMenuLink">
 						<div class="dropdown-header">EDIT</div>
-						<a id="addIvBtn" class="dropdown-item">투자목록 추가</a> <a
-							id="editIvBtn" class="dropdown-item">투자목록 수정</a>
+						<a id="addItemBtn" class="dropdown-item">투자목록 추가</a> <a
+							id="editItemBtn" class="dropdown-item">투자목록 수정</a>
 					</div>
 				</div>
 			</div>
@@ -390,44 +390,44 @@
 	document.addEventListener("DOMContentLoaded", function() {
 
 		// 모달창 이벤트 추가
-		const addIvModal = $("#addIvModal"); //추가 모달 창
-		const editIvModal = $("#editIvModal"); //수정 모달 창
-		const addIvModalSubmitBtn = document.getElementById("addIvModalSubmitBtn");//추가 모달 Submit 버튼
-		const editIvModalSubmitBtn = document.getElementById("editIvModalSubmitBtn");//수정 모달 Submit 버튼
-		const editIvModalTable = document.getElementById("editIvModalTable");//수정 모달 테이블
+		const addItemModal = $("#addItemModal"); //추가 모달 창
+		const editItemModal = $("#editItemModal"); //수정 모달 창
+		const addItemModalSubmitBtn = document.getElementById("addItemModalSubmitBtn");//추가 모달 Submit 버튼
+		const editItemModalSubmitBtn = document.getElementById("editItemModalSubmitBtn");//수정 모달 Submit 버튼
+		const editItemModalTable = document.getElementById("editItemModalTable");//수정 모달 테이블
 
 		// Asset 모달 이벤트 설정 //////////////////////////////////////////////////////////////////////////
-		const addIvBtn = document.getElementById("addIvBtn"); //자산 추가 버튼
-		const editIvBtn = document.getElementById("editIvBtn");//자산 비율수정 버튼
+		const addItemBtn = document.getElementById("addItemBtn"); //자산 추가 버튼
+		const editItemBtn = document.getElementById("editItemBtn");//자산 비율수정 버튼
 
-		addIvBtn.addEventListener('click', function() {
+		addItemBtn.addEventListener('click', function() {
 			//국가목록 setting
-			/* countryService.getCountries(1, function(result){
-				setEditModalData("country",result);
+			countryService.getCountries(1, function(result){
+				setAddItemModalSelbox("countrySelect",result);
 			}, function(error){
 				catchError(error);
-			}); */
+			});
 			
 			//자산목록 setting
-			/* assetService.getAssets(1, function(result){
-				setEditModalData("asset",result);
+			assetService.getAssets(1, function(result){
+				setAddItemModalSelbox("assetSelect",result);
 			}, function(error){
 				catchError(error);
-			}); */
+			});
 			
-			//addIvModalSubmitBtn.addEventListener('click',addData);//add submit 버튼 -> addData()
-			addIvModal.modal("show");
+			addItemModalSubmitBtn.addEventListener('click',addData);//add submit 버튼 -> addData()
+			addItemModal.modal("show");
 		});
 
-		editIvBtn.addEventListener('click', function() {
+		editItemBtn.addEventListener('click', function() {
 			//edit 창 데이터 세팅
 			/* assetService.getAssets(1, function(result){
 				setEditModalData("asset",result);
 			}, function(error){
 				catchError(error);
 			}); */
-			//editIvModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
-			editIvModal.modal("show");
+			//editItemModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
+			editItemModal.modal("show");
 		});
 
 		nameList = [ "A", "B", "C" ];
@@ -442,6 +442,62 @@
 		pieChartService.setPieChart("countryRatioPieChart", nameList,
 				ratioList, colorList);
 	});
+	
+	function setAddItemModalSelbox(id, result){
+		const selectBox = document.getElementById(id);
+		let bodyText = "";
+				
+		if(id==="countrySelect"){
+			bodyText+="<option selected=\"selected\">국가 선택</option>";
+			for(var i=0;i<result.length;i++){
+				bodyText+="<option value="+result[i].cNo+">"+result[i].cName+"</option>";
+			}
+		}else if(id==="assetSelect"){
+			bodyText+="<option selected=\"selected\">자산 선택</option>";
+			for(var i=0;i<result.length;i++){
+				bodyText+="<option value="+result[i].aNo+">"+result[i].aName+"</option>";
+			}
+		}
+		
+		selectBox.innerHTML=bodyText;		
+	}
+	
+	function addData(){
+		const addItemForm = document.getElementById("addItemForm");
+		const formData = new FormData(addItemForm);
+		
+		console.log(formData);
+		
+		let object = {};
+		formData.forEach((value, key) => {
+			console.log("value : "+value);
+			console.log("key : "+key);
+			if (!Reflect.has(object, key)) {
+		    	object[key] = value;
+		      	return;
+		    }
+		    if (!Array.isArray(object[key])) {
+		    	object[key] = [object[key]];
+		    }
+		    object[key].push(value);
+		});
+		object[uNo]=[object[uNo]];
+		object[uNo].push("1");
+		let json = JSON.stringify(object);
+		console.log(json);
+
+		/* ItemService.addItem(json,function(result){
+			console.log(result);
+			if(result === "success"){
+				reload();
+			}else{
+				alert("add failed");
+			}
+		},function(error){
+			catchError(error);
+		}) */
+	}
+	
 </script>
 <th:block th:replace="includes/footer"></th:block>
 </html>
