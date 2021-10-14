@@ -1,6 +1,6 @@
 console.log("Item js Module");
 
-var ItemService = (function() {
+var itemService = (function() {
 	
 	function addItem(param, callbackFunction, errorFunction){
 		console.log("ItemService.addCountry");
@@ -8,7 +8,8 @@ var ItemService = (function() {
 		axios({
 			method: 'post',
 			url: '/item/add',
-			data:param
+			data:param,
+			headers:{ 'Content-Type': 'application/json' }
 		})
 			.then(response => {
 				callbackFunction(response.data);

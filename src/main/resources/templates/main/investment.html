@@ -470,8 +470,6 @@
 		
 		let object = {};
 		formData.forEach((value, key) => {
-			console.log("value : "+value);
-			console.log("key : "+key);
 			if (!Reflect.has(object, key)) {
 		    	object[key] = value;
 		      	return;
@@ -481,12 +479,10 @@
 		    }
 		    object[key].push(value);
 		});
-		object[uNo]=[object[uNo]];
-		object[uNo].push("1");
 		let json = JSON.stringify(object);
 		console.log(json);
 
-		/* ItemService.addItem(json,function(result){
+		itemService.addItem(json,function(result){
 			console.log(result);
 			if(result === "success"){
 				reload();
@@ -495,7 +491,7 @@
 			}
 		},function(error){
 			catchError(error);
-		}) */
+		})
 	}
 	
 </script>

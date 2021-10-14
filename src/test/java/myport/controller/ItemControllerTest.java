@@ -24,20 +24,20 @@ import myport.domain.vo.ItemVo;
 @Slf4j
 public class ItemControllerTest {
 
-	@Setter(onMethod_= {@Autowired})
+	@Setter(onMethod_ = { @Autowired })
 	private WebApplicationContext ctx;
-		
+
 	private MockMvc mockMvc;
-	
+
 	@BeforeEach
 	public void setup() {
-		this.mockMvc=MockMvcBuilders.webAppContextSetup(ctx).build();
+		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
-	
+
 	@Test
-	public void testAddItem() throws Exception{
+	public void testAddItem() throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
-		
+
 		ItemVo paramVo = new ItemVo();
 		paramVo.setUNo(1);
 		paramVo.setCNo(2);
@@ -45,15 +45,11 @@ public class ItemControllerTest {
 		paramVo.setIName("QQQ");
 		paramVo.setIPrice(1500000);
 		paramVo.setINum(5);
-		
+
 		String jsonInString = mapper.writeValueAsString(paramVo);
-		
-		log.info(mockMvc.perform(post("/item/add")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(jsonInString))
-				.andReturn()
-				.getResponse()
-				.getContentAsString()
-				);
+
+		log.info(mockMvc.perform(post("/item/add").contentType(MediaType.APPLICATION_JSON).content(jsonInString))
+				.andReturn().getResponse().getContentAsString());
+
 	}
 }
