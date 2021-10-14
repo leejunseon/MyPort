@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-import myport.domain.AssetVo;
-import myport.domain.UserVo;
+import myport.domain.vo.AssetVo;
+import myport.domain.vo.UserVo;
 import myport.mapper.AssetMapper;
 
 @Service

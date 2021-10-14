@@ -401,6 +401,20 @@
 		const editIvBtn = document.getElementById("editIvBtn");//자산 비율수정 버튼
 
 		addIvBtn.addEventListener('click', function() {
+			//국가목록 setting
+			/* countryService.getCountries(1, function(result){
+				setEditModalData("country",result);
+			}, function(error){
+				catchError(error);
+			}); */
+			
+			//자산목록 setting
+			/* assetService.getAssets(1, function(result){
+				setEditModalData("asset",result);
+			}, function(error){
+				catchError(error);
+			}); */
+			
 			//addIvModalSubmitBtn.addEventListener('click',addData);//add submit 버튼 -> addData()
 			addIvModal.modal("show");
 		});

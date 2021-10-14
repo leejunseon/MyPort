@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import myport.domain.CountryVo;
+import myport.domain.vo.CountryVo;
 
 @SpringBootTest
 @Slf4j

@@ -2,8 +2,8 @@ package myport.service;
 
 import java.util.List;
 
-import myport.domain.AssetVo;
-import myport.domain.UserVo;
+import myport.domain.vo.AssetVo;
+import myport.domain.vo.UserVo;
 
 public interface AssetService {
 

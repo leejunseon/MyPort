@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.AllArgsConstructor;
-import myport.domain.CountryVo;
-import myport.domain.UserVo;
+import myport.domain.vo.CountryVo;
+import myport.domain.vo.UserVo;
 import myport.service.CountryService;
 
 @RestController

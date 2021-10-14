@@ -9,7 +9,7 @@
 		VALUES (#{uNo},#{cName},#{cRatio})
 	</insert>
 
-	<select id="retrieveCountries" resultType="myport.domain.CountryVo">
+	<select id="retrieveCountries" resultType="myport.domain.vo.CountryVo">
 		<![CDATA[
 			SELECT *
 			FROM TBL_COUNTRY

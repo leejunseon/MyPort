@@ -1,4 +1,4 @@
-package myport.domain;
+package myport.domain.vo;
 
 import lombok.Data;
 

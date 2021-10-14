@@ -2,8 +2,8 @@ package myport.service;
 
 import java.util.List;
 
-import myport.domain.CountryVo;
-import myport.domain.UserVo;
+import myport.domain.vo.CountryVo;
+import myport.domain.vo.UserVo;
 
 public interface CountryService {
 

@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import myport.domain.CountryVo;
-import myport.domain.UserVo;
+import myport.domain.vo.CountryVo;
+import myport.domain.vo.UserVo;
 
 @Mapper
 public interface CountryMapper {

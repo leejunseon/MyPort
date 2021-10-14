@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import lombok.extern.slf4j.Slf4j;
-import myport.domain.CountryVo;
-import myport.domain.UserVo;
+import myport.domain.vo.CountryVo;
+import myport.domain.vo.UserVo;
 
 @SpringBootTest
 @Slf4j
