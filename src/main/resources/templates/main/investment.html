@@ -386,8 +386,14 @@
 <!-- /.container-fluid -->
 
 <script type="text/javascript" th:inline="javascript">
-	//화면 초기화
+
+	/*
+	* function : document.addEventListener
+	* description : 화면 초기화
+	*/
 	document.addEventListener("DOMContentLoaded", function() {
+		
+		
 
 		// 모달창 이벤트 추가
 		const addItemModal = $("#addItemModal"); //추가 모달 창
@@ -396,7 +402,7 @@
 		const editItemModalSubmitBtn = document.getElementById("editItemModalSubmitBtn");//수정 모달 Submit 버튼
 		const editItemModalTable = document.getElementById("editItemModalTable");//수정 모달 테이블
 
-		// Asset 모달 이벤트 설정 //////////////////////////////////////////////////////////////////////////
+		// Item 모달 이벤트 설정 //////////////////////////////////////////////////////////////////////////
 		const addItemBtn = document.getElementById("addItemBtn"); //자산 추가 버튼
 		const editItemBtn = document.getElementById("editItemBtn");//자산 비율수정 버튼
 
@@ -443,6 +449,10 @@
 				ratioList, colorList);
 	});
 	
+	/*
+	* function : setAddItemModalSelbox
+	* description : addItemModal selectbox 데이터 세팅
+	*/
 	function setAddItemModalSelbox(id, result){
 		const selectBox = document.getElementById(id);
 		let bodyText = "";
@@ -452,6 +462,7 @@
 			for(var i=0;i<result.length;i++){
 				bodyText+="<option value="+result[i].cNo+">"+result[i].cName+"</option>";
 			}
+			bodyText+="<option value=\"\">없음</option>";
 		}else if(id==="assetSelect"){
 			bodyText+="<option selected=\"selected\">자산 선택</option>";
 			for(var i=0;i<result.length;i++){
@@ -462,6 +473,10 @@
 		selectBox.innerHTML=bodyText;		
 	}
 	
+	/*
+	* function : addData
+	* description : Item 추가 -> BackEnd 전송, reload
+	*/
 	function addData(){
 		const addItemForm = document.getElementById("addItemForm");
 		const formData = new FormData(addItemForm);
