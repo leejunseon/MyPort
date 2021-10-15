@@ -2,9 +2,6 @@ package myport.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +37,7 @@ public class ItemControllerTest {
 
 		ItemVo paramVo = new ItemVo();
 		paramVo.setUNo(1);
-		paramVo.setCNo(2);
-		paramVo.setAno(2);
+		paramVo.setANo(2);
 		paramVo.setIName("QQQ");
 		paramVo.setIPrice(1500000);
 		paramVo.setINum(5);

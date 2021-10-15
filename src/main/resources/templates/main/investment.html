@@ -462,7 +462,7 @@
 			for(var i=0;i<result.length;i++){
 				bodyText+="<option value="+result[i].cNo+">"+result[i].cName+"</option>";
 			}
-			bodyText+="<option value=\"\">없음</option>";
+			bodyText+="<option value='0'>없음</option>";
 		}else if(id==="assetSelect"){
 			bodyText+="<option selected=\"selected\">자산 선택</option>";
 			for(var i=0;i<result.length;i++){
@@ -486,9 +486,12 @@
 		let object = {};
 		formData.forEach((value, key) => {
 			if (!Reflect.has(object, key)) {
+				if(value==="0")
+					return;
 		    	object[key] = value;
 		      	return;
 		    }
+
 		    if (!Array.isArray(object[key])) {
 		    	object[key] = [object[key]];
 		    }

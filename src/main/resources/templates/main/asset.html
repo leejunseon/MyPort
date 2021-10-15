@@ -226,6 +226,12 @@
 			colorList.push(getColor());
 		}
 		TableBody.innerHTML = bodyText;
+		
+		if(result.length<1){
+			nameList.push("없음");
+			ratioList.push("100");
+			colorList.push(getColor());
+		}
 
 		pieChartService.setPieChart(chartElementId, nameList, ratioList,
 				colorList);

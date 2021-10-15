@@ -24,13 +24,12 @@ public class ItemMapperTest {
 		int result = 0;
 		ItemVo paramVo = new ItemVo();
 		paramVo.setUNo(1);
-		paramVo.setCNo(2);
-		paramVo.setAno(2);
+		paramVo.setANo(2);
 		paramVo.setIName("SPY");
 		paramVo.setIPrice(1000000);
 		paramVo.setINum(3);
 		result = mapper.addItem(paramVo);
-
+		log.info(paramVo.toString());
 		log.info("result : " + Integer.toString(result));
 	}
 

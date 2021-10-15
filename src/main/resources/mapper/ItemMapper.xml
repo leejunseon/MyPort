@@ -5,8 +5,15 @@
 <mapper namespace="myport.mapper.ItemMapper">
 
 	<insert id="addItem">
-		INSERT INTO TBL_ITEM(U_NO,C_NO,A_NO,I_NAME,I_PRICE,I_NUM)
-		VALUES (#{uNo},#{cNo},#{Ano},#{iName},#{iPrice},#{iNum})
+		INSERT INTO TBL_ITEM(U_NO,A_NO,I_NAME,I_PRICE,I_NUM
+ 		 <if test="cNo != 0">
+			,C_NO
+		</if>
+		)VALUES (#{uNo},#{aNo},#{iName},#{iPrice},#{iNum}
+		<if test="cNo != 0">
+			,#{cNo}
+		</if>
+		)
 	</insert>
 
 	<!-- <select id="retrieveAssets" resultType="myport.domain.vo.AssetVo">

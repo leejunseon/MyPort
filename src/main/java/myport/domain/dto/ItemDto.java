@@ -1,9 +1,6 @@
-package myport.domain.vo;
+package myport.domain.dto;
 
-import lombok.Data;
-
-@Data
-public class ItemVo {
+public class ItemDto {
 
 	public long iNo;
 	public long uNo;
@@ -12,7 +9,5 @@ public class ItemVo {
 	public String iName;
 	public long iPrice;
 	public long iNum;
-	public String iRegdate;
-	public String iUpdatedate;
 	
 }

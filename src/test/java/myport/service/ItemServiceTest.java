@@ -25,7 +25,7 @@ public class ItemServiceTest {
 		ItemVo paramVo = new ItemVo();
 		paramVo.setUNo(1);
 		paramVo.setCNo(2);
-		paramVo.setAno(2);
+		paramVo.setANo(2);
 		paramVo.setIName("DIA");
 		paramVo.setIPrice(1200000);
 		paramVo.setINum(2);
