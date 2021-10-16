@@ -27,9 +27,9 @@ public class AssetMapperTest {
 	public void testAddAsset() {
 		int result = 0;
 		AssetVo paramVo = new AssetVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		paramVo.setAName("주식1");
-		paramVo.setARatio(50);
+		paramVo.setARatio(50L);
 		result = mapper.addAsset(paramVo);
 
 		log.info("result : " + Integer.toString(result));
@@ -38,7 +38,7 @@ public class AssetMapperTest {
 	//@Test
 	public void testRetrieveAssets() {
 		UserVo paramVo = new UserVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		List<AssetVo> result = new ArrayList<AssetVo>();
 		result = mapper.retrieveAssets(paramVo);
 		log.info("Result size : " + Integer.toString(result.size()));
@@ -55,9 +55,9 @@ public class AssetMapperTest {
 	// @Test
 	public void testModifyAssets() {
 		AssetVo paramVo  = new AssetVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		paramVo.setAName("주식1");
-		paramVo.setARatio(30);
+		paramVo.setARatio(30L);
 		int result = mapper.modifyAssets(paramVo);
 		log.info("Updated row : " + result);
 	}
@@ -65,7 +65,7 @@ public class AssetMapperTest {
 	@Test
 	public void testDeleteAsset() {
 		AssetVo paramVo  = new AssetVo();
-		paramVo.setANo(51);
+		paramVo.setANo(51L);
 		int result = mapper.deleteAsset(paramVo);
 		log.info("Deleted row : " + result);	
 	}

@@ -25,6 +25,14 @@
 		]]>
 	</select>
 	
+	<select id="getTotalPrice" resultType="Long">
+		<![CDATA[
+			SELECT SUM(I_PRICE*I_NUM)
+			FROM TBL_ITEM
+			WHERE U_NO = #{uNo}
+		]]>
+	</select>
+	
 <!-- 	<update id="modifyAssets">
 		<![CDATA[
 			UPDATE TBL_ASSET

@@ -62,15 +62,15 @@ public class CountryControllerTest {
 		List<CountryVo> paramVoList  = new ArrayList<CountryVo>();
 		
 		CountryVo paramOne = new CountryVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setCName("미국");
-		paramOne.setCRatio(30);
+		paramOne.setCRatio(30L);
 		paramVoList.add(paramOne);
 		
 		CountryVo paramTwo = new CountryVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setCName("한국");
-		paramTwo.setCRatio(30);
+		paramTwo.setCRatio(30L);
 		paramVoList.add(paramTwo);
 		
 		String jsonInString = mapper.writeValueAsString(paramVoList);
@@ -91,12 +91,12 @@ public class CountryControllerTest {
 		List<CountryVo> paramVoList  = new ArrayList<CountryVo>();
 		
 		CountryVo paramOne = new CountryVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setCName("미국");
 		paramVoList.add(paramOne);
 		
 		CountryVo paramTwo = new CountryVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setCName("한국");
 		paramVoList.add(paramTwo);
 		

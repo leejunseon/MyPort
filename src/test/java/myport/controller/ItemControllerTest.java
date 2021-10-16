@@ -37,11 +37,11 @@ public class ItemControllerTest {
 		ObjectMapper mapper = new ObjectMapper();
 
 		ItemVo paramVo = new ItemVo();
-		paramVo.setUNo(1);
-		paramVo.setANo(2);
+		paramVo.setUNo(1L);
+		paramVo.setANo(2L);
 		paramVo.setIName("QQQ");
-		paramVo.setIPrice(1500000);
-		paramVo.setINum(5);
+		paramVo.setIPrice(1500000L);
+		paramVo.setINum(5L);
 
 		String jsonInString = mapper.writeValueAsString(paramVo);
 

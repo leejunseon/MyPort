@@ -27,9 +27,9 @@ public class AssetServiceTest {
 	public void testAddAsset() {
 		int result = 0;
 		AssetVo paramVo = new AssetVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		paramVo.setAName("주식2");
-		paramVo.setARatio(10);
+		paramVo.setARatio(10L);
 		result = service.addAsset(paramVo);
 
 		log.info("result : " + Integer.toString(result));
@@ -38,7 +38,7 @@ public class AssetServiceTest {
 	//@Test
 	public void testGetAssets() {
 		UserVo paramVo = new UserVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		List<AssetVo> result = new ArrayList<AssetVo>();
 		result = service.retrieveAssets(paramVo);
 		log.info("Result size : " + Integer.toString(result.size()));
@@ -57,15 +57,15 @@ public class AssetServiceTest {
 		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
 		
 		AssetVo paramOne = new AssetVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setAName("주식1");
-		paramOne.setARatio(50);
+		paramOne.setARatio(50L);
 		paramVoList.add(paramOne);
 		
 		AssetVo paramTwo = new AssetVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setAName("채권1");
-		paramTwo.setARatio(50);
+		paramTwo.setARatio(50L);
 		paramVoList.add(paramTwo);
 		
 		int result = service.modifyAssets(paramVoList);
@@ -77,12 +77,12 @@ public class AssetServiceTest {
 		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
 		
 		AssetVo paramOne = new AssetVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setAName("채권2");
 		paramVoList.add(paramOne);
 		
 		AssetVo paramTwo = new AssetVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setAName("주식2");
 		paramVoList.add(paramTwo);
 		

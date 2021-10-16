@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class UserVo {
 
-	public long uNo;
+	public Long uNo;
 	public String uId;
 	public String uPw;
 	public String uName;

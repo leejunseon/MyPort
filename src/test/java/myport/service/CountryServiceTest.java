@@ -27,9 +27,9 @@ public class CountryServiceTest {
 	public void testAddCountry() {
 		int result = 0;
 		CountryVo paramVo = new CountryVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		paramVo.setCName("중국");
-		paramVo.setCRatio(10);
+		paramVo.setCRatio(10L);
 		result = service.addCountry(paramVo);
 
 		log.info("result : " + Integer.toString(result));
@@ -38,7 +38,7 @@ public class CountryServiceTest {
 	// @Test
 	public void testRetrieveCountries() {
 		UserVo paramVo = new UserVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		List<CountryVo> result = new ArrayList<CountryVo>();
 		result = service.retrieveCountries(paramVo);
 		log.info("Result size : " + Integer.toString(result.size()));
@@ -58,15 +58,15 @@ public class CountryServiceTest {
 		List<CountryVo> paramVoList  = new ArrayList<CountryVo>();
 		
 		CountryVo paramOne = new CountryVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setCName("미국");
-		paramOne.setCRatio(10);
+		paramOne.setCRatio(10L);
 		paramVoList.add(paramOne);
 		
 		CountryVo paramTwo = new CountryVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setCName("한국");
-		paramTwo.setCRatio(10);
+		paramTwo.setCRatio(10L);
 		paramVoList.add(paramTwo);
 		
 		int result = service.modifyCountries(paramVoList);
@@ -78,12 +78,12 @@ public class CountryServiceTest {
 		List<CountryVo> paramVoList  = new ArrayList<CountryVo>();
 		
 		CountryVo paramOne = new CountryVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setCName("미국");
 		paramVoList.add(paramOne);
 		
 		CountryVo paramTwo = new CountryVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setCName("중국");
 		paramVoList.add(paramTwo);
 		

@@ -27,9 +27,9 @@ public class CountryMapperTest {
 	public void testAddCountry() {
 		int result = 0;
 		CountryVo paramVo = new CountryVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		paramVo.setCName("한국");
-		paramVo.setCRatio(30);
+		paramVo.setCRatio(30L);
 		result = mapper.addCountry(paramVo);
 
 		log.info("result : " + Integer.toString(result));
@@ -38,7 +38,7 @@ public class CountryMapperTest {
 	// @Test
 	public void testRetrieveCountries() {
 		UserVo paramVo = new UserVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		List<CountryVo> result = new ArrayList<CountryVo>();
 		result = mapper.retrieveCountries(paramVo);
 		log.info("Result size : " + Integer.toString(result.size()));
@@ -56,9 +56,9 @@ public class CountryMapperTest {
 	// @Test
 	public void testModifyCountries() {
 		CountryVo paramVo  = new CountryVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		paramVo.setCName("미국");
-		paramVo.setCRatio(50);
+		paramVo.setCRatio(50L);
 		int result = mapper.modifyCountry(paramVo);
 		log.info("Updated row : " + result);
 	}
@@ -66,7 +66,7 @@ public class CountryMapperTest {
 	@Test
 	public void testDeleteCountry() {
 		CountryVo paramVo  = new CountryVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		paramVo.setCName("캄보디아");
 		int result = mapper.deleteCountry(paramVo);
 		log.info("Deleted row : " + result);	

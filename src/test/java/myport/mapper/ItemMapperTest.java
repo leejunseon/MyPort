@@ -27,20 +27,20 @@ public class ItemMapperTest {
 	public void testAddItem() {
 		int result = 0;
 		ItemVo paramVo = new ItemVo();
-		paramVo.setUNo(1);
-		paramVo.setANo(2);
+		paramVo.setUNo(1L);
+		paramVo.setANo(2L);
 		paramVo.setIName("SPY");
-		paramVo.setIPrice(1000000);
-		paramVo.setINum(3);
+		paramVo.setIPrice(1000000L);
+		paramVo.setINum(3L);
 		result = mapper.addItem(paramVo);
 		log.info(paramVo.toString());
 		log.info("result : " + Integer.toString(result));
 	}
 	
-	@Test
+	// @Test
 	public void testRetrieveItems() {
 		UserVo paramVo = new UserVo();
-		paramVo.setUNo(1);
+		paramVo.setUNo(1L);
 		List<ItemVo> result = new ArrayList<ItemVo>();
 		result = mapper.retrieveItems(paramVo);
 		log.info("Result size : " + Integer.toString(result.size()));
@@ -52,6 +52,14 @@ public class ItemMapperTest {
 		} else {
 			log.info("Empty");
 		}
+	}
+	
+	@Test
+	public void testGetTotalPrice() {
+		UserVo paramVo = new UserVo();
+		paramVo.setUNo(1L);
+		Long result = mapper.getTotalPrice(paramVo);
+		log.info("result : "+result);
 	}
 
 }

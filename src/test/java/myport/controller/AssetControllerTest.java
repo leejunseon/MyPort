@@ -62,15 +62,15 @@ public class AssetControllerTest {
 		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
 		
 		AssetVo paramOne = new AssetVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setAName("주식1");
-		paramOne.setARatio(50);
+		paramOne.setARatio(50L);
 		paramVoList.add(paramOne);
 		
 		AssetVo paramTwo = new AssetVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setAName("채권1");
-		paramTwo.setARatio(50);
+		paramTwo.setARatio(50L);
 		paramVoList.add(paramTwo);
 		
 		String jsonInString = mapper.writeValueAsString(paramVoList);
@@ -91,12 +91,12 @@ public class AssetControllerTest {
 		List<AssetVo> paramVoList  = new ArrayList<AssetVo>();
 		
 		AssetVo paramOne = new AssetVo();
-		paramOne.setUNo(1);
+		paramOne.setUNo(1L);
 		paramOne.setAName("주식1");
 		paramVoList.add(paramOne);
 		
 		AssetVo paramTwo = new AssetVo();
-		paramTwo.setUNo(1);
+		paramTwo.setUNo(1L);
 		paramTwo.setAName("채권1");
 		paramVoList.add(paramTwo);
 		

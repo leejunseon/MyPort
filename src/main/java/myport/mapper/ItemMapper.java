@@ -14,4 +14,6 @@ public interface ItemMapper {
 	
 	public List<ItemVo> retrieveItems(UserVo vo);
 	
+	public Long getTotalPrice(UserVo vo);
+	
 }

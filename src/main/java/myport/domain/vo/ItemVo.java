@@ -5,13 +5,13 @@ import lombok.Data;
 @Data
 public class ItemVo {
 
-	public long iNo;
-	public long uNo;
-	public long cNo;
-	public long aNo;
+	public Long iNo;
+	public Long uNo;
+	public Long cNo;
+	public Long aNo;
 	public String iName;
-	public long iPrice;
-	public long iNum;
+	public Long iPrice;
+	public Long iNum;
 	public String iRegdate;
 	public String iUpdatedate;
 	

@@ -1,13 +1,16 @@
 package myport.domain.dto;
 
+import lombok.Data;
+
+@Data
 public class ItemDto {
 
-	public long iNo;
-	public long uNo;
-	public long cNo;
-	public long aNo;
+	public Long iNo;
+	public Long cNo;
+	public Long aNo;
 	public String iName;
-	public long iPrice;
-	public long iNum;
+	public Long iPrice;
+	public Long iNum;
+	public Long iRatio;
 	
 }
