@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import myport.domain.dto.ItemDto;
 import myport.domain.vo.ItemVo;
 import myport.domain.vo.UserVo;
@@ -43,11 +42,12 @@ public class ItemServiceImpl implements ItemService{
 			dto.setINum(inputVo.getINum());
 			
 			Double price = inputVo.getIPrice()*inputVo.getINum().doubleValue();
-			Double ratio = price/totalPrice*100;
+			Double ratio = price/totalPrice.doubleValue()*100;
 			dto.setIRatio(ratio.longValue());
 			
 			resultDtos.add(dto);
 		}
+		
 		return resultDtos;
 	}
 

@@ -33,7 +33,7 @@
 					<div class="card border-left-primary shadow h-100 py-2">
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered">
+								<table id="itemTable" class="table table-bordered">
 									<thead>
 										<tr>
 											<th width="15%">구분</th>
@@ -393,7 +393,13 @@
 	*/
 	document.addEventListener("DOMContentLoaded", function() {
 		
-		
+		// 투자현황 초기세팅
+		itemService.getItems(1, function(result) {
+			console.log(result);
+			setStatus("itemTable", result);
+		}, function(error) {
+			catchError(error);
+		});
 
 		// 모달창 이벤트 추가
 		const addItemModal = $("#addItemModal"); //추가 모달 창
@@ -448,6 +454,15 @@
 		pieChartService.setPieChart("countryRatioPieChart", nameList,
 				ratioList, colorList);
 	});
+	
+	/*
+	* function : setStatus
+	* description : 투자현황 테이블 데이터세팅
+	*/
+	function setStatus(id, result){
+		const tableBody = document.getElementById(id).children[1];
+		
+	}
 	
 	/*
 	* function : setAddItemModalSelbox
