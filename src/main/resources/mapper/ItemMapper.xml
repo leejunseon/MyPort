@@ -16,16 +16,16 @@
 		)
 	</insert>
 
-	<!-- <select id="retrieveAssets" resultType="myport.domain.vo.AssetVo">
+	<select id="retrieveItems" resultType="myport.domain.vo.ItemVo">
 		<![CDATA[
 			SELECT *
-			FROM TBL_ASSET
+			FROM TBL_ITEM
 			WHERE U_NO = #{uNo}
-			ORDER BY A_RATIO DESC
+			ORDER BY I_NO ASC
 		]]>
 	</select>
 	
-	<update id="modifyAssets">
+<!-- 	<update id="modifyAssets">
 		<![CDATA[
 			UPDATE TBL_ASSET
 			SET 

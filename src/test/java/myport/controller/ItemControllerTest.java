@@ -1,5 +1,6 @@
 package myport.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -31,7 +32,7 @@ public class ItemControllerTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 
-	@Test
+	// @Test
 	public void testAddItem() throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
 
@@ -47,5 +48,14 @@ public class ItemControllerTest {
 		log.info(mockMvc.perform(post("/item/add").contentType(MediaType.APPLICATION_JSON).content(jsonInString))
 				.andReturn().getResponse().getContentAsString());
 
+	}
+	
+	@Test
+	public void testRetrieve() throws Exception{
+		log.info(mockMvc.perform(get("/item/1"))
+				.andReturn()
+				.getResponse()
+				.getContentAsString()
+				);
 	}
 }
