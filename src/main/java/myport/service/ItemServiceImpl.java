@@ -1,12 +1,15 @@
 package myport.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 import myport.domain.dto.ItemDto;
+import myport.domain.dto.ItemInfoDto;
 import myport.domain.vo.ItemVo;
 import myport.domain.vo.UserVo;
 import myport.mapper.ItemMapper;
@@ -23,13 +26,16 @@ public class ItemServiceImpl implements ItemService{
 	}
 
 	@Override
-	public List<ItemDto> retrieveItems(UserVo vo) {
+	public ItemInfoDto retrieveItems(UserVo vo) {
 		List<ItemVo> resultVo = mapper.retrieveItems(vo);
 		return convertVoToDto(resultVo,vo);
 	}
 	
-	public List<ItemDto> convertVoToDto(List<ItemVo> inputVoList, UserVo vo){
+	public ItemInfoDto convertVoToDto(List<ItemVo> inputVoList, UserVo vo){
+		ItemInfoDto result = new ItemInfoDto();
+		
 		List<ItemDto> resultDtos = new ArrayList<ItemDto>();
+		Map<String,Integer> assetNumList = new HashMap<String,Integer>();
 		Long totalPrice = mapper.getTotalPrice(vo);
 		
 		for(ItemVo inputVo : inputVoList) {
@@ -48,7 +54,9 @@ public class ItemServiceImpl implements ItemService{
 			resultDtos.add(dto);
 		}
 		
-		return resultDtos;
+		result.setItemList(resultDtos);
+		
+		return result;
 	}
 
 }
