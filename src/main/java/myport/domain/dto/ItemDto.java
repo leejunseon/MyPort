@@ -10,8 +10,8 @@ import lombok.Data;
 public class ItemDto {
 
 	public Long iNo;
-	public Long cNo;
-	public Long aNo;
+	public Long cName;
+	public Long aName;
 	public String iName;
 	public Long iPrice;
 	public Long iNum;

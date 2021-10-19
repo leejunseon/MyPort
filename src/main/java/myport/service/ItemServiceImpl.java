@@ -41,8 +41,8 @@ public class ItemServiceImpl implements ItemService{
 		for(ItemVo inputVo : inputVoList) {
 			ItemDto dto= new ItemDto();
 			dto.setINo(inputVo.getINo());
-			dto.setCNo(inputVo.getCNo());
-			dto.setANo(inputVo.getANo());
+			dto.setCName(inputVo.getCName());
+			dto.setAName(inputVo.getAName());
 			dto.setIName(inputVo.getIName());
 			dto.setIPrice(inputVo.getIPrice());
 			dto.setINum(inputVo.getINum());

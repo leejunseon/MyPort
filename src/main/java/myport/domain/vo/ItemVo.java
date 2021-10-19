@@ -7,8 +7,8 @@ public class ItemVo {
 
 	public Long iNo;
 	public Long uNo;
-	public Long cNo;
-	public Long aNo;
+	public Long cName;
+	public Long aName;
 	public String iName;
 	public Long iPrice;
 	public Long iNum;
