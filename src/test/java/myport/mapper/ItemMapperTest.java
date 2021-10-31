@@ -54,11 +54,25 @@ public class ItemMapperTest {
 		}
 	}
 	
-	@Test
+	//@Test
 	public void testGetTotalPrice() {
 		UserVo paramVo = new UserVo();
 		paramVo.setUNo(1L);
 		Long result = mapper.getTotalPrice(paramVo);
+		log.info("result : "+result);
+	}
+	
+	//@Test
+	public void testGetCName() {
+		String result = "";
+		result = mapper.getCName(3L);
+		log.info("result : "+result);
+	}
+	
+	@Test
+	public void testGetAName() {
+		String result = "";
+		result = mapper.getAName(15L);
 		log.info("result : "+result);
 	}
 

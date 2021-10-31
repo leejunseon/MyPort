@@ -41,19 +41,14 @@ public class ItemServiceTest {
 	
 	@Test
 	public void testRetrieveItems() {
-		UserVo paramVo = new UserVo();
-		paramVo.setUNo(1L);
-		List<ItemDto> result = new ArrayList<ItemDto>();
-		result = service.retrieveItems(paramVo);
-		log.info("Result size : " + Integer.toString(result.size()));
-
-		if (result.size() > 0) {
-			for (ItemDto vo : result) {
-				log.info(vo.toString());
-			}
-		} else {
-			log.info("Empty");
-		}
+		/*
+		 * UserVo paramVo = new UserVo(); paramVo.setUNo(1L); List<ItemDto> result = new
+		 * ArrayList<ItemDto>(); result = service.retrieveItems(paramVo);
+		 * log.info("Result size : " + Integer.toString(result.size()));
+		 * 
+		 * if (result.size() > 0) { for (ItemDto vo : result) { log.info(vo.toString());
+		 * } } else { log.info("Empty"); }
+		 */
 
 	}
 }

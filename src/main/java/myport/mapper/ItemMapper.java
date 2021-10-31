@@ -16,4 +16,8 @@ public interface ItemMapper {
 	
 	public Long getTotalPrice(UserVo vo);
 	
+	public String getCName(Long cNo);
+	
+	public String getAName(Long aNo);
+	
 }
