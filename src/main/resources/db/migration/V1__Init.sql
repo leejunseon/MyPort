@@ -169,7 +169,7 @@ CREATE TABLE TBL_ITEM
     U_NO            NUMBER(18, 0)    NOT NULL, 
     C_NO            NUMBER(18, 0)    NULL, 
     A_NO            NUMBER(18, 0)    NOT NULL, 
-    I_NAME          VARCHAR2(20)     NOT NULL, 
+    I_NAME          VARCHAR2(50)     NOT NULL, 
     I_PRICE         NUMBER(18, 0)    NOT NULL, 
     I_NUM           NUMBER(18, 0)    NOT NULL, 
     I_REGDATE       VARCHAR2(40)     DEFAULT to_char(sysdate, 'YYYYMMDD HH24:MI:SS') NOT NULL, 
