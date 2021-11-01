@@ -37,14 +37,20 @@ public class ItemServiceImpl implements ItemService {
 	public ItemInfoDto convertVoToDto(List<ItemVo> inputVoList, UserVo vo) {
 		ItemInfoDto result = new ItemInfoDto();
 
-		List<ItemDto> ItemList = getItemList(inputVoList, vo);
+		List<ItemDto> itemList = getItemList(inputVoList, vo);
+		Map<String, Integer> assetNumList = getAssetNumList(itemList);
+		itemList = sortItemList(itemList, assetNumList);
 
-		result.setItemList(ItemList);
-		result.setAssetNumList(getAssetNumList(ItemList));
+		result.setItemList(itemList);
+		result.setAssetNumList(assetNumList);
 
 		return result;
 	}
 
+	/* ItemVo -> ItemDto로 변환
+	 * - cno, ano => cname, aname
+	 * - ratio 계산 
+	 */
 	public List<ItemDto> getItemList(List<ItemVo> inputVoList, UserVo vo) {
 		List<ItemDto> resultDtos = new ArrayList<ItemDto>();
 		Long totalPrice = mapper.getTotalPrice(vo);
@@ -69,11 +75,8 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	/*
-	 * 자산 별로 갯수 구하고 ItemInfoDto.assetNumList로 세팅
-	 * ItemInfoDto.itemList를 
-	 * 	1. 자산 갯수
-	 * 	2. ratio
-	 *   순으로 Sort
+	 * 자산 별로 갯수 구하고
+	 * 갯수 순으로 내림차순 Sort
 	 */
 	public Map<String, Integer> getAssetNumList(List<ItemDto> inputVoList) {
 		Map<String, Integer> result = new HashMap<String, Integer>();
@@ -98,6 +101,33 @@ public class ItemServiceImpl implements ItemService {
 			}
 		});
 
+		return result;
+	}
+	
+	/*
+	 * 갯수 -> ratio 내림차순으로 sort
+	 */
+	public List<ItemDto> sortItemList(List<ItemDto> itemList, Map<String, Integer> assetNumList){
+		List<ItemDto> result = new ArrayList<ItemDto>();
+		
+		Collections.sort(itemList,new Comparator<ItemDto>() {
+
+			@Override
+			public int compare(ItemDto dto1, ItemDto dto2) {
+				// TODO Auto-generated method stub
+				if(assetNumList.get(dto1.getAName())==assetNumList.get(dto2.getAName())){
+					double res = dto2.getIRatio()-dto1.getIRatio();
+					if(res<0)
+						return -1;
+					else
+						return 1;
+				}else {
+					return assetNumList.get(dto2.getAName())-assetNumList.get(dto1.getAName());
+				}
+			}
+			
+		});
+		
 		return result;
 	}
 
