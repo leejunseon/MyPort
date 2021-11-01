@@ -2,10 +2,10 @@
 CREATE TABLE TBL_USER
 (
     U_NO            NUMBER(18, 0)    NOT NULL, 
-    U_ID            VARCHAR2(20)     NOT NULL, 
-    U_PW            VARCHAR2(20)     NOT NULL, 
-    U_NAME          VARCHAR2(20)     NOT NULL, 
-    U_EMAIL         VARCHAR2(20)     NOT NULL, 
+    U_ID            VARCHAR2(50)     NOT NULL, 
+    U_PW            VARCHAR2(50)     NOT NULL, 
+    U_NAME          VARCHAR2(50)     NOT NULL, 
+    U_EMAIL         VARCHAR2(50)     NOT NULL, 
     U_REGDATE       VARCHAR2(40)     DEFAULT to_char(sysdate, 'YYYYMMDD HH24:MI:SS') NOT NULL, 
     U_UPDATEDATE    VARCHAR2(40)     DEFAULT to_char(sysdate, 'YYYYMMDD HH24:MI:SS') NOT NULL, 
     CONSTRAINT PK_TBL_USER PRIMARY KEY (U_NO)
@@ -57,7 +57,7 @@ CREATE TABLE TBL_ASSET
 (
     A_NO            NUMBER(18, 0)    NOT NULL, 
     U_NO            NUMBER(18, 0)    NOT NULL, 
-    A_NAME          VARCHAR2(20)     NOT NULL, 
+    A_NAME          VARCHAR2(50)     NOT NULL, 
     A_RATIO         NUMBER(18, 0)    NOT NULL, 
     A_REGDATE       VARCHAR2(40)     DEFAULT to_char(sysdate, 'YYYYMMDD HH24:MI:SS') NOT NULL, 
     A_UPDATEDATE    VARCHAR2(40)     DEFAULT to_char(sysdate, 'YYYYMMDD HH24:MI:SS') NOT NULL, 
@@ -112,7 +112,7 @@ CREATE TABLE TBL_COUNTRY
 (
     C_NO            NUMBER(18, 0)    NOT NULL, 
     U_NO            NUMBER(18, 0)    NOT NULL, 
-    C_NAME          VARCHAR2(20)     NOT NULL, 
+    C_NAME          VARCHAR2(50)     NOT NULL, 
     C_RATIO         NUMBER(18, 0)    NOT NULL, 
     C_REGDATE       VARCHAR2(40)     DEFAULT to_char(sysdate, 'YYYYMMDD HH24:MI:SS') NOT NULL, 
     C_UPDATEDATE    VARCHAR2(40)     DEFAULT to_char(sysdate, 'YYYYMMDD HH24:MI:SS') NOT NULL, 
