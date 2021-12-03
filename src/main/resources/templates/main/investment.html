@@ -266,10 +266,8 @@
 			colorList.push(getColor());
 		}
 
-		pieChartService.setPieChart("assetRatioPieChart", nameList, ratioList,
-				colorList);
-		pieChartService.setPieChart("countryRatioPieChart", nameList,
-				ratioList, colorList);
+		pieChartService.setPieChart("assetRatioPieChart", nameList, ratioList, colorList);
+		pieChartService.setPieChart("countryRatioPieChart", nameList, ratioList, colorList);
 	});
 	
 	/*
@@ -299,7 +297,6 @@
 					bodyText+="<td rowspan="+assetNumList[keys[j]]+">"+keys[j]+"</td>";
 				}
 			}
-			//bodyText+="	<td>"+itemList[i].aName+"</td>";
 			bodyText+="	<td>"+itemList[i].iName+"</td>";
 			bodyText+=" <td>"+itemList[i].iPrice+"</td>";
 			bodyText+=" <td width=\"10%\">"+itemList[i].iRatio+"%</td>";

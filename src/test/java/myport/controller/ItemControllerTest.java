@@ -32,7 +32,7 @@ public class ItemControllerTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
 
-	// @Test
+	//@Test
 	public void testAddItem() throws Exception {
 		ObjectMapper mapper = new ObjectMapper();
 
