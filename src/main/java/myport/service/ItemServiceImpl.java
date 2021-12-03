@@ -46,9 +46,17 @@ public class ItemServiceImpl implements ItemService {
 		List<ItemDto> itemList = getItemList(inputVoList, vo);
 		Map<String, Integer> assetNumList = getAssetNumList(itemList);
 		itemList = sortItemList(itemList, assetNumList);
+		
+		Long maxRatio = -1L;
+		for(ItemDto dto : itemList) {
+			if(maxRatio<=dto.getIRatio()) {
+				maxRatio = dto.getIRatio();
+			}
+		}
 
 		result.setItemList(itemList);
 		result.setAssetNumList(assetNumList);
+		result.setMaxRatio(maxRatio);
 
 		return result;
 	}

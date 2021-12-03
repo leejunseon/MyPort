@@ -10,5 +10,6 @@ public class ItemInfoDto {
 
 	List<ItemDto> itemList;
 	Map<String,Integer> assetNumList;
+	Long maxRatio;
 	
 }
