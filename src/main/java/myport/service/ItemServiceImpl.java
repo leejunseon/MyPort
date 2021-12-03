@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -11,6 +12,7 @@ import java.util.Map.Entry;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import myport.domain.dto.ItemDto;
 import myport.domain.dto.ItemInfoDto;
 import myport.domain.vo.ItemVo;
@@ -18,6 +20,7 @@ import myport.domain.vo.UserVo;
 import myport.mapper.ItemMapper;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class ItemServiceImpl implements ItemService {
 
@@ -34,6 +37,9 @@ public class ItemServiceImpl implements ItemService {
 		return convertVoToDto(resultVo, vo);
 	}
 
+	/*
+	 * ItemVo -> ItemDto로 변환
+	 */
 	public ItemInfoDto convertVoToDto(List<ItemVo> inputVoList, UserVo vo) {
 		ItemInfoDto result = new ItemInfoDto();
 
@@ -47,9 +53,9 @@ public class ItemServiceImpl implements ItemService {
 		return result;
 	}
 
-	/* ItemVo -> ItemDto로 변환
-	 * - cno, ano => cname, aname
-	 * - ratio 계산 
+	/* 
+	 * cno, ano => cname, aname
+	 * ratio 계산 
 	 */
 	public List<ItemDto> getItemList(List<ItemVo> inputVoList, UserVo vo) {
 		List<ItemDto> resultDtos = new ArrayList<ItemDto>();
@@ -70,45 +76,47 @@ public class ItemServiceImpl implements ItemService {
 
 			resultDtos.add(dto);
 		}
-
+		
 		return resultDtos;
 	}
 
 	/*
-	 * 자산 별로 갯수 구하고
-	 * 갯수 순으로 내림차순 Sort
+	 * 자산 별로 갯수 구함 (key : 자산, value : 갯수)
+	 * value로 map 내림차순 sort
 	 */
 	public Map<String, Integer> getAssetNumList(List<ItemDto> inputVoList) {
-		Map<String, Integer> result = new HashMap<String, Integer>();
+		Map<String, Integer> assetNumMap = new HashMap<String, Integer>();
 
 		for (ItemDto dto : inputVoList) {
-			if (result.containsKey(dto.getAName())) {
-				result.put(dto.getAName(), result.get(dto.getAName() + 1));
+			if (assetNumMap.containsKey(dto.getAName())) {
+				assetNumMap.put(dto.getAName(), assetNumMap.get(dto.getAName())+1);
 			} else {
-				result.put(dto.getAName(), 1);
+				assetNumMap.put(dto.getAName(), 1);
 			}
 		}
+		log.info("Asset Num Map(before sort) : "+assetNumMap.toString());
 
-		// Map.Entry 리스트 작성
-		List<Entry<String, Integer>> listEntries = new ArrayList<Entry<String, Integer>>(result.entrySet());
+		List<Entry<String, Integer>> listEntries = new ArrayList<Entry<String, Integer>>(assetNumMap.entrySet());
 
-		// 비교함수 Comparator를 사용하여 오름차순으로 정렬
 		Collections.sort(listEntries, new Comparator<Entry<String, Integer>>() {
-			// compare로 값을 비교
 			public int compare(Entry<String, Integer> obj1, Entry<String, Integer> obj2) {
-				// 오름 차순 정렬
 				return obj2.getValue().compareTo(obj1.getValue());
 			}
 		});
+		
+		Map<String, Integer> result = new LinkedHashMap<String, Integer>();
+	    for (Entry<String, Integer> entry : listEntries) {
+	        result.put(entry.getKey(), entry.getValue());
+	    }
+		log.info("Asset Num Map(after sort) : "+result.toString());
 
 		return result;
 	}
 	
 	/*
-	 * 갯수 -> ratio 내림차순으로 sort
+	 * 자산 갯수 -> ratio 순 내림차순으로 sort
 	 */
 	public List<ItemDto> sortItemList(List<ItemDto> itemList, Map<String, Integer> assetNumList){
-		List<ItemDto> result = new ArrayList<ItemDto>();
 		
 		Collections.sort(itemList,new Comparator<ItemDto>() {
 
@@ -128,7 +136,7 @@ public class ItemServiceImpl implements ItemService {
 			
 		});
 		
-		return result;
+		return itemList;
 	}
 
 	public String getCName(Long cNo) {

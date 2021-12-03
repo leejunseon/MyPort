@@ -394,12 +394,12 @@
 	document.addEventListener("DOMContentLoaded", function() {
 		
 		// 투자현황 초기세팅
-		/* itemService.getItems(1, function(result) {
+		itemService.getItems(1, function(result) {
 			console.log(result);
 			setStatus("itemTable", result);
 		}, function(error) {
 			catchError(error);
-		}); */
+		});
 
 		// 모달창 이벤트 추가
 		const addItemModal = $("#addItemModal"); //추가 모달 창
@@ -461,7 +461,28 @@
 	*/
 	function setStatus(id, result){
 		const tableBody = document.getElementById(id).children[1];
+		const assetNumList = result.assetNumList;
+		/* const keys = Object.keys(assetNumList);
+		console.log(keys);
+		console.log(keys[0]);
+		console.log(assetNumList[keys[0]]); */
 		
+		const itemList = result.itemList;
+		let bodyText = "";
+		for(var i = 0;i<itemList.length;i++){
+			bodyText+="<tr>";
+			bodyText+="	<td>"+itemList[i].aName+"</td>";
+			bodyText+="	<td>"+itemList[i].iName+"</td>";
+			bodyText+=" <td>"+itemList[i].iPrice+"</td>";
+			bodyText+=" <td width=\"10%\">"+itemList[i].iRatio+"%</td>";
+			bodyText+=" <td width=\"90%\">";
+			bodyText+="  <div class=\"progress\">";
+			bodyText+="   <div class=\"progress-bar\" role=\"progressbar\"style=\"width: 90%\"></div>";
+			bodyText+="  </div>";
+			bodyText+=" </td>";
+			bodyText+="</tr>";
+		}
+		tableBody.innerHTML=bodyText;
 	}
 	
 	/*
