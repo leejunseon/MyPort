@@ -94,7 +94,7 @@ public class ItemServiceImpl implements ItemService {
 	 * value로 map 내림차순 sort
 	 */
 	public Map<String, Integer> getAssetNumList(List<ItemDto> inputVoList) {
-		Map<String, Integer> assetNumMap = new HashMap<String, Integer>();
+		Map<String, Integer> assetNumMap = new LinkedHashMap<String, Integer>();
 
 		for (ItemDto dto : inputVoList) {
 			if (assetNumMap.containsKey(dto.getAName())) {
