@@ -3,11 +3,12 @@ package myport.service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.springframework.stereotype.Service;
 
@@ -47,15 +48,13 @@ public class ItemServiceImpl implements ItemService {
 		Map<String, Integer> assetNumList = getAssetNumList(itemList);
 		itemList = sortItemList(itemList, assetNumList);
 		
-		Long maxRatio = -1L;
-		for(ItemDto dto : itemList) {
-			if(maxRatio<=dto.getIRatio()) {
-				maxRatio = dto.getIRatio();
-			}
-		}
+		Set<String> countryList = getCountryList(itemList);
+		
+		Long maxRatio = getMaxRatio(itemList);
 
 		result.setItemList(itemList);
 		result.setAssetNumList(assetNumList);
+		result.setCountryList(countryList);
 		result.setMaxRatio(maxRatio);
 
 		return result;
@@ -147,7 +146,37 @@ public class ItemServiceImpl implements ItemService {
 		
 		return itemList;
 	}
+	
+	/*
+	 * 최대ratio 구하기
+	 */
+	public Long getMaxRatio(List<ItemDto> itemList) {
+		Long result = -1L;
+		
+		for(ItemDto dto : itemList) {
+			if(result<=dto.getIRatio()) {
+				result = dto.getIRatio();
+			}
+		}
+		
+		return result;
+	}
 
+	/*
+	 * Country List 구하기
+	 */
+	public Set<String> getCountryList(List<ItemDto> itemList) {
+		Set<String> result = new TreeSet<String>();
+		
+		for(ItemDto dto : itemList) {
+			String country = dto.getCName();
+			if(country!=null)
+				result.add(country);
+		}
+		
+		return result;
+	}
+	
 	public String getCName(Long cNo) {
 		return mapper.getCName(cNo);
 	}
