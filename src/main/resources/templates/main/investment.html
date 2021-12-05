@@ -210,10 +210,12 @@
 	*/
 	document.addEventListener("DOMContentLoaded", function() {
 		
+		let itemList = null;
 		// 투자현황 초기세팅
 		itemService.getItems(1, function(result) {
 			console.log(result);
-			setStatus("itemTable", result);
+			itemList = result;
+			setStatus("itemTable", itemList);
 		}, function(error) {
 			catchError(error);
 		});
@@ -250,11 +252,7 @@
 
 		editItemBtn.addEventListener('click', function() {
 			//edit 창 데이터 세팅
-			itemService.getItems(1, function(result){
-				setEditModalData(result);
-			}, function(error){
-				catchError(error);
-			});
+			setEditModalData(itemList);
 			//editItemModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
 			editItemModal.modal("show");
 		});
@@ -342,35 +340,41 @@
 	function setEditModalData(result){
 		const table = document.getElementById("editItemModalTable");
 		const tbody = table.children[1];
+		const itemList = result.itemList;
+		const countryList = result.countryList;
+		const assetList = Object.keys(result.assetNumList);
 					
 		let tbodyText = "";
-		for(var i = 0;i<result.length;i++){
+		for(var i = 0;i<itemList.length;i++){
 			tbodyText += "<tr>";
 			tbodyText += " <td>";
 			tbodyText += "  <select class=\"form-control\" name=\"job\">";
-			tbodyText += "   <option value=\"\" selected=\"selected\">국가 선택</option>";
-						/* <option value="미국">미국</option>
-						<option value="한국">한국</option>
-						<option value="국가분산">국가분산</option>
-					</select>
-				</td>
-				<td>
-					<select class="form-control" name="job">
-						<option value="" selected="selected">자산 선택</option>
-						<option value="주식">주식</option>
-						<option value="채권">채권</option>
-						<option value="원자재">원자재</option>
-						<option value="금">금</option>
-						<option value="달러RP">달러RP</option>
-					</select>
-				</td>
-				<td>KODEX 200TR</td>
-				<td>819535</td>
-				<td>1</td>
-			</tr> */
+			if(itemList[i].cName === null)
+				tbodyText += "   <option value=\"\" selected=\"selected\">없음</option>";
+			else
+				tbodyText += "   <option value=\"\" selected=\"selected\">"+itemList[i].cName+"</option>";
+			for(var j = 0;j<countryList.length;j++){
+				if(countryList[j] !== itemList[i].cName)
+					tbodyText += "<option value="+countryList[j]+">"+countryList[j]+"</option>";
+			}
+			tbodyText += "  </select>";
+			tbodyText += " </td>";
+			tbodyText += " <td>";
+			tbodyText += "  <select class=\"form-control\" name=\"job\">";
+			tbodyText += "   <option value=\"\" selected=\"selected\">"+itemList[i].aName+"</option>";
+			for(var j = 0;j<assetList.length;j++){
+				if(assetList[j] !== itemList[i].aName)
+					tbodyText += "<option value="+assetList[j]+">"+assetList[j]+"</option>";
+			}
+			tbodyText += "  </select>";
+			tbodyText += " </td>";
+			tbodyText += " <td>"+itemList[i].iName+"</td>";
+			tbodyText += " <td>"+itemList[i].iPrice+"</td>";
+			tbodyText += " <td>"+itemList[i].iNum+"</td>";
+			tbodyText += "</tr>";  
 		}
 		
-		//tbody.innerHTML = tbodyText;
+		tbody.innerHTML = tbodyText;
 	}
 
 	
