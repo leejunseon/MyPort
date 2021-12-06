@@ -295,9 +295,8 @@
 					bodyText+="<td rowspan="+assetNumList[keys[j]]+">"+keys[j]+"</td>";
 				}
 			} 
-			//bodyText+="	<td>"+itemList[i].aName+"</td>";
 			bodyText+="	<td>"+itemList[i].iName+"</td>";
-			bodyText+=" <td>"+itemList[i].iPrice+"</td>";
+			bodyText+=" <td>"+itemList[i].iPrice*itemList[i].iNum+"</td>";
 			bodyText+=" <td width=\"10%\">"+itemList[i].iRatio+"%</td>";
 			bodyText+=" <td width=\"90%\">";
 			bodyText+="  <div class=\"progress\">";
@@ -347,6 +346,16 @@
 		let tbodyText = "";
 		for(var i = 0;i<itemList.length;i++){
 			tbodyText += "<tr>";
+			tbodyText += "<td class=\"d-none\">"+itemList[i].iNo+"</td>"
+			tbodyText += " <td>";
+			tbodyText += "  <select class=\"form-control\" name=\"job\">";
+			tbodyText += "   <option value=\"\" selected=\"selected\">"+itemList[i].aName+"</option>";
+			for(var j = 0;j<assetList.length;j++){
+				if(assetList[j] !== itemList[i].aName)
+					tbodyText += "<option value="+assetList[j]+">"+assetList[j]+"</option>";
+			}
+			tbodyText += "  </select>";
+			tbodyText += " </td>";
 			tbodyText += " <td>";
 			tbodyText += "  <select class=\"form-control\" name=\"job\">";
 			if(itemList[i].cName === null)
@@ -359,18 +368,9 @@
 			}
 			tbodyText += "  </select>";
 			tbodyText += " </td>";
-			tbodyText += " <td>";
-			tbodyText += "  <select class=\"form-control\" name=\"job\">";
-			tbodyText += "   <option value=\"\" selected=\"selected\">"+itemList[i].aName+"</option>";
-			for(var j = 0;j<assetList.length;j++){
-				if(assetList[j] !== itemList[i].aName)
-					tbodyText += "<option value="+assetList[j]+">"+assetList[j]+"</option>";
-			}
-			tbodyText += "  </select>";
-			tbodyText += " </td>";
-			tbodyText += " <td>"+itemList[i].iName+"</td>";
-			tbodyText += " <td>"+itemList[i].iPrice+"</td>";
-			tbodyText += " <td>"+itemList[i].iNum+"</td>";
+			tbodyText += " <td><div><input class=\"form-control\" value=\""+itemList[i].iName+"\"></div></td>";
+			tbodyText += " <td><div><input class=\"form-control\" value=\""+itemList[i].iPrice+"\"></div></td>";
+			tbodyText += " <td><div><input class=\"form-control\" value=\""+itemList[i].iNum+"\"></div></td>";
 			tbodyText += "</tr>";  
 		}
 		
