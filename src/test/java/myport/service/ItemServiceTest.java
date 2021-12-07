@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import lombok.extern.slf4j.Slf4j;
-import myport.domain.dto.ItemDto;
+import myport.domain.dto.ItemDetail;
 import myport.domain.vo.ItemVo;
 import myport.domain.vo.UserVo;
 

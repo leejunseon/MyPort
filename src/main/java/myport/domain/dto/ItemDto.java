@@ -1,20 +1,17 @@
 package myport.domain.dto;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import lombok.Data;
 
 @Data
-/*
- * ItemVo에서 Ratio 항목 추가
- * Ratio는 DB에서 관리하지 않고, Service에서 계산.
- */
 public class ItemDto {
 
-	public Long iNo;
-	public String cName;
-	public String aName;
-	public String iName;
-	public Long iPrice;
-	public Long iNum;
-	public Long iRatio;
+	List<ItemDetail> itemList;
+	Map<String,Integer> assetNumList;
+	Set<String> countryList;
+	Long maxRatio;
 	
 }

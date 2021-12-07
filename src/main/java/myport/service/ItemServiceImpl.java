@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import myport.domain.dto.ItemDetail;
 import myport.domain.dto.ItemDto;
-import myport.domain.dto.ItemInfoDto;
 import myport.domain.vo.ItemVo;
 import myport.domain.vo.UserVo;
 import myport.mapper.ItemMapper;
@@ -33,7 +33,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public ItemInfoDto retrieveItems(UserVo vo) {
+	public ItemDto retrieveItems(UserVo vo) {
 		List<ItemVo> resultVo = mapper.retrieveItems(vo);
 		return convertVoToDto(resultVo, vo);
 	}
@@ -41,10 +41,10 @@ public class ItemServiceImpl implements ItemService {
 	/*
 	 * ItemVo -> ItemDto로 변환
 	 */
-	public ItemInfoDto convertVoToDto(List<ItemVo> inputVoList, UserVo vo) {
-		ItemInfoDto result = new ItemInfoDto();
+	public ItemDto convertVoToDto(List<ItemVo> inputVoList, UserVo vo) {
+		ItemDto result = new ItemDto();
 
-		List<ItemDto> itemList = getItemList(inputVoList, vo);
+		List<ItemDetail> itemList = getItemList(inputVoList, vo);
 		Map<String, Integer> assetNumList = getAssetNumList(itemList);
 		itemList = sortItemList(itemList, assetNumList);
 		
@@ -64,12 +64,12 @@ public class ItemServiceImpl implements ItemService {
 	 * cno, ano => cname, aname
 	 * ratio 계산 
 	 */
-	public List<ItemDto> getItemList(List<ItemVo> inputVoList, UserVo vo) {
-		List<ItemDto> resultDtos = new ArrayList<ItemDto>();
+	public List<ItemDetail> getItemList(List<ItemVo> inputVoList, UserVo vo) {
+		List<ItemDetail> resultDtos = new ArrayList<ItemDetail>();
 		Long totalPrice = mapper.getTotalPrice(vo);
 
 		for (ItemVo inputVo : inputVoList) {
-			ItemDto dto = new ItemDto();
+			ItemDetail dto = new ItemDetail();
 			dto.setINo(inputVo.getINo());
 			if(inputVo.getCNo()!=null)
 				dto.setCName(getCName(inputVo.getCNo()));
@@ -92,10 +92,10 @@ public class ItemServiceImpl implements ItemService {
 	 * 자산 별로 갯수 구함 (key : 자산, value : 갯수)
 	 * value로 map 내림차순 sort
 	 */
-	public Map<String, Integer> getAssetNumList(List<ItemDto> inputVoList) {
+	public Map<String, Integer> getAssetNumList(List<ItemDetail> inputVoList) {
 		Map<String, Integer> assetNumMap = new LinkedHashMap<String, Integer>();
 
-		for (ItemDto dto : inputVoList) {
+		for (ItemDetail dto : inputVoList) {
 			if (assetNumMap.containsKey(dto.getAName())) {
 				assetNumMap.put(dto.getAName(), assetNumMap.get(dto.getAName())+1);
 			} else {
@@ -124,12 +124,12 @@ public class ItemServiceImpl implements ItemService {
 	/*
 	 * 자산 갯수 -> ratio 순 내림차순으로 sort
 	 */
-	public List<ItemDto> sortItemList(List<ItemDto> itemList, Map<String, Integer> assetNumList){
+	public List<ItemDetail> sortItemList(List<ItemDetail> itemList, Map<String, Integer> assetNumList){
 		
-		Collections.sort(itemList,new Comparator<ItemDto>() {
+		Collections.sort(itemList,new Comparator<ItemDetail>() {
 
 			@Override
-			public int compare(ItemDto dto1, ItemDto dto2) {
+			public int compare(ItemDetail dto1, ItemDetail dto2) {
 				// TODO Auto-generated method stub
 				if(assetNumList.get(dto1.getAName())==assetNumList.get(dto2.getAName())){
 					double res = dto2.getIRatio()-dto1.getIRatio();
@@ -150,10 +150,10 @@ public class ItemServiceImpl implements ItemService {
 	/*
 	 * 최대ratio 구하기
 	 */
-	public Long getMaxRatio(List<ItemDto> itemList) {
+	public Long getMaxRatio(List<ItemDetail> itemList) {
 		Long result = -1L;
 		
-		for(ItemDto dto : itemList) {
+		for(ItemDetail dto : itemList) {
 			if(result<=dto.getIRatio()) {
 				result = dto.getIRatio();
 			}
@@ -165,10 +165,10 @@ public class ItemServiceImpl implements ItemService {
 	/*
 	 * Country List 구하기
 	 */
-	public Set<String> getCountryList(List<ItemDto> itemList) {
+	public Set<String> getCountryList(List<ItemDetail> itemList) {
 		Set<String> result = new TreeSet<String>();
 		
-		for(ItemDto dto : itemList) {
+		for(ItemDetail dto : itemList) {
 			String country = dto.getCName();
 			if(country!=null)
 				result.add(country);
@@ -186,8 +186,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public int modifyItems(ItemInfoDto dto) {
-		
+	public int modifyItems(ItemDto dto) {
 		return 0;
 	}
 

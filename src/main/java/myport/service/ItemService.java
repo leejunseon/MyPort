@@ -1,6 +1,6 @@
 package myport.service;
 
-import myport.domain.dto.ItemInfoDto;
+import myport.domain.dto.ItemDto;
 import myport.domain.vo.ItemVo;
 import myport.domain.vo.UserVo;
 
@@ -8,8 +8,8 @@ public interface ItemService {
 
 	public int addItem(ItemVo vo);
 	
-	public ItemInfoDto retrieveItems(UserVo vo);
+	public ItemDto retrieveItems(UserVo vo);
 	
-	public int modifyItems(ItemInfoDto dto);
+	public int modifyItems(ItemDto dto);
 
 }
