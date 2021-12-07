@@ -20,4 +20,6 @@ public interface ItemMapper {
 	
 	public String getAName(Long aNo);
 	
+	public int modifyItems(ItemVo vo);
+	
 }

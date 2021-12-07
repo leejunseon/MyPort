@@ -24,7 +24,7 @@
 			SET 
 				C_NAME = #{cName},
 				C_RATIO = #{cRatio},
-				C_UPDATEDATE = to_char(sysdate, 'YYYY/MM/DD HH24:MI:SS')
+				C_UPDATEDATE = to_char(sysdate, 'YYYYMMDD HH24:MI:SS')
 			WHERE C_NO = #{cNo}
 		]]>
 	</update>

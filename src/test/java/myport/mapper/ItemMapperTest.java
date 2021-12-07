@@ -69,10 +69,22 @@ public class ItemMapperTest {
 		log.info("result : "+result);
 	}
 	
-	@Test
+	//@Test
 	public void testGetAName() {
 		String result = "";
 		result = mapper.getAName(15L);
+		log.info("result : "+result);
+	}
+	
+	@Test
+	public void testModifyItems() {
+		ItemVo vo = new ItemVo();
+		vo.setUNo(1L);
+		vo.setIName("달러RP 수정");
+		vo.setIPrice(300000L);
+		vo.setINum(1L);
+		vo.setINo(22L);
+		int result = mapper.modifyItems(vo);
 		log.info("result : "+result);
 	}
 

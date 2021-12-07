@@ -185,4 +185,10 @@ public class ItemServiceImpl implements ItemService {
 		return mapper.getAName(aNo);
 	}
 
+	@Override
+	public int modifyItems(ItemInfoDto dto) {
+		
+		return 0;
+	}
+
 }
