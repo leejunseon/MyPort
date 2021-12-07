@@ -37,6 +37,14 @@ public class ItemServiceImpl implements ItemService {
 		List<ItemVo> resultVo = mapper.retrieveItems(vo);
 		return convertVoToDto(resultVo, vo);
 	}
+	
+	@Override
+	public int modifyItems(ItemDto dto) {
+		int updatedRow = 0;
+		List<ItemDetail> itemList= dto.getItemList();
+		
+		return 0;
+	}
 
 	/*
 	 * ItemVo -> ItemDto로 변환
@@ -57,6 +65,13 @@ public class ItemServiceImpl implements ItemService {
 		result.setCountryList(countryList);
 		result.setMaxRatio(maxRatio);
 
+		return result;
+	}
+	
+	public ItemVo convertDtoToVo(ItemDetail item) {
+		ItemVo result = new ItemVo();
+		result.setINo(item.getINo());
+		result.setCNo(item.getc);
 		return result;
 	}
 
@@ -184,10 +199,13 @@ public class ItemServiceImpl implements ItemService {
 	public String getAName(Long aNo) {
 		return mapper.getAName(aNo);
 	}
-
-	@Override
-	public int modifyItems(ItemDto dto) {
-		return 0;
+	
+	public String getCno(String cName) {
+		return mapper.getCNo(cName);
+	}
+	
+	public String getAno(String aName) {
+		return mapper.getAno(aName);
 	}
 
 }

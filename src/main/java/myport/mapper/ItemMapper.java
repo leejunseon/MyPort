@@ -21,5 +21,9 @@ public interface ItemMapper {
 	public String getAName(Long aNo);
 	
 	public int modifyItems(ItemVo vo);
+
+	public String getCNo(String cName);
+
+	public String getAno(String aName);
 	
 }
