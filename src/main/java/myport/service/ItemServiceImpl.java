@@ -42,7 +42,10 @@ public class ItemServiceImpl implements ItemService {
 	public int modifyItems(ItemDto dto) {
 		int updatedRow = 0;
 		List<ItemDetail> itemList= dto.getItemList();
-		
+		for(ItemDetail item : itemList) {
+			
+			updatedRow += mapper.modifyItems(null);
+		}
 		
 		return 0;
 	}
@@ -66,6 +69,16 @@ public class ItemServiceImpl implements ItemService {
 		result.setCountryList(countryList);
 		result.setMaxRatio(maxRatio);
 
+		return result;
+	}
+	
+	/*
+	 * ItemDto -> ItemVo로 변환
+	 */
+	public ItemVo convertDtoDetailToVo(ItemDetail itemDetail) {
+		ItemVo result = new ItemVo();
+				
+		
 		return result;
 	}
 
