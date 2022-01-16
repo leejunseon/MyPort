@@ -67,11 +67,7 @@ public class ItemServiceImpl implements ItemService {
 
 		return result;
 	}
-	
-	/*
-	 * public ItemVo convertDtoToVo(ItemDetail item) { ItemVo result = new ItemVo();
-	 * result.setINo(item.getINo()); result.setCNo(item.getc); return result; }
-	 */
+
 
 	/* 
 	 * cno, ano => cname, aname
