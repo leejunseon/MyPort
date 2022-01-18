@@ -63,20 +63,6 @@ public class ItemMapperTest {
 	}
 	
 	//@Test
-	public void testGetCName() {
-		String result = "";
-		result = mapper.getCName(3L);
-		log.info("result : "+result);
-	}
-	
-	//@Test
-	public void testGetAName() {
-		String result = "";
-		result = mapper.getAName(15L);
-		log.info("result : "+result);
-	}
-	
-	@Test
 	public void testModifyItems() {
 		ItemVo vo = new ItemVo();
 		vo.setUNo(1L);

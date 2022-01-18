@@ -15,14 +15,10 @@ public interface ItemMapper {
 	public List<ItemVo> retrieveItems(UserVo vo);
 	
 	public Long getTotalPrice(UserVo vo);
-	
-	public String getCName(Long cNo);
-	
-	public String getAName(Long aNo);
-	
+			
 	public int modifyItems(ItemVo vo);
 
-	public String getCNo(String cName);
+	public Long getCNo(String cName);
 
 	public String getAno(String aName);
 	

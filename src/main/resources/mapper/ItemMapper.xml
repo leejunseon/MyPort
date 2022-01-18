@@ -33,22 +33,6 @@
 		]]>
 	</select>
 	
-	<select id="getCName" resultType="String">
-		<![CDATA[
-			SELECT C_NAME
-			FROM TBL_COUNTRY
-			WHERE C_NO = #{cNo}
-		]]>
-	</select>
-	
-	<select id="getAName" resultType="String">
-		<![CDATA[
-			SELECT A_NAME
-			FROM TBL_ASSET
-			WHERE A_NO = #{aNo}
-		]]>
-	</select>
-	
 	<update id="modifyItems">
 		<![CDATA[
 			UPDATE TBL_ITEM

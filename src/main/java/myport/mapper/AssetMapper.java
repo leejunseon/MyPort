@@ -17,5 +17,9 @@ public interface AssetMapper {
 	public int modifyAssets(AssetVo vo);
 	
 	public int deleteAsset(AssetVo vo);
+	
+	public String getAName(Long aNo);
+
+	public Long getANo(AssetVo vo);
 
 }

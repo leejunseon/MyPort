@@ -6,10 +6,12 @@
 
 	<insert id="addAsset">
 		INSERT INTO TBL_ASSET(U_NO,A_NAME,A_RATIO)
-		VALUES (#{uNo},#{aName},#{aRatio})
+		VALUES
+		(#{uNo},#{aName},#{aRatio})
 	</insert>
 
-	<select id="retrieveAssets" resultType="myport.domain.vo.AssetVo">
+	<select id="retrieveAssets"
+		resultType="myport.domain.vo.AssetVo">
 		<![CDATA[
 			SELECT *
 			FROM TBL_ASSET
@@ -17,7 +19,7 @@
 			ORDER BY A_RATIO DESC
 		]]>
 	</select>
-	
+
 	<update id="modifyAssets">
 		<![CDATA[
 			UPDATE TBL_ASSET
@@ -28,12 +30,29 @@
 			WHERE A_NO = #{aNo}
 		]]>
 	</update>
-	
+
 	<delete id="deleteAsset">
 		<![CDATA[
 			DELETE TBL_ASSET
 			WHERE A_NO = #{aNo}
 		]]>
 	</delete>
+
+	<select id="getAName" resultType="String">
+		<![CDATA[
+			SELECT A_NAME
+			FROM TBL_ASSET
+			WHERE A_NO = #{aNo}
+		]]>
+	</select>
+	
+	<select id="getANo" resultType="Long">
+		<![CDATA[
+			SELECT A_NO
+			FROM TBL_ASSET
+			WHERE U_NO = #{uNo}
+			AND A_NAME = #{aName}
+		]]>
+	</select>
 
 </mapper>

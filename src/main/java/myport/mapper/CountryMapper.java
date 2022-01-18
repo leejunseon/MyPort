@@ -17,5 +17,9 @@ public interface CountryMapper {
 	public int modifyCountry(CountryVo vo);
 	
 	public int deleteCountry(CountryVo vo);
+	
+	public String getCName(Long cNo);
+	
+	public Long getCNo(CountryVo vo);
 
 }

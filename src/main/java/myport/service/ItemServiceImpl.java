@@ -16,8 +16,12 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import myport.domain.dto.ItemDetail;
 import myport.domain.dto.ItemDto;
+import myport.domain.vo.AssetVo;
+import myport.domain.vo.CountryVo;
 import myport.domain.vo.ItemVo;
 import myport.domain.vo.UserVo;
+import myport.mapper.AssetMapper;
+import myport.mapper.CountryMapper;
 import myport.mapper.ItemMapper;
 
 @Service
@@ -25,29 +29,31 @@ import myport.mapper.ItemMapper;
 @AllArgsConstructor
 public class ItemServiceImpl implements ItemService {
 
-	private ItemMapper mapper;
+	private ItemMapper itemMapper;
+	private CountryMapper countryMapper;
+	private AssetMapper assetMapper;
 
 	@Override
 	public int addItem(ItemVo vo) {
-		return mapper.addItem(vo);
+		return itemMapper.addItem(vo);
 	}
 
 	@Override
 	public ItemDto retrieveItems(UserVo vo) {
-		List<ItemVo> resultVo = mapper.retrieveItems(vo);
+		List<ItemVo> resultVo = itemMapper.retrieveItems(vo);
 		return convertVoToDto(resultVo, vo);
 	}
 	
 	@Override
-	public int modifyItems(ItemDto dto) {
+	public int modifyItems(UserVo vo, ItemDto dto) {
 		int updatedRow = 0;
 		List<ItemDetail> itemList= dto.getItemList();
 		for(ItemDetail item : itemList) {
-			
-			updatedRow += mapper.modifyItems(null);
+			ItemVo itemVo = convertDetailToVo(vo, item);
+			updatedRow += itemMapper.modifyItems(itemVo);
 		}
 		
-		return 0;
+		return updatedRow;
 	}
 
 	/*
@@ -73,11 +79,17 @@ public class ItemServiceImpl implements ItemService {
 	}
 	
 	/*
-	 * ItemDto -> ItemVo로 변환
+	 * ItemDetail -> ItemVo로 변환
 	 */
-	public ItemVo convertDtoDetailToVo(ItemDetail itemDetail) {
+	public ItemVo convertDetailToVo(UserVo user, ItemDetail detail) {
 		ItemVo result = new ItemVo();
-				
+		result.setINo(detail.getINo());
+		result.setUNo(user.getUNo());
+		result.setCNo(getCno(user, detail));
+		result.setANo(getAno(user, detail));
+		result.setIName(detail.getIName());
+		result.setIPrice(detail.getIPrice());
+		result.setINum(detail.getINum());
 		
 		return result;
 	}
@@ -89,7 +101,7 @@ public class ItemServiceImpl implements ItemService {
 	 */
 	public List<ItemDetail> getItemList(List<ItemVo> inputVoList, UserVo vo) {
 		List<ItemDetail> resultDtos = new ArrayList<ItemDetail>();
-		Long totalPrice = mapper.getTotalPrice(vo);
+		Long totalPrice = itemMapper.getTotalPrice(vo);
 
 		for (ItemVo inputVo : inputVoList) {
 			ItemDetail dto = new ItemDetail();
@@ -153,7 +165,6 @@ public class ItemServiceImpl implements ItemService {
 
 			@Override
 			public int compare(ItemDetail dto1, ItemDetail dto2) {
-				// TODO Auto-generated method stub
 				if(assetNumList.get(dto1.getAName())==assetNumList.get(dto2.getAName())){
 					double res = dto2.getIRatio()-dto1.getIRatio();
 					if(res<0)
@@ -201,19 +212,25 @@ public class ItemServiceImpl implements ItemService {
 	}
 	
 	public String getCName(Long cNo) {
-		return mapper.getCName(cNo);
+		return countryMapper.getCName(cNo);
 	}
 
 	public String getAName(Long aNo) {
-		return mapper.getAName(aNo);
+		return assetMapper.getAName(aNo);
+	}
+		
+	public Long getCno(UserVo user, ItemDetail detail) {
+		CountryVo country = new CountryVo();
+		country.setUNo(user.getUNo());
+		country.setCName(detail.getCName());
+		return countryMapper.getCNo(country);
 	}
 	
-	public String getCno(String cName) {
-		return mapper.getCNo(cName);
-	}
-	
-	public String getAno(String aName) {
-		return mapper.getAno(aName);
+	public Long getAno(UserVo user, ItemDetail detail) {
+		AssetVo asset = new AssetVo();
+		asset.setUNo(user.getUNo());
+		asset.setAName(detail.getAName());
+		return assetMapper.getANo(asset);
 	}
 
 }

@@ -6,10 +6,12 @@
 
 	<insert id="addCountry">
 		INSERT INTO TBL_COUNTRY(U_NO,C_NAME,C_RATIO)
-		VALUES (#{uNo},#{cName},#{cRatio})
+		VALUES
+		(#{uNo},#{cName},#{cRatio})
 	</insert>
 
-	<select id="retrieveCountries" resultType="myport.domain.vo.CountryVo">
+	<select id="retrieveCountries"
+		resultType="myport.domain.vo.CountryVo">
 		<![CDATA[
 			SELECT *
 			FROM TBL_COUNTRY
@@ -17,7 +19,7 @@
 			ORDER BY C_RATIO DESC
 		]]>
 	</select>
-	
+
 	<update id="modifyCountry">
 		<![CDATA[
 			UPDATE TBL_COUNTRY
@@ -28,12 +30,29 @@
 			WHERE C_NO = #{cNo}
 		]]>
 	</update>
-	
+
 	<delete id="deleteCountry">
 		<![CDATA[
 			DELETE TBL_COUNTRY
 			WHERE C_NO = #{cNo}
 		]]>
 	</delete>
+
+	<select id="getCName" resultType="String">
+		<![CDATA[
+			SELECT C_NAME
+			FROM TBL_COUNTRY
+			WHERE C_NO = #{cNo}
+		]]>
+	</select>
+	
+	<select id="getCNo" resultType="Long">
+		<![CDATA[
+			SELECT C_NO
+			FROM TBL_COUNTRY
+			WHERE U_NO = #{uNo}
+			AND C_NAME = #{cName}
+		]]>
+	</select>
 
 </mapper>

@@ -10,6 +10,6 @@ public interface ItemService {
 	
 	public ItemDto retrieveItems(UserVo vo);
 	
-	public int modifyItems(ItemDto dto);
+	public int modifyItems(UserVo vo, ItemDto dto);
 
 }
