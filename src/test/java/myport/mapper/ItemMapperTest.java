@@ -62,7 +62,7 @@ public class ItemMapperTest {
 		log.info("result : "+result);
 	}
 	
-	//@Test
+	@Test
 	public void testModifyItems() {
 		ItemVo vo = new ItemVo();
 		vo.setUNo(1L);

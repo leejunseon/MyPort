@@ -3,6 +3,9 @@ package myport.controller;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import myport.domain.dto.ItemDetail;
+import myport.domain.dto.ItemDto;
 import myport.domain.vo.ItemVo;
 
 @SpringBootTest
@@ -46,13 +51,42 @@ public class ItemControllerTest {
 		String jsonInString = mapper.writeValueAsString(paramVo);
 
 		log.info(mockMvc.perform(post("/item/add").contentType(MediaType.APPLICATION_JSON).content(jsonInString))
-				.andReturn().getResponse().getContentAsString());
+				.andReturn()
+				.getResponse()
+				.getContentAsString()
+				);
 
 	}
 	
-	@Test
+	//@Test
 	public void testRetrieve() throws Exception{
 		log.info(mockMvc.perform(get("/item/1"))
+				.andReturn()
+				.getResponse()
+				.getContentAsString()
+				);
+	}
+	
+	@Test
+	public void testModify() throws Exception{
+		ObjectMapper mapper = new ObjectMapper();
+
+		ItemDto item = new ItemDto(); 
+		List<ItemDetail> itemList = new ArrayList<ItemDetail>();
+		ItemDetail detail = new ItemDetail();
+		detail.setINo(6L); 
+		detail.setCName("미국");
+		detail.setAName("주식");
+		detail.setIName("SPY");
+		detail.setIPrice(551855L);
+		detail.setINum(3L);
+		
+		itemList.add(detail);
+		item.setItemList(itemList);
+
+		String jsonInString = mapper.writeValueAsString(item);
+		
+		log.info(mockMvc.perform(post("/item/modify/1").contentType(MediaType.APPLICATION_JSON).content(jsonInString))
 				.andReturn()
 				.getResponse()
 				.getContentAsString()

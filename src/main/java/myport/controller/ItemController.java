@@ -33,5 +33,12 @@ public class ItemController {
 		paramVo.setUNo(uNo);
 		return service.retrieveItems(paramVo);
 	}
+	
+	@PostMapping(value="/modify/{uNo}",consumes="application/json")
+	public int modify(@PathVariable("uNo") Long uNo, @RequestBody ItemDto itemDto) throws Exception{
+		UserVo paramUser = new UserVo();
+		paramUser.setUNo(uNo);
+		return service.modifyItems(paramUser, itemDto);
+	}
 
 }
