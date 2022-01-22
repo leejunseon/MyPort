@@ -253,7 +253,7 @@
 		editItemBtn.addEventListener('click', function() {
 			//edit 창 데이터 세팅
 			setEditModalData(itemList);
-			//editItemModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
+			editItemModalSubmitBtn.addEventListener('click',modifyData);//edit submit 버튼 -> modifyData()
 			editItemModal.modal("show");
 		});
 
@@ -415,6 +415,14 @@
 		},function(error){
 			catchError(error);
 		})
+	}
+	
+	/*
+	* function : modifyData
+	* description : Item 수정 -> BackEnd 전송, reload
+	*/
+	function modifyData(){
+		
 	}
 	
 </script>
