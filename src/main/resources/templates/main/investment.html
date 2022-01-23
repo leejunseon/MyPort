@@ -422,7 +422,60 @@
 	* description : Item 수정 -> BackEnd 전송, reload
 	*/
 	function modifyData(){
+		///////////////////////////////////////////////////////////////////////////////////////////////////////
+		const editModalTbl = document.getElementById("editModalTable");//수정 모달 테이블
+		let cnt = editModalTbl.rows.length;
+
+		let type = "";
+		let deleteYn = "";
+		let editDataList = [];
+		let deleteDataList = [];
 		
+		//입력값 -> editDataList, deleteDataList로 세팅
+		for (var i = 0; i < cnt; i++) {
+			if (i == 0) {
+				type = editModalTbl.rows[i].cells[0].innerText;
+			} else {
+				deleteYn = editModalTbl.rows[i].cells[3].children[0].children[0].checked;
+				console.log(deleteYn);
+				if (type === "자산") {
+					let asset = {
+						aNo : null,
+						uNo : 1,
+						aName : null,
+						aRatio : null
+					};
+					asset.aNo = editModalTbl.rows[i].cells[0].innerText;
+					asset.aName = editModalTbl.rows[i].cells[1].children[0].children[0].value;
+					asset.aRatio = editModalTbl.rows[i].cells[2].children[0].children[0].children[0].value;
+					if(deleteYn){
+						deleteDataList.push(asset);
+					}else{
+						editDataList.push(asset);
+					}
+				} else if (type === "국가") {
+					let country = {
+						cNo : null,
+						uNo : 1,
+						cName : null,
+						cRatio : null
+					}
+					country.cNo = editModalTbl.rows[i].cells[0].innerText;
+					country.cName =editModalTbl.rows[i].cells[1].children[0].children[0].value;
+					country.cRatio = editModalTbl.rows[i].cells[2].children[0].children[0].children[0].value;
+					if(deleteYn){
+						deleteDataList.push(country);
+					}else{
+						editDataList.push(country);
+					}
+				}
+			}
+		}
+		
+		console.log("type : " + type);
+		console.log(deleteDataList);
+		console.log(editDataList);
+		///////////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 	
 </script>
